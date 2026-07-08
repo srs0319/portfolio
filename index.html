@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pin Zhi Ye | Creative Marketing Leader</title>
+<style>
+  @import url('https://fonts.cdnfonts.com/css/noto-serif-tc');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  :root{
+    --bg:#ffffff;
+    --ink:#141414;
+    --muted:#6b6b66;
+    --line:#dedcd4;
+    --paper:#faf9f6;
+    --accent:#141414;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Helvetica Neue", "Noto Sans TC", Arial, sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1100px; margin:0 auto; padding-left:40px; padding-right:40px;}
+  @media(max-width:760px){.wrap{padding-left:22px; padding-right:22px;}}
+
+  .serif{font-family:"Noto Serif TC","Georgia",serif;}
+
+  /* NAV — dark glass over the dark hero; switches to light glass once scrolled past it */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:rgba(11,15,25,.45); backdrop-filter:blur(14px) saturate(140%); -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid rgba(255,255,255,.1);
+    transition:background .3s ease, border-color .3s ease;
+  }
+  nav{display:flex; justify-content:space-between; align-items:center; height:72px;}
+  .logo{font-weight:700; letter-spacing:2px; font-size:14px; text-transform:uppercase; color:#fff; transition:color .3s ease;}
+  .logo img{height:40px; width:auto; display:block;}
+  .navlinks{display:flex; gap:34px; font-size:12px; letter-spacing:1px; color:rgba(255,255,255,.65); text-transform:uppercase; transition:color .3s ease;}
+  .navlinks a{position:relative; padding-bottom:4px;}
+  .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#d97706;transform:scaleX(0);transition:transform .25s ease;}
+  .navlinks a:hover::after{transform:scaleX(1);}
+  .navlinks a:hover{color:#fff;}
+  header.scrolled{
+    background:rgba(255,255,255,.88); border-bottom:1px solid var(--line);
+  }
+  header.scrolled .logo{color:var(--ink);}
+  header.scrolled .navlinks{color:var(--muted);}
+  header.scrolled .navlinks a:hover{color:var(--ink);}
+
+  /* NAV — mobile hamburger */
+  .nav-toggle{
+    display:none; flex-direction:column; justify-content:center; align-items:flex-end; gap:5px;
+    width:30px; height:28px; background:none; border:none; padding:0; cursor:pointer; z-index:2;
+  }
+  .nav-toggle span{display:block; width:100%; height:2px; background:#fff; transition:background .3s ease, transform .3s ease, opacity .3s ease, width .3s ease;}
+  header.scrolled .nav-toggle span{background:var(--ink);}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg); width:100%;}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg); width:100%;}
+  @media(max-width:700px){
+    .nav-toggle{display:flex;}
+    .navlinks{
+      position:fixed; top:72px; left:0; right:0; z-index:49;
+      flex-direction:column; align-items:flex-start; gap:0;
+      background:rgba(11,15,25,.94); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+      max-height:0; overflow:hidden; opacity:0; padding:0 24px;
+      transition:max-height .35s ease, opacity .3s ease, padding .35s ease;
+    }
+    .navlinks.open{max-height:300px; opacity:1; padding:4px 24px 12px;}
+    .navlinks a{width:100%; padding:9px 0; font-size:12px; border-bottom:1px solid rgba(255,255,255,.1); color:#fff;}
+    .navlinks a::after{display:none;}
+    header.scrolled .navlinks{background:rgba(255,255,255,.97); border-bottom:1px solid var(--line);}
+    header.scrolled .navlinks a{color:var(--ink); border-bottom:1px solid var(--line);}
+  }
+
+  /* HERO — DaoAI dark tech aesthetic (deep navy bg, cyan accent, Inter 800) */
+  .hero{
+    position:relative; overflow:hidden;
+    text-align:center; color:#f5f7fa;
+    background:#0b0f19;
+  }
+  .hero-video{
+    position:absolute; inset:0; z-index:0; width:100%; height:100%;
+    object-fit:cover; opacity:.55; pointer-events:none;
+  }
+  @media(max-width:700px){.hero-video{display:none;}}
+  .hero-tint{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg, rgba(11,15,25,.55) 0%, rgba(11,15,25,.25) 45%, rgba(11,15,25,.55) 100%);
+  }
+  @media(max-width:700px){.hero-tint{background:#0b0f19;}}
+  .hero-fold{
+    position:relative; z-index:3;
+    min-height:100vh; display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
+    padding:120px 0 60px;
+  }
+  .hero-inner{position:relative; z-index:1; display:flex; flex-direction:column; align-items:center;}
+  .hero-badge{
+    display:inline-block;
+    color:#fff; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3);
+    font-family:"Helvetica Neue",sans-serif; font-weight:600; font-size:12px; letter-spacing:0.15em; text-transform:uppercase;
+    padding:7px 18px; border-radius:20px; margin-bottom:26px;
+  }
+  h1.display{
+    font-family:"Helvetica Neue","Inter",sans-serif;
+    font-weight:800; font-size:clamp(38px,7vw,80px); line-height:1.16; max-width:900px;
+    letter-spacing:-1px; color:#fff;
+  }
+  h1.display .accent{color:#fff;}
+  .hero .lede{
+    margin-top:28px; max-width:900px; color:#c3c9d4; font-size:17px; line-height:1.75; position:relative; z-index:1;
+    font-family:"Helvetica Neue","Noto Sans TC",sans-serif;
+  }
+  .hero .lede strong{color:#fff; font-weight:600;}
+  .hero-cta{
+    position:relative; z-index:1;
+    margin-top:40px; display:inline-flex; align-items:center; gap:8px;
+    padding:14px 30px; border:1px solid rgba(255,255,255,.35); border-radius:8px;
+    background:#fff; box-shadow:none;
+    color:#0b0f19; font-family:"Helvetica Neue",sans-serif; font-weight:700; font-size:15px; letter-spacing:0.01em;
+    transition:background .2s ease, transform .15s ease;
+  }
+  .hero-cta:hover{background:#e5e7eb; transform:translateY(-2px);}
+  .hero-caption{
+    position:relative; z-index:1; margin-top:22px; font-size:11px; letter-spacing:2px;
+    text-transform:uppercase; color:#9ca8bc;
+  }
+  .hero .meta-row{
+    position:relative; z-index:3; width:100%; max-width:1020px;
+    margin:0 auto; padding:40px 40px 90px; display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid rgba(148,163,184,.2);
+  }
+  .hero .meta-row > div{
+    padding:22px 24px 0 0; border-right:1px solid rgba(148,163,184,.2);
+    opacity:0; transform:translateY(24px);
+    transition:opacity 1.4s cubic-bezier(.22,1,.36,1), transform 1.4s cubic-bezier(.22,1,.36,1), border-color .2s ease;
+  }
+  .hero .meta-row > div::before{
+    content:""; display:block; width:0; height:2px; background:#d97706; margin-bottom:16px;
+    transition:width 1.1s cubic-bezier(.22,1,.36,1) .3s;
+  }
+  .hero .meta-row > div:hover::before{width:44px;}
+  .hero .meta-row > div:hover .val{color:#fbbf24;}
+  .hero .meta-row.is-visible > div{opacity:1; transform:translateY(0);}
+  .hero .meta-row.is-visible > div::before{width:28px;}
+  .hero .meta-row.is-visible > div:nth-child(1){transition-delay:0s;}
+  .hero .meta-row.is-visible > div:nth-child(2){transition-delay:.25s;}
+  .hero .meta-row.is-visible > div:nth-child(3){transition-delay:.5s;}
+  .hero .meta-row.is-visible > div:nth-child(4){transition-delay:.75s;}
+  .hero .meta-row > div:last-child{border-right:none;}
+  .hero .meta-row .num{font-size:11px; letter-spacing:1px; color:#9ca8bc; text-transform:uppercase; margin-bottom:6px;}
+  .hero .meta-row .val{font-size:18px; font-weight:600; color:#f1f5f9; transition:color .2s ease;}
+  @media(max-width:760px){.hero-fold{padding:120px 0 40px;}}
+  @media(max-width:700px){
+    .hero .meta-row{grid-template-columns:repeat(2,1fr); padding:30px 24px 50px; row-gap:24px;}
+    .hero .meta-row > div{border-bottom:none; padding-bottom:0; margin-bottom:0;}
+    .hero .meta-row > div:nth-child(2n){border-right:none;}
+    .hero .meta-row > div:nth-child(-n+2){padding-top:0;}
+  }
+
+  /* SECTION */
+  section{padding:120px 0; border-bottom:1px solid var(--line); scroll-margin-top:100px;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;
+    margin-bottom:64px; padding-bottom:24px; border-bottom:1px solid var(--line);
+  }
+  .section-num{display:flex; align-items:center; gap:26px; font-size:12px; letter-spacing:2px; color:var(--muted); text-transform:uppercase;}
+  .section-num .num-line{flex:0 0 64px; height:1px; background:var(--line);}
+  h2{font-size:clamp(28px,3.4vw,40px); font-weight:400;}
+  @media(max-width:700px){h2{font-size:clamp(21px,5.6vw,28px); line-height:1.3;}}
+  .mobile-break{display:none;}
+  @media(max-width:700px){.mobile-break{display:block;}}
+  .section-sub{color:var(--muted); margin-top:14px; max-width:520px; font-size:14px;}
+
+  /* WORK — editorial grid, no boxes/cards, rule-separated */
+  .work-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px;}
+  @media(max-width:760px){.work-grid{gap:32px 20px;}}
+  .work-item{border-top:1px solid var(--line); padding-top:22px;}
+  .work-grid .tag-row{min-height:54px; align-content:flex-start;}
+  @media(max-width:760px){.work-grid .tag-row{min-height:132px;}}
+  @media(max-width:400px){.work-grid .tag-row{min-height:160px;}}
+  .thumb{
+    aspect-ratio:16/10; background:var(--paper); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+    color:var(--muted); font-size:11px; letter-spacing:1px; text-transform:uppercase;
+    overflow:hidden; border-radius:12px;
+  }
+  .thumb img{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
+  div.thumb img{cursor:zoom-in;}
+  a.thumb{cursor:pointer; transition:border-color .2s ease, opacity .2s ease;}
+  a.thumb:hover{border-color:#d97706; opacity:.9;}
+  .thumb-carousel{position:relative;}
+  .thumb-carousel img{position:absolute; inset:0; opacity:0; transition:opacity .35s ease; pointer-events:none;}
+  .thumb-carousel img.active{position:relative; opacity:1; pointer-events:auto;}
+  .thumb-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+    width:32px; height:32px; border-radius:50%; border:1px solid rgba(255,255,255,.6);
+    background:rgba(20,20,20,.35); color:#fff; font-size:18px; line-height:1;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    opacity:0; transition:opacity .2s ease, background .2s ease;
+  }
+  .thumb-carousel:hover .thumb-arrow{opacity:1;}
+  .thumb-arrow:hover{background:rgba(20,20,20,.6);}
+  .thumb-arrow.prev{left:12px;}
+  .thumb-arrow.next{right:12px;}
+  .lightbox{
+    position:fixed; inset:0; z-index:200; background:rgba(11,15,25,.92);
+    display:flex; align-items:center; justify-content:center; padding:40px;
+    opacity:0; visibility:hidden; transition:opacity .25s ease;
+  }
+  .lightbox.open{opacity:1; visibility:visible;}
+  .lightbox img{max-width:100%; max-height:100%; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lightbox-close{
+    position:absolute; top:24px; right:28px; width:40px; height:40px; border-radius:50%;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.3); color:#fff;
+    font-size:20px; display:flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.18);}
+  .tag-row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;}
+  .tag{
+    font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted);
+    border:1px solid var(--line); border-radius:999px; padding:5px 12px;
+  }
+  .work-item h3{font-size:19px; font-weight:600; margin-bottom:14px;}
+  .work-item p{color:var(--muted); font-size:14px; text-align:justify;}
+  .work-item .stat{font-weight:700; font-size:13px; margin-top:14px; display:block;}
+  .placeholder-note{color:#a8a6a0; font-style:italic; font-weight:400;}
+  .story p{margin-bottom:10px;}
+  .story-label{font-weight:700; color:var(--ink); text-transform:uppercase; font-size:10px; letter-spacing:1px; margin-right:8px;}
+
+  /* EXPERIENCE — growth timeline: connecting spine + node per card, newest first */
+  .timeline{position:relative; padding-left:32px; border-left:1px solid var(--line);}
+  .titem{position:relative; padding:0 0 40px 28px;}
+  .titem:last-child{padding-bottom:0;}
+  .titem::before{
+    content:""; position:absolute; left:-37px; top:26px;
+    width:10px; height:10px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--line); z-index:1;
+  }
+  .titem:first-child::before{
+    background:#d97706; border-color:#d97706; box-shadow:0 0 0 4px rgba(217,119,6,.15);
+  }
+  .tcard{border:1px solid var(--line); border-radius:12px; padding:26px 30px; background:var(--paper); transition:border-color .2s ease;}
+  .titem:first-child .tcard{border-color:#d97706; background:#fff; box-shadow:0 4px 24px rgba(217,119,6,.08);}
+  .titem-head{display:flex; align-items:center; gap:10px; margin-bottom:10px;}
+  .titem .period{font-size:12px; letter-spacing:1px; color:var(--muted); text-transform:uppercase;}
+  .current-badge{
+    font-size:10px; letter-spacing:1px; text-transform:uppercase; font-weight:600;
+    color:#b45309; background:rgba(217,119,6,.12); border:1px solid rgba(217,119,6,.35);
+    border-radius:999px; padding:3px 10px;
+  }
+  .titem .role{font-weight:600; font-size:19px;}
+  .titem .org{color:var(--muted); font-size:13px; margin-top:3px; margin-bottom:14px;}
+  .titem ul{padding-left:18px; color:var(--muted); font-size:14px;}
+  .titem li{margin-bottom:8px;}
+  @media(max-width:700px){.tcard{padding:20px;}}
+  .titem-more{
+    overflow:hidden; max-height:0; opacity:0;
+    transition:max-height .6s cubic-bezier(.22,1,.36,1), opacity .4s ease;
+  }
+  .titem-more.open{max-height:3000px; opacity:1;}
+  .titem-more > .titem:last-child{padding-bottom:0;}
+  .timeline-toggle{
+    display:flex; align-items:center; gap:8px; margin:28px 0 0 32px;
+    background:none; border:none; padding:0; cursor:pointer;
+    font-family:"Helvetica Neue",sans-serif; font-size:13px; font-weight:600;
+    letter-spacing:.02em; color:var(--ink);
+  }
+  .timeline-toggle-arrow{display:inline-block; font-size:12px; transition:transform .3s ease;}
+  .timeline-toggle span:first-child{position:relative; padding-bottom:2px;}
+  .timeline-toggle span:first-child::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--ink); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+  }
+  .timeline-toggle:hover span:first-child::after{transform:scaleX(1);}
+  .timeline-toggle[aria-expanded="true"] .timeline-toggle-arrow{transform:rotate(180deg);}
+  @media(max-width:700px){.timeline-toggle{margin-left:0;}}
+
+  /* SKILLS — editorial columns */
+  .skill-grid{
+    position:relative; display:grid; grid-template-columns:repeat(2,1fr); gap:0;
+    border-top:1px solid var(--line); border-left:1px solid var(--line);
+    border-radius:16px; overflow:hidden;
+  }
+  .skill-grid::after{
+    content:""; position:absolute; left:50%; top:50%; width:9px; height:9px;
+    margin:-5px 0 0 -5px; border-radius:50%; background:#d97706;
+    box-shadow:0 0 0 4px var(--bg); z-index:2; pointer-events:none;
+  }
+  .skill-box{
+    position:relative; padding:32px; border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+    transition:background .25s ease, box-shadow .25s ease, opacity .25s ease;
+  }
+  .skill-box:hover{background:#fff; box-shadow:inset 0 0 0 1px #d97706; z-index:1; opacity:1;}
+  .skill-grid:has(.skill-box:hover) .skill-box:not(:hover){opacity:.45;}
+  @media(max-width:700px){.skill-box{padding:20px;}}
+  .skill-index{
+    position:absolute; top:14px; right:16px; font-size:11px; font-weight:700;
+    letter-spacing:1px; color:#d97706; opacity:0; transition:opacity .25s ease;
+  }
+  .skill-box:hover .skill-index{opacity:1;}
+  .skill-icon{width:22px; height:22px; margin-bottom:14px; color:var(--ink);}
+  .skill-icon svg{width:100%; height:100%; display:block;}
+  .skill-box h4{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:16px;}
+  .skill-box .pill-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{
+    font-size:13px; color:var(--muted); border:1px solid var(--line); border-radius:999px;
+    padding:6px 14px; transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .skill-box:hover .pill{color:var(--ink); border-color:#d97706;}
+
+  /* CAPABILITIES — dual-axis matrix (mirrors DaoAI's paired feature grid) */
+  .cap-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
+  @media(max-width:760px){.cap-grid{grid-template-columns:1fr; gap:0;}}
+  .cap-col-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:8px;}
+  .cap-item{padding:26px 0; border-top:1px solid var(--line);}
+  .cap-item h4{font-size:17px; font-weight:600; margin-bottom:8px;}
+  .cap-item p{color:var(--muted); font-size:14px;}
+  @media(max-width:760px){.cap-col-head{margin-top:40px;} .cap-col:first-child .cap-col-head{margin-top:0;}}
+
+  /* WORK — flagship deep-dive cards (mirrors DaoAI's Visual Intelligence product cards) */
+  .flagship-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px; margin-bottom:80px;}
+  @media(max-width:760px){.flagship-grid{grid-template-columns:1fr;}}
+  .flagship-item{border-top:2px solid var(--ink); padding-top:22px;}
+  .flagship-label{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:14px;}
+  .flagship-item .tag-row{min-height:54px; align-content:flex-start;}
+  .more-work-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:40px;}
+
+  /* UPDATES — Latest-Insights-style cards */
+  .updates-grid{display:flex; flex-wrap:wrap; gap:40px;}
+  .update-card{flex:1 1 300px; max-width:360px; border-top:1px solid var(--line); padding-top:20px;}
+
+  /* CLOSING CTA — two-column "how I can help" (mirrors DaoAI's final tabbed CTA) */
+  .close-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
+  @media(max-width:760px){.close-grid{grid-template-columns:1fr;}}
+  .close-col{border-top:1px solid var(--line); padding-top:24px;}
+  .close-col h4{font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:20px;}
+
+  /* CLOSING CTA (alt) — paired problem → value rows */
+  .close-pairs{display:flex; flex-direction:column;}
+  .close-pair{
+    display:grid; grid-template-columns:1fr 40px 1fr; align-items:center; gap:8px;
+    border-top:1px solid var(--line); padding:26px 0;
+  }
+  @media(max-width:760px){.close-pair{grid-template-columns:1fr; gap:10px; padding:20px 0;}}
+  .close-problem{color:var(--muted); font-size:15px;}
+  .close-value{color:var(--ink); font-size:15px; font-weight:500;}
+  .close-arrow{
+    display:flex; align-items:center; justify-content:center;
+    width:32px; height:32px; border-radius:50%; border:1px solid var(--line);
+    color:#d97706; font-size:14px; transition:border-color .2s ease, background .2s ease;
+  }
+  @media(max-width:760px){.close-arrow{transform:rotate(90deg); width:24px; height:24px;}}
+  .close-pair:hover .close-arrow{border-color:#d97706; background:rgba(217,119,6,.08);}
+  .close-col ul{list-style:none;}
+  .close-col li{font-size:14px; padding:12px 0; border-top:1px solid var(--line);}
+  .close-col li:first-child{border-top:none;}
+
+  /* CONTACT */
+  footer{padding:100px 0 60px;}
+  #contact{
+    background-image: linear-gradient(to right, rgba(255,255,255,.82), rgba(255,255,255,.6)), url('footer-bg.png');
+    background-size: cover; background-position: center;
+  }
+  .contact-grid{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .contact-grid h2{max-width:520px;}
+  .contact-links{display:flex; gap:14px; flex-wrap:wrap;}
+  .contact-links a{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--ink); border-radius:999px; padding:12px 26px;
+    font-size:13px; font-weight:600; letter-spacing:.02em;
+    color:var(--ink); background:none;
+    transition:background .2s ease, color .2s ease;
+  }
+  .contact-links a:hover{background:var(--ink); color:#fff;}
+  .footer-grid{display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:64px; padding-top:32px; border-top:1px solid var(--line); flex-wrap:wrap;}
+  .footer-col h4{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:14px;}
+  .footer-logo{height:40px; width:auto; display:block;}
+  .footer-col .footer-links{display:flex; flex-wrap:wrap; gap:8px 24px;}
+  .footer-col a{font-size:13px; color:var(--muted);}
+  .footer-col a:hover{color:var(--ink);}
+  .footer-col p{font-size:13px; color:var(--muted); max-width:260px;}
+  .copyright{color:var(--muted); font-size:11px; margin-top:50px; letter-spacing:1px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#" aria-label="回到頂端"><img src="Rome Logo.png" alt="Rome"></a>
+      <div class="navlinks" id="navLinks">
+        <a href="#capabilities">能力</a>
+        <a href="#work">作品</a>
+        <a href="#experience">經歷</a>
+        <a href="#skills">技能</a>
+        <a href="#contact">聯絡</a>
+      </div>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-tint"></div>
+  <div class="hero-fold">
+    <div class="hero-inner wrap">
+      <div class="hero-badge">Creative &amp; Integrated Marketing Leader</div>
+      <h1 class="display">把技術轉換成<br><span class="accent">客戶想買單</span>的畫面與敘事</h1>
+      <p class="lede">
+        具備10年跨國科技與整合行銷經驗的創意驅動行銷領導者，橫跨零售、產品行銷與整合行銷，包含在HTC等全球科技知名品牌的行銷實戰經驗；現任職於AI新創公司，具備<strong>亞太（含東南亞）與中國市場在地化創意轉譯</strong>的稀有能力，中英雙語。近一年自學用AI vibe coding，獨立建置公司網站、CRM系統與AI Agent，把AI工具真正落實到日常工作中。
+      </p>
+      <a href="#work" class="hero-cta">查看作品 →</a>
+    </div>
+  </div>
+  <div class="meta-row">
+    <div><div class="num">Experience</div><div class="val">10年+ 跨國整合行銷</div></div>
+    <div><div class="num">Focus</div><div class="val">APAC／中國市場在地化與GTM</div></div>
+    <div><div class="num">Edge</div><div class="val">AI／VR 前沿技術轉譯</div></div>
+    <div><div class="num">Background</div><div class="val">全In-house品牌端經驗</div></div>
+  </div>
+</section>
+
+<section id="capabilities" class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span>01</span><span class="num-line"></span><span>Capabilities</span></div>
+      <h2 class="serif">品牌與行銷策略<br class="mobile-break"> × 技術轉譯與AI實作</h2>
+    </div>
+  </div>
+  <div class="cap-grid">
+    <div class="cap-col">
+      <div class="cap-col-head">品牌與行銷策略 · Creative &amp; Brand Marketing</div>
+      <div class="cap-item">
+        <h4>品牌敘事策略</h4>
+        <p>把複雜的技術規格轉成客戶聽得懂、買得下手的故事，讓工程團隊的語言變成業務能用的武器。</p>
+      </div>
+      <div class="cap-item">
+        <h4>GTM在地化執行</h4>
+        <p>獨立扛過負責（含東南亞）與中國市場的落地執行，從策略制定到素材產出，帶動實際營收成長。</p>
+      </div>
+      <div class="cap-item">
+        <h4>跨文化溝通談判</h4>
+        <p>中英雙語，直接對接國際策略夥伴與電信商CEO層級決策者，也熟悉台灣與中國兩地的溝通與規範差異。</p>
+      </div>
+    </div>
+    <div class="cap-col">
+      <div class="cap-col-head">技術轉譯與AI實作 · Technical Translation &amp; AI-Native Build</div>
+      <div class="cap-item">
+        <h4>產品技術 → 價值敘事</h4>
+        <p>把AI工業檢測系統的技術特徵，轉化為製造業客戶能理解、願意買單的價值敘事。</p>
+      </div>
+      <div class="cap-item">
+        <h4>Vibe Coding／AI Agent建置</h4>
+        <p>不是工程師，但能獨立打造CRM系統、具備human-in-the-loop審核機制的LinkedIn發文AI Agent，以及公司官網。</p>
+      </div>
+      <div class="cap-item">
+        <h4>展場視覺與影片產出</h4>
+        <p>從資訊架構、版面設計到影片剪輯，一個人完成從內容到視覺的產出，不必等工程師或外包設計師接手。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span>02</span><span class="num-line"></span><span>Work</span></div>
+      <h2 class="serif">代表作品</h2>
+    </div>
+  </div>
+
+  <div class="flagship-grid">
+
+    <div class="flagship-item">
+      <div class="flagship-label">Flagship Case 01</div>
+      <a class="thumb thumb-carousel" href="https://www.daoai.com/" target="_blank" rel="noopener">
+        <img src="thumb-daoai.png" alt="DaoAI 官網首頁" class="active">
+        <img src="thumb-daoai-tw.png" alt="DaoAI 官網首頁 · 繁體中文版">
+        <img src="thumb-daoai-cn.png" alt="DaoAI 官網首頁 · 簡體中文版">
+        <button type="button" class="thumb-arrow prev" aria-label="上一張">&#8249;</button>
+        <button type="button" class="thumb-arrow next" aria-label="下一張">&#8250;</button>
+      </a>
+      <div class="tag-row"><span class="tag">UI/UX</span><span class="tag">Information Architecture</span><span class="tag">Brand Visual System</span><span class="tag">Web Design</span></div>
+      <h3>DaoAI 官網 &amp; Blog</h3>
+      <div class="story">
+        <p>資訊架構、頁面版型、視覺層級、品牌色彩與字體系統，全部由一個人規劃設計並利用AI工具，實際產出網站的UI/UX、排版、多媒體內容。</p>
+      </div>
+    </div>
+
+    <div class="flagship-item">
+      <div class="flagship-label">Flagship Case 02</div>
+      <div class="thumb thumb-carousel">
+        <img src="thumb-crm.png" alt="CRM 系統 Form Submissions 儀表板" class="active">
+        <img src="thumb-crm-2.png" alt="LinkedIn發文AI Agent · 靈感輸入介面">
+        <button type="button" class="thumb-arrow prev" aria-label="上一張">&#8249;</button>
+        <button type="button" class="thumb-arrow next" aria-label="下一張">&#8250;</button>
+      </div>
+      <div class="tag-row"><span class="tag">Vibe Coding</span><span class="tag">AI Agent</span><span class="tag">Human-in-the-loop</span></div>
+      <h3>CRM系統 &amp; LinkedIn發文AI Agent</h3>
+      <div class="story">
+        <p>依照公司規模與需求，以vibe coding的方式打造內部專用CRM系統，另外建了一個LinkedIn發文AI Agent，整合了LinkedIn自動發文與AI靈感庫等功能，將AI融入工作流中。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="more-work-head">More Work</div>
+  <div class="work-grid">
+
+    <div class="work-item">
+      <div class="thumb thumb-carousel">
+        <img src="thumb-apex-design.png" alt="APEX IPC 2026 展位背板設計輸出" class="active" style="object-position:center 60%">
+        <img src="thumb-apex-2.jpg" alt="APEX IPC 2026 展位現場照片">
+        <button type="button" class="thumb-arrow prev" aria-label="上一張">&#8249;</button>
+        <button type="button" class="thumb-arrow next" aria-label="下一張">&#8250;</button>
+      </div>
+      <div class="tag-row"><span class="tag">Exhibition Design</span><span class="tag">Affinity</span><span class="tag">Backdrop Design</span><span class="tag">Brand System</span></div>
+      <h3>展會平面輸出與現場視覺 — APEX IPC 2026</h3>
+      <div class="story">
+        <p>主導公司在APEX IPC 2026的展位設計（含背板設計輸出），並負責innoVex Computex現場展示影片與相關宣傳素材。</p>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <a class="thumb" href="https://www.daoai.com/zh-cn/aoi/" target="_blank" rel="noopener"><img src="thumb-video.png" alt="AI AOI for PCBA 產品影片截圖"></a>
+      <div class="tag-row"><span class="tag">Video</span><span class="tag">CapCut</span><span class="tag">AI生成畫面混剪</span></div>
+      <h3>產品與品牌行銷影片</h3>
+      <div class="story">
+        <p>包辦腳本、拍攝、剪輯，並利用AI工具生成的畫面混合實拍素材，一起剪進同一支片子裡。作品包含產品介紹/短影片等形式。</p>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="thumb thumb-carousel">
+        <img src="thumb-htc-brochure.jpg" alt="HTC U12+ 產品特點一頁式宣傳品" class="active">
+        <img src="thumb-htc-brochure-1.jpg" alt="HTC U12+ 競品規格比較頁">
+        <button type="button" class="thumb-arrow prev" aria-label="上一張">&#8249;</button>
+        <button type="button" class="thumb-arrow next" aria-label="下一張">&#8250;</button>
+      </div>
+      <div class="tag-row"><span class="tag">Print &amp; Layout</span><span class="tag">Canva</span><span class="tag">Illustrator</span></div>
+      <h3>產品宣傳品設計</h3>
+      <div class="story">
+        <p>針對銷售人員設計之銷售素材，整合技術規格、品牌調性、銷售重點，助於銷售人員介紹產品。</p>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="thumb"><img src="thumb-keynote.png" alt="Beyond Boundaries: Unleashing Business Opportunities in XR and Metaverse Frontier 簡報封面"></div>
+      <div class="tag-row"><span class="tag">Keynote</span><span class="tag">Presentation Design</span><span class="tag">XR / Metaverse</span></div>
+      <h3>HTC內部研討會簡報 — Beyond Boundaries</h3>
+      <div class="story">
+        <p>製作並主講「Beyond Boundaries: Unleashing Business Opportunities in XR and Metaverse Frontier」內部研討會簡報，向團隊說明XR與Metaverse領域的商業機會。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience" class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span>03</span><span class="num-line"></span><span>Experience</span></div>
+      <h2 class="serif">工作經歷</h2>
+    </div>
+  </div>
+  <div class="timeline">
+
+    <div class="titem">
+      <div class="tcard">
+        <div class="titem-head">
+          <span class="period">2025.01 – 至今</span>
+          <span class="current-badge">現職</span>
+        </div>
+        <div class="role">Marketing Specialist</div>
+        <div class="org">DaoAI Robotics · Vancouver, Canada</div>
+        <ul>
+          <li>用vibe coding的方式，獨立打造CRM系統與具備human-in-the-loop審核機制的LinkedIn發文AI Agent</li>
+          <li>主導建立公司網站與部落格的內容架構與視覺系統，並親自執行影片、產品手冊製作</li>
+          <li>主導APEX IPC 2026與innoVex兩場國際展會的展位視覺設計（含背板輸出），現場成功接觸指標型大客戶</li>
+          <li>建立技術轉譯工作流，將AI工業檢測系統的複雜技術特徵轉化為製造業客戶易懂的價值敘事</li>
+          <li>同時負責台灣與中國雙市場的行銷與產品資料，掌握兩地在地化溝通與內容規範的差異</li>
+          <li>執行市場研究與競品分析，支持產品定位與差異化敘事調整</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="titem">
+      <div class="tcard">
+        <div class="titem-head"><span class="period">2023.05 – 2024.06</span></div>
+        <div class="role">Product Marketing Manager, APAC</div>
+        <div class="org">HTC · Taipei, Taiwan</div>
+        <ul>
+          <li>主導亞太（東南亞）在地化行銷資產與銷售賦能材料的策略制定與落地執行，帶動營收季增40%</li>
+          <li>推動VR／元宇宙解決方案GTM策略，與Hong Kong Cyberport等策略夥伴洽談Ex-EVA馬來西亞VR電競競技場合作，談至實質階段（尚未簽約即離職，後續進度未掌握）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="titem-more" id="expMore">
+
+      <div class="titem">
+        <div class="tcard">
+          <div class="titem-head"><span class="period">2022.03 – 2023.04</span></div>
+          <div class="role">Area Manager</div>
+          <div class="org">T-Shine Case · Sydney, Australia</div>
+          <ul>
+            <li>六個月內帶動店鋪業績成長三倍，客戶轉換率提升至80%，Google地圖點擊率成長100%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="titem">
+        <div class="tcard">
+          <div class="titem-head"><span class="period">2020.06 – 2022.03</span></div>
+          <div class="role">HR Manager → Store Manager</div>
+          <div class="org">Elephone · Melbourne, Australia</div>
+          <ul>
+            <li>端到端招募流程，成功招募12名銷售專員、4名資深技師（跨9家門市）、平面設計師與海外電商專員</li>
+            <li>Black Friday 2021 全公司九家門市業績排名第三；建立會員制度，回購率提升30%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="titem">
+        <div class="tcard">
+          <div class="titem-head"><span class="period">2013.11 – 2019.09</span></div>
+          <div class="role">Trainer → Product Marketing Specialist</div>
+          <div class="org">HTC · Taipei, Taiwan</div>
+          <ul>
+            <li>從Trainer起步，負責產品與門市教育訓練，之後轉任Product Marketing Specialist</li>
+            <li>主導製作HTC U12+台灣發表記者會簡報；負責經銷商發表會／記者會現場產品介紹</li>
+            <li>代表HTC向電信商客戶CEO層級高階主管進行產品簡報與介紹</li>
+            <li>負責審核台灣官網產品頁資訊；製作門市人員教育訓練宣傳物</li>
+            <li>建立銷售指南與競品分析系統，支持第一線銷售與零售團隊</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button type="button" class="timeline-toggle" id="expToggle" aria-expanded="false" aria-controls="expMore">
+    <span>展開更多經歷</span><span class="timeline-toggle-arrow">&#8595;</span>
+  </button>
+</section>
+
+<section id="skills" class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span>04</span><span class="num-line"></span><span>Skills</span></div>
+      <h2 class="serif">軟實力結合AI工具，將創意落地</h2>
+    </div>
+  </div>
+  <div class="skill-grid">
+    <div class="skill-box">
+      <span class="skill-index">01</span>
+      <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+      <h4>創意策略領導</h4>
+      <div class="pill-row">
+        <span class="pill">品牌敘事策略</span><span class="pill">GTM規劃</span>
+        <span class="pill">跨部門協作</span><span class="pill">市場競品分析</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <span class="skill-index">02</span>
+      <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg></div>
+      <h4>視覺內容製作</h4>
+      <div class="pill-row">
+        <span class="pill">Photoshop</span><span class="pill">Premiere Pro</span><span class="pill">Illustrator</span>
+        <span class="pill">Figma（基礎）</span>
+        <span class="pill">CapCut 剪映</span><span class="pill">Affinity</span>
+        <span class="pill">Canva</span><span class="pill">展場平面輸出</span><span class="pill">攝影</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <span class="skill-index">03</span>
+      <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><rect x="10" y="10" width="4" height="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M4.5 19.5l2-2M17.5 6.5l2-2"/></svg></div>
+      <h4>AI協作與技術轉譯</h4>
+      <div class="pill-row">
+        <span class="pill">技術價值轉譯</span>
+        <span class="pill">工業科技行銷</span><span class="pill">Vibe Coding／AI Agent建置</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <span class="skill-index">04</span>
+      <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z"/></svg></div>
+      <h4>跨文化溝通與商務拓展</h4>
+      <div class="pill-row">
+        <span class="pill">中英雙語</span><span class="pill">多元文化團隊管理</span>
+        <span class="pill">策略夥伴開發</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="help" class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="section-num"><span>05</span><span class="num-line"></span><span>How I Can Help</span></div>
+      <h2 class="serif">我能解決的問題，能提供的價值</h2>
+    </div>
+  </div>
+  <div class="close-pairs">
+    <div class="close-pair">
+      <div class="close-problem">技術很強，但講不清楚在賣什麼</div>
+      <div class="close-arrow">&#8594;</div>
+      <div class="close-value">把複雜技術轉譯成客戶想買單的故事與敘事</div>
+    </div>
+    <div class="close-pair">
+      <div class="close-problem">要打進亞太（含東南亞）或中國市場，缺真正在地化的行銷語言</div>
+      <div class="close-arrow">&#8594;</div>
+      <div class="close-value">具備亞太與中國市場在地化創意轉譯的稀有能力，中英雙語</div>
+    </div>
+    <div class="close-pair">
+      <div class="close-problem">需要網站、CRM系統或AI工具，但沒有工程資源可以馬上動工</div>
+      <div class="close-arrow">&#8594;</div>
+      <div class="close-value">獨立打造網站、CRM系統與AI Agent，把AI真正落實到工作流中</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <h2 class="serif">一起聊聊<br>下一個挑戰。</h2>
+      <div class="contact-links">
+        <a href="mailto:srs0319@gmail.com">寄 Email</a>
+        <a href="https://www.linkedin.com/in/rome-ye/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <a href="#" aria-label="回到頂端"><img class="footer-logo" src="Rome Logo.png" alt="Rome"></a>
+      <div class="footer-links">
+        <a href="#capabilities">能力</a>
+        <a href="#work">作品</a>
+        <a href="#experience">經歷</a>
+        <a href="#skills">技能</a>
+      </div>
+    </div>
+    <div class="copyright">Rome All Rights Reserved © 2026</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button type="button" class="lightbox-close" aria-label="關閉">&#10005;</button>
+  <img src="" alt="">
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var header = document.querySelector('header');
+    var heroEl = document.querySelector('.hero');
+    if (header && heroEl) {
+      var onScroll = function () {
+        var threshold = heroEl.offsetHeight - 80;
+        if (window.scrollY > threshold) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    var metaRow = document.querySelector('.hero .meta-row');
+    if (!metaRow) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    io.observe(metaRow);
+
+    document.querySelectorAll('.thumb-carousel').forEach(function (car) {
+      var imgs = Array.prototype.slice.call(car.querySelectorAll('img'));
+      if (imgs.length < 2) return;
+      var i = imgs.findIndex(function (im) { return im.classList.contains('active'); });
+      if (i < 0) i = 0;
+      function show(n) {
+        imgs[i].classList.remove('active');
+        i = (n + imgs.length) % imgs.length;
+        imgs[i].classList.add('active');
+      }
+      var prev = car.querySelector('.thumb-arrow.prev');
+      var next = car.querySelector('.thumb-arrow.next');
+      if (prev) prev.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); show(i - 1); });
+      if (next) next.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); show(i + 1); });
+    });
+
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = lightbox.querySelector('img');
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('open');
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    }
+    document.querySelectorAll('div.thumb img').forEach(function (img) {
+      img.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox(img.src, img.alt);
+      });
+    });
+    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    var expToggle = document.getElementById('expToggle');
+    var expMore = document.getElementById('expMore');
+    if (expToggle && expMore) {
+      expToggle.addEventListener('click', function () {
+        var open = expMore.classList.toggle('open');
+        expToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        expToggle.querySelector('span:first-child').textContent = open ? '收合經歷' : '展開更多經歷';
+      });
+    }
+  });
+</script>
+</body>
+</html>
