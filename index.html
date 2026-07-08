@@ -89,12 +89,10 @@
     position:absolute; inset:0; z-index:0; width:100%; height:100%;
     object-fit:cover; opacity:1; pointer-events:none;
   }
-  @media(max-width:700px){.hero-video{display:none;}}
   .hero-tint{
     position:absolute; inset:0; z-index:1; pointer-events:none;
     background:rgba(60,64,72,.45);
   }
-  @media(max-width:700px){.hero-tint{background:#0b0f19;}}
   .hero-fold{
     position:relative; z-index:3;
     min-height:70vh; display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start;
@@ -130,7 +128,11 @@
   .hero-intro .lede{
     max-width:900px; margin:0 auto; color:var(--muted); font-size:17px; line-height:1.75;
     font-family:"Helvetica Neue","Noto Sans TC",sans-serif; text-align:center;
+    opacity:0; transform:translateY(24px);
+    transition:opacity 1.1s cubic-bezier(.22,1,.36,1), transform 1.1s cubic-bezier(.22,1,.36,1);
   }
+  .hero-intro .lede.is-visible{opacity:1; transform:translateY(0);}
+  @media(max-width:760px){.hero-intro .lede{text-align:left; padding:0 6px;}}
   .hero-intro .lede strong{color:var(--ink); font-weight:600;}
   .hero-intro .meta-row{
     width:100%; max-width:1020px;
@@ -418,7 +420,7 @@
   <div class="hero-tint"></div>
   <div class="hero-fold">
     <div class="hero-inner wrap">
-      <div class="hero-badge">Creative &amp; Integrated Marketing Leader</div>
+      <div class="hero-badge">Creative &amp; Integrated<br class="mobile-break"> Marketing Leader</div>
       <h1 class="display">把技術轉換成<br><span class="accent">客戶想買單</span>的畫面與敘事</h1>
       <a href="#work" class="hero-cta">查看作品 →</a>
     </div>
@@ -799,16 +801,19 @@
     }
 
     var metaRow = document.querySelector('.hero-intro .meta-row');
-    if (!metaRow) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.25 });
-    io.observe(metaRow);
+    var lede = document.querySelector('.hero-intro .lede');
+    if (metaRow || lede) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      if (metaRow) io.observe(metaRow);
+      if (lede) io.observe(lede);
+    }
 
     document.querySelectorAll('.thumb-carousel').forEach(function (car) {
       var imgs = Array.prototype.slice.call(car.querySelectorAll('img'));
