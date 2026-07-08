@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pin Zhi Ye | Creative Marketing Leader</title>
+<title>Rome Ye | Creative Marketing Leader</title>
 <style>
   @import url('https://fonts.cdnfonts.com/css/noto-serif-tc');
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -30,26 +30,28 @@
 
   .serif{font-family:"Noto Serif TC","Georgia",serif;}
 
-  /* NAV — dark glass over the dark hero; switches to light glass once scrolled past it */
+  /* NAV — transparent over the hero video; becomes light glass once scrolled past it */
   header{
     position:fixed; top:0; left:0; right:0; z-index:50;
-    background:rgba(11,15,25,.45); backdrop-filter:blur(14px) saturate(140%); -webkit-backdrop-filter:blur(14px) saturate(140%);
-    border-bottom:1px solid rgba(255,255,255,.1);
-    transition:background .3s ease, border-color .3s ease;
+    background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;
+    border-bottom:1px solid transparent;
+    transition:background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+  }
+  header.scrolled{
+    background:rgba(255,255,255,.55); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid rgba(255,255,255,.4);
   }
   nav{display:flex; justify-content:space-between; align-items:center; height:72px;}
   .logo{font-weight:700; letter-spacing:2px; font-size:14px; text-transform:uppercase; color:#fff; transition:color .3s ease;}
   .logo img{height:40px; width:auto; display:block;}
-  .navlinks{display:flex; gap:34px; font-size:12px; letter-spacing:1px; color:rgba(255,255,255,.65); text-transform:uppercase; transition:color .3s ease;}
+  header.scrolled .logo{color:var(--ink);}
+  .navlinks{display:flex; gap:34px; font-size:12px; letter-spacing:1px; color:rgba(255,255,255,.75); text-transform:uppercase; transition:color .3s ease;}
+  header.scrolled .navlinks{color:var(--muted);}
   .navlinks a{position:relative; padding-bottom:4px;}
-  .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#d97706;transform:scaleX(0);transition:transform .25s ease;}
+  .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;transform:scaleX(0);transition:transform .25s ease;}
+  header.scrolled .navlinks a::after{background:var(--ink);}
   .navlinks a:hover::after{transform:scaleX(1);}
   .navlinks a:hover{color:#fff;}
-  header.scrolled{
-    background:rgba(255,255,255,.88); border-bottom:1px solid var(--line);
-  }
-  header.scrolled .logo{color:var(--ink);}
-  header.scrolled .navlinks{color:var(--muted);}
   header.scrolled .navlinks a:hover{color:var(--ink);}
 
   /* NAV — mobile hamburger */
@@ -67,39 +69,38 @@
     .navlinks{
       position:fixed; top:72px; left:0; right:0; z-index:49;
       flex-direction:column; align-items:flex-start; gap:0;
-      background:rgba(11,15,25,.94); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+      background:rgba(255,255,255,.97); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
       max-height:0; overflow:hidden; opacity:0; padding:0 24px;
       transition:max-height .35s ease, opacity .3s ease, padding .35s ease;
+      border-bottom:1px solid var(--line);
     }
     .navlinks.open{max-height:300px; opacity:1; padding:4px 24px 12px;}
-    .navlinks a{width:100%; padding:9px 0; font-size:12px; border-bottom:1px solid rgba(255,255,255,.1); color:#fff;}
+    .navlinks a{width:100%; padding:9px 0; font-size:12px; border-bottom:1px solid var(--line); color:var(--ink);}
     .navlinks a::after{display:none;}
-    header.scrolled .navlinks{background:rgba(255,255,255,.97); border-bottom:1px solid var(--line);}
-    header.scrolled .navlinks a{color:var(--ink); border-bottom:1px solid var(--line);}
   }
 
   /* HERO — DaoAI dark tech aesthetic (deep navy bg, cyan accent, Inter 800) */
   .hero{
     position:relative; overflow:hidden;
-    text-align:center; color:#f5f7fa;
+    text-align:left; color:#f5f7fa;
     background:#0b0f19;
   }
   .hero-video{
     position:absolute; inset:0; z-index:0; width:100%; height:100%;
-    object-fit:cover; opacity:.55; pointer-events:none;
+    object-fit:cover; opacity:1; pointer-events:none;
   }
   @media(max-width:700px){.hero-video{display:none;}}
   .hero-tint{
     position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(180deg, rgba(11,15,25,.55) 0%, rgba(11,15,25,.25) 45%, rgba(11,15,25,.55) 100%);
+    background:rgba(60,64,72,.45);
   }
   @media(max-width:700px){.hero-tint{background:#0b0f19;}}
   .hero-fold{
     position:relative; z-index:3;
-    min-height:100vh; display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
-    padding:120px 0 60px;
+    min-height:70vh; display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start;
+    padding:150px 0 40px;
   }
-  .hero-inner{position:relative; z-index:1; display:flex; flex-direction:column; align-items:center;}
+  .hero-inner{position:relative; z-index:1; display:flex; flex-direction:column; align-items:flex-start;}
   .hero-badge{
     display:inline-block;
     color:#fff; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3);
@@ -112,56 +113,57 @@
     letter-spacing:-1px; color:#fff;
   }
   h1.display .accent{color:#fff;}
-  .hero .lede{
-    margin-top:28px; max-width:900px; color:#c3c9d4; font-size:17px; line-height:1.75; position:relative; z-index:1;
-    font-family:"Helvetica Neue","Noto Sans TC",sans-serif;
-  }
-  .hero .lede strong{color:#fff; font-weight:600;}
   .hero-cta{
     position:relative; z-index:1;
     margin-top:40px; display:inline-flex; align-items:center; gap:8px;
-    padding:14px 30px; border:1px solid rgba(255,255,255,.35); border-radius:8px;
-    background:#fff; box-shadow:none;
-    color:#0b0f19; font-family:"Helvetica Neue",sans-serif; font-weight:700; font-size:15px; letter-spacing:0.01em;
+    padding:14px 30px; border:1px solid rgba(255,255,255,.5); border-radius:8px;
+    background:rgba(255,255,255,.18); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:none;
+    color:#fff; font-family:"Helvetica Neue",sans-serif; font-weight:700; font-size:15px; letter-spacing:0.01em;
     transition:background .2s ease, transform .15s ease;
   }
-  .hero-cta:hover{background:#e5e7eb; transform:translateY(-2px);}
-  .hero-caption{
-    position:relative; z-index:1; margin-top:22px; font-size:11px; letter-spacing:2px;
-    text-transform:uppercase; color:#9ca8bc;
+  .hero-cta:hover{background:rgba(255,255,255,.3); transform:translateY(-2px);}
+
+  /* HERO INTRO — white section under hero: lede + meta stats */
+  .hero-intro{
+    background:var(--bg); padding:64px 0 20px;
   }
-  .hero .meta-row{
-    position:relative; z-index:3; width:100%; max-width:1020px;
-    margin:0 auto; padding:40px 40px 90px; display:grid; grid-template-columns:repeat(4,1fr); gap:0;
-    border-top:1px solid rgba(148,163,184,.2);
+  .hero-intro .lede{
+    max-width:900px; margin:0 auto; color:var(--muted); font-size:17px; line-height:1.75;
+    font-family:"Helvetica Neue","Noto Sans TC",sans-serif; text-align:center;
   }
-  .hero .meta-row > div{
-    padding:22px 24px 0 0; border-right:1px solid rgba(148,163,184,.2);
+  .hero-intro .lede strong{color:var(--ink); font-weight:600;}
+  .hero-intro .meta-row{
+    width:100%; max-width:1020px;
+    margin:44px auto 0; padding:30px 0 10px; display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid var(--line);
+  }
+  .hero-intro .meta-row > div{
+    padding:22px 24px 0 0; border-right:1px solid var(--line);
     opacity:0; transform:translateY(24px);
     transition:opacity 1.4s cubic-bezier(.22,1,.36,1), transform 1.4s cubic-bezier(.22,1,.36,1), border-color .2s ease;
   }
-  .hero .meta-row > div::before{
-    content:""; display:block; width:0; height:2px; background:#d97706; margin-bottom:16px;
+  .hero-intro .meta-row > div::before{
+    content:""; display:block; width:0; height:2px; background:var(--ink); margin-bottom:16px;
     transition:width 1.1s cubic-bezier(.22,1,.36,1) .3s;
   }
-  .hero .meta-row > div:hover::before{width:44px;}
-  .hero .meta-row > div:hover .val{color:#fbbf24;}
-  .hero .meta-row.is-visible > div{opacity:1; transform:translateY(0);}
-  .hero .meta-row.is-visible > div::before{width:28px;}
-  .hero .meta-row.is-visible > div:nth-child(1){transition-delay:0s;}
-  .hero .meta-row.is-visible > div:nth-child(2){transition-delay:.25s;}
-  .hero .meta-row.is-visible > div:nth-child(3){transition-delay:.5s;}
-  .hero .meta-row.is-visible > div:nth-child(4){transition-delay:.75s;}
-  .hero .meta-row > div:last-child{border-right:none;}
-  .hero .meta-row .num{font-size:11px; letter-spacing:1px; color:#9ca8bc; text-transform:uppercase; margin-bottom:6px;}
-  .hero .meta-row .val{font-size:18px; font-weight:600; color:#f1f5f9; transition:color .2s ease;}
-  @media(max-width:760px){.hero-fold{padding:120px 0 40px;}}
-  @media(max-width:700px){
-    .hero .meta-row{grid-template-columns:repeat(2,1fr); padding:30px 24px 50px; row-gap:24px;}
-    .hero .meta-row > div{border-bottom:none; padding-bottom:0; margin-bottom:0;}
-    .hero .meta-row > div:nth-child(2n){border-right:none;}
-    .hero .meta-row > div:nth-child(-n+2){padding-top:0;}
+  .hero-intro .meta-row > div:hover::before{width:44px;}
+  .hero-intro .meta-row > div:hover .val{color:var(--ink);}
+  .hero-intro .meta-row.is-visible > div{opacity:1; transform:translateY(0);}
+  .hero-intro .meta-row.is-visible > div::before{width:28px;}
+  .hero-intro .meta-row.is-visible > div:nth-child(1){transition-delay:0s;}
+  .hero-intro .meta-row.is-visible > div:nth-child(2){transition-delay:.25s;}
+  .hero-intro .meta-row.is-visible > div:nth-child(3){transition-delay:.5s;}
+  .hero-intro .meta-row.is-visible > div:nth-child(4){transition-delay:.75s;}
+  .hero-intro .meta-row > div:last-child{border-right:none;}
+  .hero-intro .meta-row .num{font-size:11px; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;}
+  .hero-intro .meta-row .val{font-size:18px; font-weight:600; color:var(--ink); transition:color .2s ease;}
+  @media(max-width:760px){
+    .hero-intro .meta-row{grid-template-columns:repeat(2,1fr); padding:30px 0 10px; row-gap:24px;}
+    .hero-intro .meta-row > div{border-bottom:none; padding-bottom:0; margin-bottom:0;}
+    .hero-intro .meta-row > div:nth-child(2n){border-right:none;}
+    .hero-intro .meta-row > div:nth-child(-n+2){padding-top:0;}
   }
+  @media(max-width:760px){.hero-fold{padding:120px 0 40px;}}
 
   /* SECTION */
   section{padding:120px 0; border-bottom:1px solid var(--line); scroll-margin-top:100px;}
@@ -417,12 +419,15 @@
     <div class="hero-inner wrap">
       <div class="hero-badge">Creative &amp; Integrated Marketing Leader</div>
       <h1 class="display">把技術轉換成<br><span class="accent">客戶想買單</span>的畫面與敘事</h1>
-      <p class="lede">
-        具備10年跨國科技與整合行銷經驗的創意驅動行銷領導者，橫跨零售、產品行銷與整合行銷，包含在HTC等全球科技知名品牌的行銷實戰經驗；現任職於AI新創公司，具備<strong>亞太（含東南亞）與中國市場在地化創意轉譯</strong>的稀有能力，中英雙語。近一年自學用AI vibe coding，獨立建置公司網站、CRM系統與AI Agent，把AI工具真正落實到日常工作中。
-      </p>
       <a href="#work" class="hero-cta">查看作品 →</a>
     </div>
   </div>
+</section>
+
+<section class="hero-intro wrap">
+  <p class="lede">
+    具備10年跨國科技與整合行銷經驗的創意驅動行銷領導者，橫跨零售、產品行銷與整合行銷，包含在HTC等全球科技知名品牌的行銷實戰經驗；現任職於AI新創公司，具備<strong>亞太（含東南亞）與中國市場在地化創意轉譯</strong>的稀有能力，中英雙語。近一年自學用AI vibe coding，獨立建置公司網站、CRM系統與AI Agent，把AI工具真正落實到日常工作中。
+  </p>
   <div class="meta-row">
     <div><div class="num">Experience</div><div class="val">10年+ 跨國整合行銷</div></div>
     <div><div class="num">Focus</div><div class="val">APAC／中國市場在地化與GTM</div></div>
@@ -792,7 +797,7 @@
       });
     }
 
-    var metaRow = document.querySelector('.hero .meta-row');
+    var metaRow = document.querySelector('.hero-intro .meta-row');
     if (!metaRow) return;
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
