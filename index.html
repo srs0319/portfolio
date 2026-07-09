@@ -350,8 +350,13 @@
   .cap-item{padding:26px 0; border-top:1px solid var(--line);}
   .cap-grid.cap-animated .cap-item{
     overflow:hidden; max-height:0; padding-top:0; padding-bottom:0; opacity:0;
-    transform:translateY(14px); border-top-color:transparent;
-    transition:max-height .55s ease, padding .55s ease, opacity .45s ease, transform .55s ease, border-color .55s ease;
+    transform:translateY(8px); border-top-color:transparent;
+    transition:
+      max-height .9s cubic-bezier(.22,1,.36,1),
+      padding .9s cubic-bezier(.22,1,.36,1),
+      opacity .7s ease,
+      transform .85s cubic-bezier(.22,1,.36,1),
+      border-color .7s ease;
     transition-delay:var(--cap-delay, 0ms);
   }
   .cap-grid.cap-animated.is-visible .cap-item{
@@ -1043,7 +1048,7 @@
       capGrid.querySelectorAll('.cap-col').forEach(function (col, colIndex) {
         col.querySelectorAll('.cap-item').forEach(function (item, itemIndex) {
           var order = colIndex === 0 ? itemIndex : itemIndex + 3;
-          item.style.setProperty('--cap-delay', (order * 170) + 'ms');
+          item.style.setProperty('--cap-delay', (order * 120) + 'ms');
         });
       });
       if (reduceMotion) {
