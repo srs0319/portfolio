@@ -100,7 +100,7 @@
   }
   .hero-video{
     position:absolute; inset:0; z-index:0; width:100%; height:100%;
-    object-fit:cover; object-position:62% 88%; opacity:1; pointer-events:none;
+    object-fit:cover; object-position:32% 88%; opacity:1; pointer-events:none;
   }
   .hero-tint{
     position:absolute; inset:0; z-index:1; pointer-events:none;
@@ -191,8 +191,11 @@
   .section-num{display:flex; align-items:center; gap:26px; font-size:12px; letter-spacing:2px; color:var(--muted); text-transform:uppercase;}
   .section-num .num-line{flex:0 0 64px; height:1px; background:var(--line);}
   h2{font-size:clamp(28px,3.4vw,40px); font-weight:400;}
-  html[lang="en"] #capabilities .section-head{border-bottom:none; padding-bottom:0;}
-  html[lang="en"] #capabilities h2{font-size:clamp(28px,3vw,32px); line-height:1.32; max-width:920px;}
+  #capabilities .section-head{display:block; border-bottom:none; padding-bottom:0;}
+  .cap-title-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px; margin-top:12px;}
+  .cap-title{font-size:clamp(30px,3.1vw,38px); line-height:1.2;}
+  html[lang="en"] #capabilities .cap-title{font-size:clamp(27px,2.8vw,31px); line-height:1.22;}
+  @media(max-width:760px){.cap-title-grid{grid-template-columns:1fr; gap:8px;} .cap-title{font-size:clamp(28px,7vw,34px);}}
   @media(max-width:700px){h2{font-size:clamp(26px,7vw,32px); line-height:1.25;}}
   .mobile-break{display:none;}
   @media(max-width:700px){.mobile-break{display:block;}}
@@ -463,7 +466,10 @@
   <div class="section-head">
     <div>
       <div class="section-num"><span>01</span><span class="num-line"></span><span>Capabilities</span></div>
-      <h2 class="serif">品牌與行銷策略<br class="mobile-break"> × 技術轉譯與AI實作</h2>
+      <div class="cap-title-grid">
+        <h2 class="serif cap-title">品牌與行銷策略</h2>
+        <h2 class="serif cap-title">技術轉譯與AI實作</h2>
+      </div>
     </div>
   </div>
   <div class="cap-grid">
@@ -800,7 +806,6 @@
           'h1.display': '把技術轉換成<br><span class="accent">客戶想買單</span>的畫面與敘事',
           '.hero-cta': '查看作品 →',
           '.hero-intro .lede': '具備10年跨國科技與整合行銷經驗的創意驅動行銷領導者，橫跨零售、產品行銷與整合行銷，包含在HTC等全球科技知名品牌的行銷實戰經驗；現任職於AI新創公司，具備<strong>亞太（含東南亞）與中國市場在地化創意轉譯</strong>的稀有能力，中英雙語。近一年自學用AI vibe coding，獨立建置公司網站、CRM系統與AI Agent，把AI工具真正落實到日常工作中。',
-          '#capabilities h2': '品牌與行銷策略<br class="mobile-break"> × 技術轉譯與AI實作',
           '#work h2': '代表作品',
           '#experience h2': '工作經歷',
           '#skills h2': '軟實力結合AI工具，將創意落地',
@@ -812,6 +817,7 @@
           'header .navlinks a': ['能力', '作品', '經歷', '技能', '聯絡'],
           '.footer-links a': ['能力', '作品', '經歷', '技能'],
           '.hero-intro .meta-row .val': ['10年+ 跨國整合行銷', 'APAC／中國市場<br>在地化與GTM', 'AI／VR 前沿技術轉譯', '全In-house品牌端經驗'],
+          '.cap-title': ['品牌與行銷策略', '技術轉譯與AI實作'],
           '.cap-col-head': ['品牌與行銷策略 · Creative &amp; Brand Marketing', '技術轉譯與AI實作 · Technical Translation &amp; AI-Native Build'],
           '.cap-item h4': ['品牌敘事策略', 'GTM在地化執行', '跨文化溝通談判', '產品技術 → 價值敘事', 'Vibe Coding／AI Agent建置', '展場視覺與影片產出'],
           '.cap-item p': [
@@ -873,7 +879,6 @@
           'h1.display': 'Turning technology into<br><span class="accent">visuals and stories</span> customers buy into',
           '.hero-cta': 'View Work →',
           '.hero-intro .lede': 'A creative-driven marketing professional with 10+ years of international technology and integrated marketing experience across retail, product marketing, and integrated campaigns, including hands-on work at global technology brands such as HTC. Currently working at an AI startup, I bring a rare ability to translate ideas for <strong>APAC, Southeast Asia, and China markets</strong>, with bilingual English and Chinese communication. Over the past year, I have self-taught AI vibe coding and independently built a company website, CRM system, and AI Agent, turning AI tools into real daily workflows.',
-          '#capabilities h2': 'Brand &amp; Marketing Strategy<br class="mobile-break"> × Technical Translation &amp; AI Execution',
           '#work h2': 'Selected Work',
           '#experience h2': 'Experience',
           '#skills h2': 'Soft skills plus AI tools, turning creative ideas into execution',
@@ -885,6 +890,7 @@
           'header .navlinks a': ['Capabilities', 'Work', 'Experience', 'Skills', 'Contact'],
           '.footer-links a': ['Capabilities', 'Work', 'Experience', 'Skills'],
           '.hero-intro .meta-row .val': ['10+ years in global integrated marketing', 'APAC / China markets<br>Localization &amp; GTM', 'AI / VR frontier technology translation', 'Fully in-house brand-side experience'],
+          '.cap-title': ['Brand &amp; Marketing Strategy', 'Technical Translation &amp; AI Execution'],
           '.cap-col-head': ['', ''],
           '.cap-item h4': ['Brand Narrative Strategy', 'Localized GTM Execution', 'Cross-Cultural Communication', 'Product Technology → Value Narrative', 'Vibe Coding / AI Agent Building', 'Trade Show Visuals &amp; Video Production'],
           '.cap-item p': [
