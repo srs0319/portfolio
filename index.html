@@ -348,6 +348,20 @@
   .cap-col-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:8px;}
   html[lang="en"] .cap-col-head:empty{display:none;}
   .cap-item{padding:26px 0; border-top:1px solid var(--line);}
+  .cap-grid.cap-animated .cap-item{
+    overflow:hidden; max-height:0; padding-top:0; padding-bottom:0; opacity:0;
+    transform:translateY(14px); border-top-color:transparent;
+    transition:max-height .55s ease, padding .55s ease, opacity .45s ease, transform .55s ease, border-color .55s ease;
+    transition-delay:var(--cap-delay, 0ms);
+  }
+  .cap-grid.cap-animated.is-visible .cap-item{
+    max-height:260px; padding-top:26px; padding-bottom:26px; opacity:1;
+    transform:translateY(0); border-top-color:var(--line);
+  }
+  @media(max-width:760px){.cap-grid.cap-animated.is-visible .cap-item{max-height:360px;}}
+  @media(prefers-reduced-motion:reduce){
+    .cap-grid.cap-animated .cap-item{transition:none; max-height:none; padding-top:26px; padding-bottom:26px; opacity:1; transform:none; border-top-color:var(--line);}
+  }
   .cap-item h4{font-size:17px; font-weight:600; margin-bottom:8px;}
   .cap-item p{color:var(--muted); font-size:14px;}
   @media(max-width:760px){.cap-col-head{margin-top:40px;} .cap-col:first-child .cap-col-head{margin-top:0;}}
@@ -1021,6 +1035,32 @@
       });
     }
     applyLanguage(activeLang);
+
+    var capGrid = document.querySelector('.cap-grid');
+    if (capGrid) {
+      var capSection = document.getElementById('capabilities');
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      capGrid.querySelectorAll('.cap-col').forEach(function (col, colIndex) {
+        col.querySelectorAll('.cap-item').forEach(function (item, itemIndex) {
+          var order = colIndex === 0 ? itemIndex : itemIndex + 3;
+          item.style.setProperty('--cap-delay', (order * 170) + 'ms');
+        });
+      });
+      if (reduceMotion) {
+        capGrid.classList.add('cap-animated', 'is-visible');
+      } else {
+        capGrid.classList.add('cap-animated');
+        var capObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              capGrid.classList.add('is-visible');
+              capObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.22 });
+        capObserver.observe(capSection || capGrid);
+      }
+    }
 
     var metaRow = document.querySelector('.hero-intro .meta-row');
     var lede = document.querySelector('.hero-intro .lede');
