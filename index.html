@@ -258,6 +258,9 @@
   .work-item .stat{font-weight:700; font-size:13px; margin-top:14px; display:block;}
   .placeholder-note{color:#a8a6a0; font-style:italic; font-weight:400;}
   .story p{margin-bottom:10px;}
+  .impact-list{list-style:none; margin:16px 0 0; padding:0; border-top:1px solid var(--line);}
+  .impact-list li{padding:10px 0; border-bottom:1px solid var(--line); color:var(--muted); font-size:13px; line-height:1.6;}
+  .impact-list strong{color:var(--ink); font-weight:600;}
   .flagship-item .story, .work-item .story{min-height:56px;}
   .story-label{font-weight:700; color:var(--ink); text-transform:uppercase; font-size:10px; letter-spacing:1px; margin-right:8px;}
 
@@ -345,7 +348,7 @@
   /* CAPABILITIES — dual-axis matrix (mirrors DaoAI's paired feature grid) */
   .cap-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
   @media(max-width:760px){.cap-grid{grid-template-columns:1fr; gap:0;}}
-  .cap-col-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:8px;}
+  .cap-col-head{display:none;}
   html[lang="en"] .cap-col-head:empty{display:none;}
   .cap-item{padding:26px 0; border-top:1px solid var(--line);}
   .cap-grid.cap-animated .cap-item{
@@ -489,7 +492,7 @@
       <div class="section-num"><span>01</span><span class="num-line"></span><span>Capabilities</span></div>
       <div class="cap-title-grid">
         <h2 class="serif cap-title">品牌與行銷策略</h2>
-        <h2 class="serif cap-title">技術轉譯與<br>AI實作</h2>
+        <h2 class="serif cap-title">技術轉譯與AI實作</h2>
       </div>
     </div>
   </div>
@@ -547,9 +550,14 @@
         <button type="button" class="thumb-arrow next" aria-label="下一張">&#8250;</button>
       </a>
       <div class="tag-row"><span class="tag">UI/UX</span><span class="tag">Information Architecture</span><span class="tag">Brand Visual System</span><span class="tag">Web Design</span></div>
-      <h3>DaoAI 官網 &amp; Blog</h3>
+      <h3>DaoAI 官網、Blog &amp; SEO/GEO</h3>
       <div class="story">
         <p>資訊架構、頁面版型、視覺層級、品牌色彩與字體系統，全部由一個人規劃設計並利用AI工具，實際產出網站的UI/UX、排版、多媒體內容。</p>
+        <ul class="impact-list">
+          <li>以 <strong>SEO/GEO</strong> 與 innoVEX 落地頁，把官網與內容變成 inbound 線索入口。</li>
+          <li>已吸引 <strong>美國富士康、中國 Dell、Inventec、NXP、Honeywell Aerospace、Advantech</strong> 等製造與科技客戶關注。</li>
+          <li>對應官方數位資產、跨國在地化、AI 技術價值轉譯三種日常戰場。</li>
+        </ul>
       </div>
     </div>
 
@@ -641,7 +649,7 @@
         <div class="org">DaoAI Robotics · Vancouver, Canada</div>
         <ul>
           <li>用vibe coding的方式，獨立打造CRM系統與具備human-in-the-loop審核機制的LinkedIn發文AI Agent</li>
-          <li>主導建立公司網站與部落格的內容架構與視覺系統，並親自執行影片、產品手冊製作</li>
+          <li>主導建立公司網站、部落格與SEO/GEO內容架構，吸引高價值製造與科技客戶 inbound 關注</li>
           <li>主導APEX IPC 2026與innoVex兩場國際展會的展位視覺設計（含背板輸出），現場成功接觸指標型大客戶</li>
           <li>建立技術轉譯工作流，將AI工業檢測系統的複雜技術特徵轉化為製造業客戶易懂的價值敘事</li>
           <li>同時負責台灣與中國雙市場的行銷與產品資料，掌握兩地在地化溝通與內容規範的差異</li>
@@ -838,8 +846,8 @@
           'header .navlinks a': ['能力', '作品', '經歷', '技能', '聯絡'],
           '.footer-links a': ['能力', '作品', '經歷', '技能'],
           '.hero-intro .meta-row .val': ['10年+ 跨國整合行銷', 'APAC／中國市場<br>在地化與GTM', 'AI／VR 前沿技術轉譯', '全In-house品牌端經驗'],
-          '.cap-title': ['品牌與行銷策略', '技術轉譯與<br>AI實作'],
-          '.cap-col-head': ['品牌與行銷策略 · Creative &amp; Brand Marketing', '技術轉譯與AI實作 · Technical Translation &amp; AI-Native Build'],
+          '.cap-title': ['品牌與行銷策略', '技術轉譯與AI實作'],
+          '.cap-col-head': ['', ''],
           '.cap-item h4': ['品牌敘事策略', 'GTM在地化執行', '跨文化溝通談判', '產品技術 → 價值敘事', 'Vibe Coding／AI Agent建置', '展場視覺與影片產出'],
           '.cap-item p': [
             '把複雜的技術規格轉成客戶聽得懂、買得下手的故事，讓工程團隊的語言變成業務能用的武器。',
@@ -849,10 +857,15 @@
             '不是工程師，但能獨立打造CRM系統、具備human-in-the-loop審核機制的LinkedIn發文AI Agent，以及公司官網。',
             '從資訊架構、版面設計到影片剪輯，一個人完成從內容到視覺的產出，不必等工程師或外包設計師接手。'
           ],
-          '.flagship-item h3': ['DaoAI 官網 &amp; Blog', 'CRM系統 &amp; LinkedIn發文AI Agent'],
+          '.flagship-item h3': ['DaoAI 官網、Blog &amp; SEO/GEO', 'CRM系統 &amp; LinkedIn發文AI Agent'],
           '.flagship-item .story p': [
             '資訊架構、頁面版型、視覺層級、品牌色彩與字體系統，全部由一個人規劃設計並利用AI工具，實際產出網站的UI/UX、排版、多媒體內容。',
             '依照公司規模與需求，以vibe coding的方式打造內部專用CRM系統，另外建了一個LinkedIn發文AI Agent，整合了LinkedIn自動發文與AI靈感庫等功能，將AI融入工作流中。'
+          ],
+          '.impact-list li': [
+            '以 <strong>SEO/GEO</strong> 與 innoVEX 落地頁，把官網與內容變成 inbound 線索入口。',
+            '已吸引 <strong>美國富士康、中國 Dell、Inventec、NXP、Honeywell Aerospace、Advantech</strong> 等製造與科技客戶關注。',
+            '對應官方數位資產、跨國在地化、AI 技術價值轉譯三種日常戰場。'
           ],
           '.work-item h3': ['展會平面輸出與現場視覺 — APEX IPC 2026', '產品與品牌行銷影片', '產品宣傳品設計', 'HTC 研討會簡報'],
           '.work-item .story p': [
@@ -866,7 +879,7 @@
           '.titem .period': ['2025.01 – 至今', '2023.05 – 2024.06', '2022.03 – 2023.04', '2020.06 – 2022.03', '2013.11 – 2019.09'],
           '.titem li': [
             '用vibe coding的方式，獨立打造CRM系統與具備human-in-the-loop審核機制的LinkedIn發文AI Agent',
-            '主導建立公司網站與部落格的內容架構與視覺系統，並親自執行影片、產品手冊製作',
+            '主導建立公司網站、部落格與SEO/GEO內容架構，吸引高價值製造與科技客戶 inbound 關注',
             '主導APEX IPC 2026與innoVex兩場國際展會的展位視覺設計（含背板輸出），現場成功接觸指標型大客戶',
             '建立技術轉譯工作流，將AI工業檢測系統的複雜技術特徵轉化為製造業客戶易懂的價值敘事',
             '同時負責台灣與中國雙市場的行銷與產品資料，掌握兩地在地化溝通與內容規範的差異',
@@ -922,10 +935,15 @@
             'I am not an engineer, but I can independently build internal CRM systems, human-in-the-loop LinkedIn posting AI Agents, and company websites.',
             'From information architecture and layout design to video editing, I can produce content and visuals without waiting on engineering or outsourced design.'
           ],
-          '.flagship-item h3': ['DaoAI Website &amp; Blog', 'CRM System &amp; LinkedIn Posting AI Agent'],
+          '.flagship-item h3': ['DaoAI Website, Blog &amp; SEO/GEO', 'CRM System &amp; LinkedIn Posting AI Agent'],
           '.flagship-item .story p': [
             'I planned the information architecture, page layouts, visual hierarchy, brand colors, and typography system, then used AI tools to execute the website UI/UX, layout, and multimedia content.',
             'Based on company needs, I used vibe coding to build an internal CRM system and a LinkedIn posting AI Agent with automated posting and an AI inspiration library, embedding AI into the workflow.'
+          ],
+          '.impact-list li': [
+            'Used <strong>SEO/GEO</strong> and an innoVEX landing page to turn the website and content system into an inbound lead channel.',
+            'Attracted interest from high-value manufacturing and technology accounts, including <strong>Foxconn US, Dell China, Inventec, NXP, Honeywell Aerospace, and Advantech</strong>.',
+            'Connects directly to official digital assets, cross-market localization, and AI technology value translation.'
           ],
           '.work-item h3': ['Trade Show Print &amp; On-Site Visuals — APEX IPC 2026', 'Product &amp; Brand Marketing Videos', 'Product Collateral Design', 'HTC Seminar Presentation'],
           '.work-item .story p': [
@@ -939,7 +957,7 @@
           '.titem .period': ['Jan 2025 – Present', 'May 2023 – Jun 2024', 'Mar 2022 – Apr 2023', 'Jun 2020 – Mar 2022', 'Nov 2013 – Sep 2019'],
           '.titem li': [
             'Used vibe coding to independently build a CRM system and a human-in-the-loop LinkedIn posting AI Agent.',
-            'Led the information architecture and visual system for the company website and blog, while personally producing videos and product brochures.',
+            'Led the company website, blog, and SEO/GEO content architecture, attracting inbound attention from high-value manufacturing and technology accounts.',
             'Led booth visual design for APEX IPC 2026 and innoVEX, helping the team engage high-value enterprise prospects on site.',
             'Built a technical translation workflow that turns complex AI inspection capabilities into clear value narratives for manufacturers.',
             'Managed marketing and product materials for Taiwan and China markets, adapting communication to local context and compliance differences.',
