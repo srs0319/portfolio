@@ -53,6 +53,13 @@
   .navlinks a:hover::after{transform:scaleX(1);}
   .navlinks a:hover{color:#fff;}
   header.scrolled .navlinks a:hover{color:var(--ink);}
+  .lang-toggle{
+    color:inherit; background:transparent; border:1px solid currentColor; border-radius:999px;
+    padding:3px 10px; font:inherit; letter-spacing:1px; text-transform:uppercase; cursor:pointer;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .lang-toggle:hover{background:rgba(255,255,255,.16); color:#fff;}
+  header.scrolled .lang-toggle:hover{background:var(--ink); color:#fff; border-color:var(--ink);}
 
   /* NAV — mobile hamburger */
   .nav-toggle{
@@ -77,6 +84,11 @@
     .navlinks.open{max-height:300px; opacity:1; padding:4px 24px 12px;}
     .navlinks a{width:100%; padding:9px 0; font-size:12px; border-bottom:1px solid var(--line); color:var(--ink);}
     .navlinks a::after{display:none;}
+    .lang-toggle{
+      width:100%; border:none; border-bottom:1px solid var(--line); border-radius:0;
+      padding:9px 0; text-align:left; color:var(--ink); background:none;
+    }
+    .lang-toggle:hover{background:none; color:var(--ink);}
   }
 
   /* HERO — DaoAI dark tech aesthetic (deep navy bg, cyan accent, Inter 800) */
@@ -407,6 +419,7 @@
         <a href="#experience">經歷</a>
         <a href="#skills">技能</a>
         <a href="#contact">聯絡</a>
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
       </div>
       <button type="button" class="nav-toggle" id="navToggle" aria-label="選單" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -770,6 +783,199 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    var translations = {
+      zh: {
+        lang: 'zh-Hant',
+        title: 'Rome Ye | Creative & Integrated Marketer',
+        toggleLabel: 'EN',
+        toggleAria: 'Switch to English',
+        expOpen: '展開更多經歷',
+        expClose: '收合經歷',
+        text: {
+          'h1.display': '把技術轉換成<br><span class="accent">客戶想買單</span>的畫面與敘事',
+          '.hero-cta': '查看作品 →',
+          '.hero-intro .lede': '具備10年跨國科技與整合行銷經驗的創意驅動行銷領導者，橫跨零售、產品行銷與整合行銷，包含在HTC等全球科技知名品牌的行銷實戰經驗；現任職於AI新創公司，具備<strong>亞太（含東南亞）與中國市場在地化創意轉譯</strong>的稀有能力，中英雙語。近一年自學用AI vibe coding，獨立建置公司網站、CRM系統與AI Agent，把AI工具真正落實到日常工作中。',
+          '#capabilities h2': '品牌與行銷策略<br class="mobile-break"> × 技術轉譯與AI實作',
+          '#work h2': '代表作品',
+          '#experience h2': '工作經歷',
+          '#skills h2': '軟實力結合AI工具，將創意落地',
+          '#help h2': '我能解決的問題，能提供的價值',
+          '#contact h2': '一起聊聊<br>下一個挑戰。',
+          '.more-work-head': 'More Work'
+        },
+        groups: {
+          'header .navlinks a': ['能力', '作品', '經歷', '技能', '聯絡'],
+          '.footer-links a': ['能力', '作品', '經歷', '技能'],
+          '.hero-intro .meta-row .val': ['10年+ 跨國整合行銷', 'APAC／中國市場<br>在地化與GTM', 'AI／VR 前沿技術轉譯', '全In-house品牌端經驗'],
+          '.cap-col-head': ['品牌與行銷策略 · Creative &amp; Brand Marketing', '技術轉譯與AI實作 · Technical Translation &amp; AI-Native Build'],
+          '.cap-item h4': ['品牌敘事策略', 'GTM在地化執行', '跨文化溝通談判', '產品技術 → 價值敘事', 'Vibe Coding／AI Agent建置', '展場視覺與影片產出'],
+          '.cap-item p': [
+            '把複雜的技術規格轉成客戶聽得懂、買得下手的故事，讓工程團隊的語言變成業務能用的武器。',
+            '獨立扛過負責（含東南亞）與中國市場的落地執行，從策略制定到素材產出，帶動實際營收成長。',
+            '中英雙語，直接對接國際策略夥伴與電信商CEO層級決策者，也熟悉台灣與中國兩地的溝通與規範差異。',
+            '把AI工業檢測系統的技術特徵，轉化為製造業客戶能理解、願意買單的價值敘事。',
+            '不是工程師，但能獨立打造CRM系統、具備human-in-the-loop審核機制的LinkedIn發文AI Agent，以及公司官網。',
+            '從資訊架構、版面設計到影片剪輯，一個人完成從內容到視覺的產出，不必等工程師或外包設計師接手。'
+          ],
+          '.flagship-item h3': ['DaoAI 官網 &amp; Blog', 'CRM系統 &amp; LinkedIn發文AI Agent'],
+          '.flagship-item .story p': [
+            '資訊架構、頁面版型、視覺層級、品牌色彩與字體系統，全部由一個人規劃設計並利用AI工具，實際產出網站的UI/UX、排版、多媒體內容。',
+            '依照公司規模與需求，以vibe coding的方式打造內部專用CRM系統，另外建了一個LinkedIn發文AI Agent，整合了LinkedIn自動發文與AI靈感庫等功能，將AI融入工作流中。'
+          ],
+          '.work-item h3': ['展會平面輸出與現場視覺 — APEX IPC 2026', '產品與品牌行銷影片', '產品宣傳品設計', 'HTC 研討會簡報'],
+          '.work-item .story p': [
+            '主導公司在APEX IPC 2026的展位設計（含背板設計輸出），並負責innoVex Computex現場展示影片與相關宣傳素材。',
+            '包辦腳本、拍攝、剪輯，並利用AI工具生成的畫面混合實拍素材，一起剪進同一支片子裡。作品包含產品介紹/短影片等形式。',
+            '針對銷售人員設計之銷售素材，整合技術規格、品牌調性、銷售重點，助於銷售人員介紹產品。',
+            '研討會簡報，向HK Cyberport夥伴說明XR與Metaverse領域的商業機會。'
+          ],
+          '#work .tag': ['UI/UX', 'Information Architecture', 'Brand Visual System', 'Web Design', 'Vibe Coding', 'AI Agent', 'Human-in-the-loop', 'Exhibition Design', 'Affinity', 'Backdrop Design', 'Brand System', 'Video', 'CapCut', 'AI生成畫面混剪', 'Print &amp; Layout', 'Canva', 'Illustrator', 'Keynote', 'Presentation Design', 'XR / Metaverse'],
+          '.current-badge': ['現職'],
+          '.titem .period': ['2025.01 – 至今', '2023.05 – 2024.06', '2022.03 – 2023.04', '2020.06 – 2022.03', '2013.11 – 2019.09'],
+          '.titem li': [
+            '用vibe coding的方式，獨立打造CRM系統與具備human-in-the-loop審核機制的LinkedIn發文AI Agent',
+            '主導建立公司網站與部落格的內容架構與視覺系統，並親自執行影片、產品手冊製作',
+            '主導APEX IPC 2026與innoVex兩場國際展會的展位視覺設計（含背板輸出），現場成功接觸指標型大客戶',
+            '建立技術轉譯工作流，將AI工業檢測系統的複雜技術特徵轉化為製造業客戶易懂的價值敘事',
+            '同時負責台灣與中國雙市場的行銷與產品資料，掌握兩地在地化溝通與內容規範的差異',
+            '執行市場研究與競品分析，支持產品定位與差異化敘事調整',
+            '主導亞太（東南亞）在地化行銷資產與銷售賦能材料的策略制定與落地執行，帶動營收季增40%',
+            '推動VR／元宇宙解決方案GTM策略，與Hong Kong Cyberport等策略夥伴洽談Ex-EVA馬來西亞VR電競競技場合作，談至實質階段（尚未簽約即離職，後續進度未掌握）',
+            '六個月內帶動店鋪業績成長三倍，客戶轉換率提升至80%，Google地圖點擊率成長100%',
+            '端到端招募流程，成功招募12名銷售專員、4名資深技師（跨9家門市）、平面設計師與海外電商專員',
+            'Black Friday 2021 全公司九家門市業績排名第三；建立會員制度，回購率提升30%',
+            '從Trainer起步，負責產品與門市教育訓練，之後轉任Product Marketing Specialist',
+            '主導製作HTC U12+台灣發表記者會簡報；負責經銷商發表會／記者會現場產品介紹',
+            '代表HTC向電信商客戶CEO層級高階主管進行產品簡報與介紹',
+            '負責審核台灣官網產品頁資訊；製作門市人員教育訓練宣傳物',
+            '建立銷售指南與競品分析系統，支持第一線銷售與零售團隊'
+          ],
+          '.skill-box h4': ['創意策略領導', '視覺內容製作', 'AI協作與技術轉譯', '跨文化溝通與商務拓展'],
+          '.pill': ['品牌敘事策略', 'GTM規劃', '跨部門協作', '市場競品分析', 'Photoshop', 'Premiere Pro', 'Illustrator', 'Figma（基礎）', 'CapCut 剪映', 'Affinity', 'Canva', '展場平面輸出', '攝影', '技術價值轉譯', '工業科技行銷', 'Vibe Coding／AI Agent建置', '中英雙語', '多元文化團隊管理', '策略夥伴開發'],
+          '.close-problem': ['技術很強，但講不清楚在賣什麼', '要打進亞太（含東南亞）或中國市場，缺真正在地化的行銷語言', '需要網站、CRM系統或AI工具，但沒有工程資源可以馬上動工'],
+          '.close-value': ['把複雜技術轉譯成客戶想買單的故事與敘事', '具備亞太與中國市場在地化創意轉譯的稀有能力，中英雙語', '獨立打造網站、CRM系統與AI Agent，把AI真正落實到工作流中'],
+          '.contact-links a': ['寄 Email', 'LinkedIn']
+        }
+      },
+      en: {
+        lang: 'en',
+        title: 'Rome Ye | Creative & Integrated Marketer',
+        toggleLabel: '中',
+        toggleAria: 'Switch to Chinese',
+        expOpen: 'Show more experience',
+        expClose: 'Collapse experience',
+        text: {
+          'h1.display': 'Turning technology into<br><span class="accent">visuals and stories</span> customers buy into',
+          '.hero-cta': 'View Work →',
+          '.hero-intro .lede': 'A creative-driven marketing professional with 10+ years of international technology and integrated marketing experience across retail, product marketing, and integrated campaigns, including hands-on work at global technology brands such as HTC. Currently working at an AI startup, I bring a rare ability to translate ideas for <strong>APAC, Southeast Asia, and China markets</strong>, with bilingual English and Chinese communication. Over the past year, I have self-taught AI vibe coding and independently built a company website, CRM system, and AI Agent, turning AI tools into real daily workflows.',
+          '#capabilities h2': 'Brand &amp; Marketing Strategy<br class="mobile-break"> × Technical Translation &amp; AI Execution',
+          '#work h2': 'Selected Work',
+          '#experience h2': 'Experience',
+          '#skills h2': 'Soft skills plus AI tools, turning creative ideas into execution',
+          '#help h2': 'Problems I solve and value I bring',
+          '#contact h2': 'Let’s talk about<br>the next challenge.',
+          '.more-work-head': 'More Work'
+        },
+        groups: {
+          'header .navlinks a': ['Capabilities', 'Work', 'Experience', 'Skills', 'Contact'],
+          '.footer-links a': ['Capabilities', 'Work', 'Experience', 'Skills'],
+          '.hero-intro .meta-row .val': ['10+ years in global integrated marketing', 'APAC / China markets<br>Localization &amp; GTM', 'AI / VR frontier technology translation', 'Fully in-house brand-side experience'],
+          '.cap-col-head': ['Creative &amp; Brand Marketing', 'Technical Translation &amp; AI-Native Build'],
+          '.cap-item h4': ['Brand Narrative Strategy', 'Localized GTM Execution', 'Cross-Cultural Communication', 'Product Technology → Value Narrative', 'Vibe Coding / AI Agent Building', 'Trade Show Visuals &amp; Video Production'],
+          '.cap-item p': [
+            'I turn complex technical specifications into stories customers understand and sales teams can use.',
+            'I have led market execution across APAC, Southeast Asia, and China, from strategy to creative assets that support revenue growth.',
+            'Bilingual in English and Chinese, I work directly with international partners, telecom decision makers, and teams across Taiwan and China.',
+            'I translate AI industrial inspection capabilities into value narratives manufacturers can understand and act on.',
+            'I am not an engineer, but I can independently build internal CRM systems, human-in-the-loop LinkedIn posting AI Agents, and company websites.',
+            'From information architecture and layout design to video editing, I can produce content and visuals without waiting on engineering or outsourced design.'
+          ],
+          '.flagship-item h3': ['DaoAI Website &amp; Blog', 'CRM System &amp; LinkedIn Posting AI Agent'],
+          '.flagship-item .story p': [
+            'I planned the information architecture, page layouts, visual hierarchy, brand colors, and typography system, then used AI tools to execute the website UI/UX, layout, and multimedia content.',
+            'Based on company needs, I used vibe coding to build an internal CRM system and a LinkedIn posting AI Agent with automated posting and an AI inspiration library, embedding AI into the workflow.'
+          ],
+          '.work-item h3': ['Trade Show Print &amp; On-Site Visuals — APEX IPC 2026', 'Product &amp; Brand Marketing Videos', 'Product Collateral Design', 'HTC Seminar Presentation'],
+          '.work-item .story p': [
+            'Led booth visual design for APEX IPC 2026, including backdrop production, and supported innoVEX Computex with demo videos and promotional assets.',
+            'Owned scripting, shooting, and editing, combining AI-generated visuals with live footage for product introductions and short-form videos.',
+            'Designed sales enablement materials that connect technical specifications, brand tone, and sales priorities for frontline teams.',
+            'Designed a seminar presentation for HK Cyberport partners on business opportunities in XR and the metaverse.'
+          ],
+          '#work .tag': ['UI/UX', 'Information Architecture', 'Brand Visual System', 'Web Design', 'Vibe Coding', 'AI Agent', 'Human-in-the-loop', 'Exhibition Design', 'Affinity', 'Backdrop Design', 'Brand System', 'Video', 'CapCut', 'AI-Generated Mixed Footage', 'Print &amp; Layout', 'Canva', 'Illustrator', 'Keynote', 'Presentation Design', 'XR / Metaverse'],
+          '.current-badge': ['Current'],
+          '.titem .period': ['Jan 2025 – Present', 'May 2023 – Jun 2024', 'Mar 2022 – Apr 2023', 'Jun 2020 – Mar 2022', 'Nov 2013 – Sep 2019'],
+          '.titem li': [
+            'Used vibe coding to independently build a CRM system and a human-in-the-loop LinkedIn posting AI Agent.',
+            'Led the information architecture and visual system for the company website and blog, while personally producing videos and product brochures.',
+            'Led booth visual design for APEX IPC 2026 and innoVEX, helping the team engage high-value enterprise prospects on site.',
+            'Built a technical translation workflow that turns complex AI inspection capabilities into clear value narratives for manufacturers.',
+            'Managed marketing and product materials for Taiwan and China markets, adapting communication to local context and compliance differences.',
+            'Conducted market research and competitive analysis to support positioning and narrative decisions.',
+            'Led APAC and Southeast Asia localized marketing assets and sales enablement execution, driving 40% quarter-over-quarter revenue growth.',
+            'Developed VR / metaverse GTM strategy and advanced partnership discussions with Hong Kong Cyberport and Ex-EVA Malaysia for a VR esports arena concept.',
+            'Tripled store revenue within six months, improved customer conversion to 80%, and grew Google Maps click-through by 100%.',
+            'Owned end-to-end recruiting and hired sales specialists, senior technicians across nine stores, a graphic designer, and an overseas e-commerce specialist.',
+            'Ranked third across nine stores during Black Friday 2021 and built a membership program that improved repeat purchase rate by 30%.',
+            'Started as a trainer for product and retail education, then moved into product marketing.',
+            'Led HTC U12+ Taiwan launch presentation materials and presented products at dealer events and press events.',
+            'Represented HTC in product presentations to CEO-level telecom customer stakeholders.',
+            'Reviewed Taiwan website product page content and produced retail training materials.',
+            'Built sales guides and competitive analysis systems to support frontline sales and retail teams.'
+          ],
+          '.skill-box h4': ['Creative Strategy Leadership', 'Visual Content Production', 'AI Collaboration &amp; Technical Translation', 'Cross-Cultural Communication &amp; Business Development'],
+          '.pill': ['Brand Narrative Strategy', 'GTM Planning', 'Cross-Functional Collaboration', 'Market &amp; Competitor Analysis', 'Photoshop', 'Premiere Pro', 'Illustrator', 'Figma (Basic)', 'CapCut', 'Affinity', 'Canva', 'Trade Show Print Production', 'Photography', 'Technical Value Translation', 'Industrial Tech Marketing', 'Vibe Coding / AI Agent Building', 'Bilingual English / Chinese', 'Multicultural Team Management', 'Strategic Partnership Development'],
+          '.close-problem': ['Strong technology, but the value is hard to explain', 'Entering APAC, Southeast Asia, or China without localized marketing language', 'Need a website, CRM system, or AI tool without immediate engineering resources'],
+          '.close-value': ['Translate complex technology into stories customers understand and buy into', 'Bring rare APAC and China market localization ability, with bilingual English and Chinese communication', 'Independently build websites, CRM systems, and AI Agents that put AI into real workflows'],
+          '.contact-links a': ['Email', 'LinkedIn']
+        }
+      }
+    };
+
+    var activeLang = localStorage.getItem('siteLang') === 'en' ? 'en' : 'zh';
+    var langToggle = document.getElementById('langToggle');
+
+    function updateExpToggleLabel() {
+      var expToggleEl = document.getElementById('expToggle');
+      var expMoreEl = document.getElementById('expMore');
+      if (!expToggleEl || !expMoreEl) return;
+      var label = expMoreEl.classList.contains('open') ? translations[activeLang].expClose : translations[activeLang].expOpen;
+      expToggleEl.querySelector('span:first-child').textContent = label;
+    }
+
+    function applyLanguage(lang) {
+      activeLang = lang;
+      localStorage.setItem('siteLang', lang);
+      var copy = translations[lang];
+      document.documentElement.lang = copy.lang;
+      document.title = copy.title;
+      Object.keys(copy.text).forEach(function (selector) {
+        var el = document.querySelector(selector);
+        if (el) el.innerHTML = copy.text[selector];
+      });
+      Object.keys(copy.groups).forEach(function (selector) {
+        document.querySelectorAll(selector).forEach(function (el, index) {
+          if (copy.groups[selector][index] !== undefined) el.innerHTML = copy.groups[selector][index];
+        });
+      });
+      if (langToggle) {
+        langToggle.textContent = copy.toggleLabel;
+        langToggle.setAttribute('aria-label', copy.toggleAria);
+      }
+      updateExpToggleLabel();
+    }
+
+    if (langToggle) {
+      langToggle.addEventListener('click', function () {
+        applyLanguage(activeLang === 'zh' ? 'en' : 'zh');
+        if (navLinks && navToggle) {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
     var header = document.querySelector('header');
     var heroEl = document.querySelector('.hero');
     if (header && heroEl) {
@@ -801,6 +1007,7 @@
         });
       });
     }
+    applyLanguage(activeLang);
 
     var metaRow = document.querySelector('.hero-intro .meta-row');
     var lede = document.querySelector('.hero-intro .lede');
@@ -865,7 +1072,7 @@
       expToggle.addEventListener('click', function () {
         var open = expMore.classList.toggle('open');
         expToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        expToggle.querySelector('span:first-child').textContent = open ? '收合經歷' : '展開更多經歷';
+        updateExpToggleLabel();
       });
     }
   });
