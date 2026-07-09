@@ -45,17 +45,18 @@
   .logo{font-weight:700; letter-spacing:2px; font-size:14px; text-transform:uppercase; color:#fff; transition:color .3s ease;}
   .logo img{height:40px; width:auto; display:block;}
   header.scrolled .logo{color:var(--ink);}
-  .navlinks{display:flex; gap:34px; font-size:12px; letter-spacing:1px; color:rgba(255,255,255,.75); text-transform:uppercase; transition:color .3s ease;}
+  .navlinks{display:flex; align-items:center; gap:34px; font-size:12px; letter-spacing:1px; color:rgba(255,255,255,.75); text-transform:uppercase; transition:color .3s ease;}
   header.scrolled .navlinks{color:var(--muted);}
-  .navlinks a{position:relative; padding-bottom:4px;}
-  .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;transform:scaleX(0);transition:transform .25s ease;}
+  .navlinks a{position:relative; display:inline-flex; align-items:center; min-height:28px; padding:0;}
+  .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:#fff;transform:scaleX(0);transition:transform .25s ease;}
   header.scrolled .navlinks a::after{background:var(--ink);}
   .navlinks a:hover::after{transform:scaleX(1);}
   .navlinks a:hover{color:#fff;}
   header.scrolled .navlinks a:hover{color:var(--ink);}
   .lang-toggle{
+    display:inline-flex; align-items:center; justify-content:center; min-width:36px; height:28px;
     color:inherit; background:transparent; border:1px solid currentColor; border-radius:999px;
-    padding:3px 10px; font:inherit; letter-spacing:1px; text-transform:uppercase; cursor:pointer;
+    padding:0 10px; font:inherit; line-height:1; letter-spacing:1px; text-transform:uppercase; cursor:pointer;
     transition:background .2s ease, color .2s ease, border-color .2s ease;
   }
   .lang-toggle:hover{background:rgba(255,255,255,.16); color:#fff;}
@@ -86,7 +87,7 @@
     .navlinks a::after{display:none;}
     .lang-toggle{
       width:100%; border:none; border-bottom:1px solid var(--line); border-radius:0;
-      padding:9px 0; text-align:left; color:var(--ink); background:none;
+      height:auto; min-height:36px; padding:9px 0; justify-content:flex-start; text-align:left; color:var(--ink); background:none;
     }
     .lang-toggle:hover{background:none; color:var(--ink);}
   }
@@ -190,6 +191,7 @@
   .section-num{display:flex; align-items:center; gap:26px; font-size:12px; letter-spacing:2px; color:var(--muted); text-transform:uppercase;}
   .section-num .num-line{flex:0 0 64px; height:1px; background:var(--line);}
   h2{font-size:clamp(28px,3.4vw,40px); font-weight:400;}
+  html[lang="en"] #capabilities h2{font-size:clamp(30px,3.4vw,36px); line-height:1.32; max-width:1000px;}
   @media(max-width:700px){h2{font-size:clamp(26px,7vw,32px); line-height:1.25;}}
   .mobile-break{display:none;}
   @media(max-width:700px){.mobile-break{display:block;}}
@@ -199,7 +201,7 @@
   .work-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px;}
   @media(max-width:760px){.work-grid{gap:32px 20px;}}
   .work-item{border-top:1px solid var(--line); padding-top:22px;}
-  .work-grid .tag-row{min-height:54px; align-content:flex-start;}
+  .work-grid .tag-row{min-height:78px; align-content:flex-start;}
   @media(max-width:760px){.work-grid .tag-row{min-height:132px;}}
   @media(max-width:400px){.work-grid .tag-row{min-height:160px;}}
   .thumb{
@@ -244,12 +246,13 @@
     font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted);
     border:1px solid var(--line); border-radius:999px; padding:5px 12px;
   }
-  .work-item h3{font-size:19px; font-weight:600; margin-bottom:14px;}
+  .flagship-item h3, .work-item h3{font-size:19px; font-weight:600; min-height:56px; margin-bottom:14px;}
   @media(max-width:760px){.work-item h3{min-height:52px;}}
   .work-item p{color:var(--muted); font-size:14px; text-align:justify;}
   .work-item .stat{font-weight:700; font-size:13px; margin-top:14px; display:block;}
   .placeholder-note{color:#a8a6a0; font-style:italic; font-weight:400;}
   .story p{margin-bottom:10px;}
+  .flagship-item .story, .work-item .story{min-height:112px;}
   .story-label{font-weight:700; color:var(--ink); text-transform:uppercase; font-size:10px; letter-spacing:1px; margin-right:8px;}
 
   /* EXPERIENCE — growth timeline: connecting spine + node per card, newest first */
@@ -347,7 +350,7 @@
   @media(max-width:760px){.flagship-grid{grid-template-columns:1fr;}}
   .flagship-item{border-top:2px solid var(--ink); padding-top:22px;}
   .flagship-label{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:14px;}
-  .flagship-item .tag-row{min-height:54px; align-content:flex-start;}
+  .flagship-item .tag-row{min-height:78px; align-content:flex-start;}
   .more-work-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:40px;}
 
   /* UPDATES — Latest-Insights-style cards */
@@ -880,7 +883,7 @@
           'header .navlinks a': ['Capabilities', 'Work', 'Experience', 'Skills', 'Contact'],
           '.footer-links a': ['Capabilities', 'Work', 'Experience', 'Skills'],
           '.hero-intro .meta-row .val': ['10+ years in global integrated marketing', 'APAC / China markets<br>Localization &amp; GTM', 'AI / VR frontier technology translation', 'Fully in-house brand-side experience'],
-          '.cap-col-head': ['Creative &amp; Brand Marketing', 'Technical Translation &amp; AI-Native Build'],
+          '.cap-col-head': ['', 'Technical Translation &amp; AI-Native Build'],
           '.cap-item h4': ['Brand Narrative Strategy', 'Localized GTM Execution', 'Cross-Cultural Communication', 'Product Technology → Value Narrative', 'Vibe Coding / AI Agent Building', 'Trade Show Visuals &amp; Video Production'],
           '.cap-item p': [
             'I turn complex technical specifications into stories customers understand and sales teams can use.',
