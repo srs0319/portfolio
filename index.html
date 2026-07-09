@@ -378,6 +378,8 @@
   .flagship-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px; margin-bottom:48px;}
   @media(max-width:760px){.flagship-grid{grid-template-columns:1fr;}}
   .flagship-item{border-top:2px solid var(--ink); padding-top:22px;}
+  .flagship-item.is-primary{grid-column:1/-1;}
+  .flagship-item.is-primary .thumb{aspect-ratio:16/7;}
   .flagship-label{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:14px;}
   .flagship-item .tag-row{min-height:64px; align-content:flex-start;}
   .more-work-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:40px;}
@@ -540,7 +542,7 @@
 
   <div class="flagship-grid">
 
-    <div class="flagship-item">
+    <div class="flagship-item is-primary">
       <div class="flagship-label">Flagship Case 01</div>
       <a class="thumb thumb-carousel" href="https://www.daoai.com/" target="_blank" rel="noopener">
         <img src="thumb-daoai.png" alt="DaoAI 官網首頁" class="active">
@@ -563,6 +565,18 @@
 
     <div class="flagship-item">
       <div class="flagship-label">Flagship Case 02</div>
+      <a class="thumb" href="https://www.daoai.com/innovex/" target="_blank" rel="noopener">
+        <img src="thumb-daoai.png" alt="DaoAI innoVEX 落地頁">
+      </a>
+      <div class="tag-row"><span class="tag">Landing Page</span><span class="tag">Campaign UX</span><span class="tag">SEO/GEO</span></div>
+      <h3>innoVEX 活動落地頁</h3>
+      <div class="story">
+        <p>把展會曝光延伸成可轉換的數位入口，整合產品價值敘事、活動溝通與填單路徑，承接搜尋與GEO帶來的高意圖流量。</p>
+      </div>
+    </div>
+
+    <div class="flagship-item">
+      <div class="flagship-label">Flagship Case 03</div>
       <div class="thumb thumb-carousel">
         <img src="thumb-crm.png" alt="CRM 系統 Form Submissions 儀表板" class="active">
         <img src="thumb-crm-2.png" alt="LinkedIn發文AI Agent · 靈感輸入介面">
@@ -857,9 +871,10 @@
             '不是工程師，但能獨立打造CRM系統、具備human-in-the-loop審核機制的LinkedIn發文AI Agent，以及公司官網。',
             '從資訊架構、版面設計到影片剪輯，一個人完成從內容到視覺的產出，不必等工程師或外包設計師接手。'
           ],
-          '.flagship-item h3': ['DaoAI 官網、Blog &amp; SEO/GEO', 'CRM系統 &amp; LinkedIn發文AI Agent'],
+          '.flagship-item h3': ['DaoAI 官網、Blog &amp; SEO/GEO', 'innoVEX 活動落地頁', 'CRM系統 &amp; LinkedIn發文AI Agent'],
           '.flagship-item .story p': [
             '資訊架構、頁面版型、視覺層級、品牌色彩與字體系統，全部由一個人規劃設計並利用AI工具，實際產出網站的UI/UX、排版、多媒體內容。',
+            '把展會曝光延伸成可轉換的數位入口，整合產品價值敘事、活動溝通與填單路徑，承接搜尋與GEO帶來的高意圖流量。',
             '依照公司規模與需求，以vibe coding的方式打造內部專用CRM系統，另外建了一個LinkedIn發文AI Agent，整合了LinkedIn自動發文與AI靈感庫等功能，將AI融入工作流中。'
           ],
           '.impact-list li': [
@@ -874,7 +889,7 @@
             '針對銷售人員設計之銷售素材，整合技術規格、品牌調性、銷售重點，助於銷售人員介紹產品。',
             '研討會簡報，向HK Cyberport夥伴說明XR與Metaverse領域的商業機會。'
           ],
-          '#work .tag': ['UI/UX', 'Information Architecture', 'Brand Visual System', 'Web Design', 'Vibe Coding', 'AI Agent', 'Human-in-the-loop', 'Exhibition Design', 'Affinity', 'Backdrop Design', 'Brand System', 'Video', 'CapCut', 'AI生成畫面混剪', 'Print &amp; Layout', 'Canva', 'Illustrator', 'Keynote', 'Presentation Design', 'XR / Metaverse'],
+          '#work .tag': ['UI/UX', 'Information Architecture', 'Brand Visual System', 'Web Design', 'Landing Page', 'Campaign UX', 'SEO/GEO', 'Vibe Coding', 'AI Agent', 'Human-in-the-loop', 'Exhibition Design', 'Affinity', 'Backdrop Design', 'Brand System', 'Video', 'CapCut', 'AI生成畫面混剪', 'Print &amp; Layout', 'Canva', 'Illustrator', 'Keynote', 'Presentation Design', 'XR / Metaverse'],
           '.current-badge': ['現職'],
           '.titem .period': ['2025.01 – 至今', '2023.05 – 2024.06', '2022.03 – 2023.04', '2020.06 – 2022.03', '2013.11 – 2019.09'],
           '.titem li': [
@@ -935,9 +950,10 @@
             'I am not an engineer, but I can independently build internal CRM systems, human-in-the-loop LinkedIn posting AI Agents, and company websites.',
             'From information architecture and layout design to video editing, I can produce content and visuals without waiting on engineering or outsourced design.'
           ],
-          '.flagship-item h3': ['DaoAI Website, Blog &amp; SEO/GEO', 'CRM System &amp; LinkedIn Posting AI Agent'],
+          '.flagship-item h3': ['DaoAI Website, Blog &amp; SEO/GEO', 'innoVEX Campaign Landing Page', 'CRM System &amp; LinkedIn Posting AI Agent'],
           '.flagship-item .story p': [
             'I planned the information architecture, page layouts, visual hierarchy, brand colors, and typography system, then used AI tools to execute the website UI/UX, layout, and multimedia content.',
+            'Extended trade-show visibility into a conversion-focused digital entry point, combining product value narrative, event messaging, and form submission flow for high-intent search and GEO traffic.',
             'Based on company needs, I used vibe coding to build an internal CRM system and a LinkedIn posting AI Agent with automated posting and an AI inspiration library, embedding AI into the workflow.'
           ],
           '.impact-list li': [
@@ -952,7 +968,7 @@
             'Designed sales enablement materials that connect technical specifications, brand tone, and sales priorities for frontline teams.',
             'Designed a seminar presentation for HK Cyberport partners on business opportunities in XR and the metaverse.'
           ],
-          '#work .tag': ['UI/UX', 'Information Architecture', 'Brand Visual System', 'Web Design', 'Vibe Coding', 'AI Agent', 'Human-in-the-loop', 'Exhibition Design', 'Affinity', 'Backdrop Design', 'Brand System', 'Video', 'CapCut', 'AI-Generated Mixed Footage', 'Print &amp; Layout', 'Canva', 'Illustrator', 'Keynote', 'Presentation Design', 'XR / Metaverse'],
+          '#work .tag': ['UI/UX', 'Information Architecture', 'Brand Visual System', 'Web Design', 'Landing Page', 'Campaign UX', 'SEO/GEO', 'Vibe Coding', 'AI Agent', 'Human-in-the-loop', 'Exhibition Design', 'Affinity', 'Backdrop Design', 'Brand System', 'Video', 'CapCut', 'AI-Generated Mixed Footage', 'Print &amp; Layout', 'Canva', 'Illustrator', 'Keynote', 'Presentation Design', 'XR / Metaverse'],
           '.current-badge': ['Current'],
           '.titem .period': ['Jan 2025 – Present', 'May 2023 – Jun 2024', 'Mar 2022 – Apr 2023', 'Jun 2020 – Mar 2022', 'Nov 2013 – Sep 2019'],
           '.titem li': [
