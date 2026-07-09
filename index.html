@@ -197,7 +197,11 @@
   .cap-title-grid::before{content:"×"; position:absolute; left:50%; top:.18em; transform:translateX(-50%); font-family:var(--serif); font-size:clamp(30px,3vw,36px); line-height:1; color:var(--ink);}
   .cap-title{font-size:clamp(30px,3.1vw,38px); line-height:1.2;}
   html[lang="en"] #capabilities .cap-title{font-size:clamp(27px,2.8vw,31px); line-height:1.22;}
-  @media(max-width:760px){.cap-title-grid{grid-template-columns:1fr; gap:8px;} .cap-title-grid::before{display:none;} .cap-title{font-size:clamp(28px,7vw,34px);}}
+  @media(max-width:760px){
+    .cap-title-grid{grid-template-columns:1fr; gap:8px;}
+    .cap-title-grid::before{position:static; display:block; transform:none; margin:2px 0; font-size:clamp(26px,7vw,32px);}
+    .cap-title{font-size:clamp(28px,7vw,34px);}
+  }
   @media(max-width:700px){h2{font-size:clamp(26px,7vw,32px); line-height:1.25;}}
   .mobile-break{display:none;}
   @media(max-width:700px){.mobile-break{display:block;}}
