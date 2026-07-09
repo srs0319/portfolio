@@ -201,6 +201,8 @@
   @media(max-width:700px){h2{font-size:clamp(26px,7vw,32px); line-height:1.25;}}
   .mobile-break{display:none;}
   @media(max-width:700px){.mobile-break{display:block;}}
+  .desktop-break{display:block;}
+  @media(max-width:700px){.desktop-break{display:none;}}
   .section-sub{color:var(--muted); margin-top:14px; max-width:520px; font-size:14px;}
 
   /* WORK — editorial grid, no boxes/cards, rule-separated */
@@ -924,7 +926,7 @@
         expOpen: 'Show more experience',
         expClose: 'Collapse experience',
         text: {
-          'h1.display': 'Turning technology into<br><span class="accent">visuals and stories</span> customers buy into',
+          'h1.display': 'Turning technology into<br class="desktop-break"><span class="accent">visuals and stories</span><br class="mobile-break"> customers buy into',
           '.hero-cta': 'View Work →',
           '.hero-intro .lede': 'A creative-driven marketing professional with 10+ years of international technology and integrated marketing experience across retail, product marketing, and integrated campaigns, including hands-on work at global technology brands such as HTC. Currently working at an AI startup, I bring a rare ability to translate ideas for <strong>APAC, Southeast Asia, and China markets</strong>, with bilingual English and Chinese communication. Over the past year, I have self-taught AI vibe coding and independently built a company website, CRM system, and AI Agent, turning AI tools into real daily workflows.',
           '#work h2': 'Selected Work',
