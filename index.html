@@ -325,6 +325,7 @@
     border-top:1px solid var(--line); border-left:1px solid var(--line);
     border-radius:16px; overflow:hidden;
   }
+  @media(max-width:700px){.skill-grid{grid-template-columns:1fr;}}
   .skill-grid::after{
     content:""; position:absolute; left:50%; top:50%; width:9px; height:9px;
     margin:-5px 0 0 -5px; border-radius:50%; background:#d97706;
@@ -349,6 +350,9 @@
   .pill{
     font-size:13px; color:var(--muted); border:1px solid var(--line); border-radius:999px;
     padding:6px 14px; transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  @media(max-width:700px){
+    .pill{border-radius:8px; padding:6px 10px; line-height:1.35;}
   }
   .skill-box:hover .pill{color:var(--ink); border-color:#d97706;}
 
