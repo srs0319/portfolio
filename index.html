@@ -191,7 +191,8 @@
   .section-num{display:flex; align-items:center; gap:26px; font-size:12px; letter-spacing:2px; color:var(--muted); text-transform:uppercase;}
   .section-num .num-line{flex:0 0 64px; height:1px; background:var(--line);}
   h2{font-size:clamp(28px,3.4vw,40px); font-weight:400;}
-  html[lang="en"] #capabilities h2{font-size:clamp(30px,3.4vw,36px); line-height:1.32; max-width:1000px;}
+  html[lang="en"] #capabilities .section-head{border-bottom:none; padding-bottom:0;}
+  html[lang="en"] #capabilities h2{font-size:clamp(28px,3vw,32px); line-height:1.32; max-width:920px;}
   @media(max-width:700px){h2{font-size:clamp(26px,7vw,32px); line-height:1.25;}}
   .mobile-break{display:none;}
   @media(max-width:700px){.mobile-break{display:block;}}
@@ -201,7 +202,7 @@
   .work-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px;}
   @media(max-width:760px){.work-grid{gap:32px 20px;}}
   .work-item{border-top:1px solid var(--line); padding-top:22px;}
-  .work-grid .tag-row{min-height:78px; align-content:flex-start;}
+  .work-grid .tag-row{min-height:64px; align-content:flex-start;}
   @media(max-width:760px){.work-grid .tag-row{min-height:132px;}}
   @media(max-width:400px){.work-grid .tag-row{min-height:160px;}}
   .thumb{
@@ -246,13 +247,13 @@
     font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted);
     border:1px solid var(--line); border-radius:999px; padding:5px 12px;
   }
-  .flagship-item h3, .work-item h3{font-size:19px; font-weight:600; min-height:56px; margin-bottom:14px;}
+  .flagship-item h3, .work-item h3{font-size:19px; font-weight:600; min-height:32px; margin-bottom:12px;}
   @media(max-width:760px){.work-item h3{min-height:52px;}}
   .work-item p{color:var(--muted); font-size:14px; text-align:justify;}
   .work-item .stat{font-weight:700; font-size:13px; margin-top:14px; display:block;}
   .placeholder-note{color:#a8a6a0; font-style:italic; font-weight:400;}
   .story p{margin-bottom:10px;}
-  .flagship-item .story, .work-item .story{min-height:112px;}
+  .flagship-item .story, .work-item .story{min-height:96px;}
   .story-label{font-weight:700; color:var(--ink); text-transform:uppercase; font-size:10px; letter-spacing:1px; margin-right:8px;}
 
   /* EXPERIENCE — growth timeline: connecting spine + node per card, newest first */
@@ -340,17 +341,18 @@
   .cap-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
   @media(max-width:760px){.cap-grid{grid-template-columns:1fr; gap:0;}}
   .cap-col-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:8px;}
+  html[lang="en"] .cap-col-head:empty{display:none;}
   .cap-item{padding:26px 0; border-top:1px solid var(--line);}
   .cap-item h4{font-size:17px; font-weight:600; margin-bottom:8px;}
   .cap-item p{color:var(--muted); font-size:14px;}
   @media(max-width:760px){.cap-col-head{margin-top:40px;} .cap-col:first-child .cap-col-head{margin-top:0;}}
 
   /* WORK — flagship deep-dive cards (mirrors DaoAI's Visual Intelligence product cards) */
-  .flagship-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px; margin-bottom:80px;}
+  .flagship-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px; margin-bottom:48px;}
   @media(max-width:760px){.flagship-grid{grid-template-columns:1fr;}}
   .flagship-item{border-top:2px solid var(--ink); padding-top:22px;}
   .flagship-label{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:14px;}
-  .flagship-item .tag-row{min-height:78px; align-content:flex-start;}
+  .flagship-item .tag-row{min-height:64px; align-content:flex-start;}
   .more-work-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:40px;}
 
   /* UPDATES — Latest-Insights-style cards */
@@ -883,7 +885,7 @@
           'header .navlinks a': ['Capabilities', 'Work', 'Experience', 'Skills', 'Contact'],
           '.footer-links a': ['Capabilities', 'Work', 'Experience', 'Skills'],
           '.hero-intro .meta-row .val': ['10+ years in global integrated marketing', 'APAC / China markets<br>Localization &amp; GTM', 'AI / VR frontier technology translation', 'Fully in-house brand-side experience'],
-          '.cap-col-head': ['', 'Technical Translation &amp; AI-Native Build'],
+          '.cap-col-head': ['', ''],
           '.cap-item h4': ['Brand Narrative Strategy', 'Localized GTM Execution', 'Cross-Cultural Communication', 'Product Technology → Value Narrative', 'Vibe Coding / AI Agent Building', 'Trade Show Visuals &amp; Video Production'],
           '.cap-item p': [
             'I turn complex technical specifications into stories customers understand and sales teams can use.',
