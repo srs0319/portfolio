@@ -59,12 +59,20 @@
   .navlinks a:hover{color:#fff;}
   header.scrolled .navlinks a:hover{color:#fff;}
   .lang-toggle{
-    display:inline-flex; align-items:center; justify-content:center; min-width:74px; height:36px;
-    color:#20283a; background:rgba(255,255,255,.88); border:1px solid rgba(255,255,255,.55); border-radius:999px;
-    padding:0 18px; font:inherit; line-height:1; letter-spacing:1px; text-transform:uppercase; cursor:pointer;
-    transition:background .2s ease, color .2s ease, border-color .2s ease;
+    display:inline-flex; align-items:center; justify-content:center; min-width:0; height:28px;
+    color:rgba(255,255,255,.62); background:none; border:0; border-radius:0;
+    padding:0; font:inherit; font-size:9px; line-height:1; letter-spacing:1px; text-transform:uppercase; cursor:pointer;
+    transition:color .2s ease;
   }
-  .lang-toggle:hover, header.scrolled .lang-toggle:hover{background:#fff; color:#111827; border-color:#fff;}
+  .lang-toggle:hover, header.scrolled .lang-toggle:hover{background:none; color:#fff;}
+  .navlinks .contact-link{
+    min-width:86px; height:36px; justify-content:center; padding:0 18px;
+    color:#20283a; background:rgba(255,255,255,.9); border:1px solid rgba(255,255,255,.55); border-radius:999px;
+    font-size:11px; font-weight:500; letter-spacing:0;
+    transition:background .2s ease, color .2s ease;
+  }
+  .navlinks .contact-link::after{display:none;}
+  .navlinks .contact-link:hover{background:#fff; color:#111827;}
 
   /* NAV — mobile hamburger */
   .nav-toggle{
@@ -99,9 +107,11 @@
     .navlinks a::after{display:none;}
     .lang-toggle{
       width:100%; border:none; border-bottom:1px solid var(--line); border-radius:0;
-      height:auto; min-height:36px; padding:9px 0; justify-content:flex-start; text-align:left; color:var(--ink); background:none;
+      height:auto; min-height:36px; padding:9px 0; justify-content:flex-start; text-align:left; color:var(--ink); background:none; font-size:11px;
     }
     .lang-toggle:hover{background:none; color:var(--ink);}
+    .navlinks .contact-link{width:100%; min-width:0; height:auto; justify-content:flex-start; padding:9px 0; color:var(--ink); background:none; border:0; border-bottom:1px solid var(--line); border-radius:0; font-size:12px;}
+    .navlinks .contact-link:hover{background:none; color:var(--ink);}
   }
 
   /* HERO — DaoAI dark tech aesthetic (deep navy bg, cyan accent, Inter 800) */
@@ -489,8 +499,8 @@
         <a href="#work">作品</a>
         <a href="#experience">經歷</a>
         <a href="#skills">技能</a>
-        <a href="#contact">聯絡</a>
         <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
+        <a class="contact-link" href="#contact">聯絡我</a>
       </div>
       <button type="button" class="nav-toggle" id="navToggle" aria-label="選單" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -889,7 +899,7 @@
           '.more-work-head': 'More Work'
         },
         groups: {
-          'header .navlinks a': ['能力', '作品', '經歷', '技能', '聯絡'],
+          'header .navlinks a': ['能力', '作品', '經歷', '技能', '聯絡我'],
           '.footer-links a': ['能力', '作品', '經歷', '技能'],
           '.hero-intro .meta-row .val': ['10年+ 跨國整合行銷', 'APAC／中國市場<br>在地化與GTM', 'AI／VR 前沿技術轉譯', '全In-house品牌端經驗'],
           '.rail-step span': ['技術轉譯', '商業與團隊', '亞太策略', 'AI原生建造', '下一階段'],
@@ -975,7 +985,7 @@
           '.more-work-head': 'More Work'
         },
         groups: {
-          'header .navlinks a': ['Capabilities', 'Work', 'Experience', 'Skills', 'Contact'],
+          'header .navlinks a': ['Capabilities', 'Work', 'Experience', 'Skills', 'Contact Me'],
           '.footer-links a': ['Capabilities', 'Work', 'Experience', 'Skills'],
           '.hero-intro .meta-row .val': ['10+ years in global integrated marketing', 'APAC / China markets<br>Localization &amp; GTM', 'AI / VR frontier technology translation', 'Fully in-house brand-side experience'],
           '.rail-step span': ['Technical Translation', 'Business &amp; Teams', 'APAC Strategy', 'AI-Native Building', 'What Comes Next'],
