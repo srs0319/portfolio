@@ -354,42 +354,31 @@
     .experience-card,.carry-tag{transition:none;}
   }
 
-  /* SKILLS — editorial columns */
-  .skill-grid{
-    position:relative; display:grid; grid-template-columns:repeat(2,1fr); gap:0;
-    border-top:1px solid var(--line); border-left:1px solid var(--line);
-    border-radius:16px; overflow:hidden;
-  }
-  @media(max-width:700px){.skill-grid{grid-template-columns:1fr;}}
-  .skill-grid::after{
-    content:""; position:absolute; left:50%; top:50%; width:9px; height:9px;
-    margin:-5px 0 0 -5px; border-radius:50%; background:#d97706;
-    box-shadow:0 0 0 4px var(--bg); z-index:2; pointer-events:none;
-  }
-  .skill-box{
-    position:relative; padding:32px; border-right:1px solid var(--line); border-bottom:1px solid var(--line);
-    transition:background .25s ease, box-shadow .25s ease, opacity .25s ease;
-  }
-  .skill-box:hover{background:#fff; box-shadow:inset 0 0 0 1px #d97706; z-index:1; opacity:1;}
-  .skill-grid:has(.skill-box:hover) .skill-box:not(:hover){opacity:.45;}
-  @media(max-width:700px){.skill-box{padding:20px;}}
-  .skill-index{
-    position:absolute; top:14px; right:16px; font-size:11px; font-weight:700;
-    letter-spacing:1px; color:#d97706; opacity:0; transition:opacity .25s ease;
-  }
-  .skill-box:hover .skill-index{opacity:1;}
-  .skill-icon{width:22px; height:22px; margin-bottom:14px; color:var(--ink);}
-  .skill-icon svg{width:100%; height:100%; display:block;}
-  .skill-box h4{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:16px;}
-  .skill-box .pill-row{display:flex; flex-wrap:wrap; gap:8px;}
+  /* SKILLS — capabilities first, supporting toolkit second */
+  .skill-cap-title-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; position:relative; margin-bottom:42px;}
+  .skill-cap-title-grid::before{content:"×"; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); font-size:30px; font-weight:300;}
+  .skill-cap-title{font-family:"Noto Serif TC","Georgia",serif; font-size:clamp(30px,4vw,42px); line-height:1.25; font-weight:400;}
+  .skill-cap-title:last-child{text-align:left;}
+  .skill-cap-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
+  .skill-cap-col{display:flex; flex-direction:column;}
+  .skill-cap-item{padding:26px 0; border-top:1px solid var(--line);}
+  .skill-cap-item h3{font-size:17px; font-weight:600; margin-bottom:8px;}
+  .skill-cap-item > p{color:var(--muted); font-size:14px; min-height:48px;}
+  .tool-label{font-size:9px; letter-spacing:1.4px; text-transform:uppercase; color:#9a9891; margin:18px 0 8px;}
+  .skill-cap-item .pill-row{display:flex; flex-wrap:wrap; gap:7px;}
   .pill{
-    font-size:13px; color:var(--muted); border:1px solid var(--line); border-radius:999px;
-    padding:6px 14px; transition:color .25s ease, border-color .25s ease, background .25s ease;
+    font-size:10px; color:var(--muted); border:1px solid var(--line); border-radius:999px;
+    padding:5px 10px; transition:color .25s ease, border-color .25s ease, background .25s ease;
   }
+  .skill-cap-item:hover .pill{color:var(--ink); border-color:#b9b6ad; background:#fff;}
   @media(max-width:700px){
-    .pill{border-radius:8px; padding:8px 14px; line-height:1.35;}
+    .skill-cap-title-grid{grid-template-columns:1fr; gap:8px; margin-bottom:28px;}
+    .skill-cap-title-grid::before{position:static; display:block; transform:none; margin:2px 0; font-size:28px;}
+    .skill-cap-title{font-size:30px;}
+    .skill-cap-grid{grid-template-columns:1fr; gap:0;}
+    .skill-cap-item > p{min-height:0;}
+    .pill{border-radius:8px; padding:7px 10px; line-height:1.35;}
   }
-  .skill-box:hover .pill{color:var(--ink); border-color:#d97706;}
 
   /* CAPABILITIES — dual-axis matrix (mirrors DaoAI's paired feature grid) */
   .cap-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
@@ -778,47 +767,20 @@
   <div class="section-head">
     <div>
       <div class="section-num"><span>04</span><span class="num-line"></span><span>Skills</span></div>
-      <h2 class="serif">軟實力結合AI工具，將創意落地</h2>
+      <h2 class="serif">核心能力與實作工具</h2>
     </div>
   </div>
-  <div class="skill-grid">
-    <div class="skill-box">
-      <span class="skill-index">01</span>
-      <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/><circle cx="12" cy="12" r="2.5"/></svg></div>
-      <h4>創意策略領導</h4>
-      <div class="pill-row">
-        <span class="pill">品牌敘事策略</span><span class="pill">GTM規劃</span>
-        <span class="pill">跨部門協作</span><span class="pill">市場競品分析</span>
-      </div>
+  <div class="skill-cap-title-grid"><h3 class="skill-cap-title">品牌與行銷策略</h3><h3 class="skill-cap-title">技術轉譯與AI實作</h3></div>
+  <div class="skill-cap-grid">
+    <div class="skill-cap-col">
+      <article class="skill-cap-item"><h3>品牌敘事策略</h3><p>把複雜的技術規格轉成客戶聽得懂、買得下手的故事，讓工程團隊的語言變成業務能用的武器。</p><div class="tool-label">Supporting toolkit</div><div class="pill-row"><span class="pill">市場競品分析</span><span class="pill">Canva</span><span class="pill">Illustrator</span><span class="pill">Keynote</span></div></article>
+      <article class="skill-cap-item"><h3>GTM在地化執行</h3><p>獨立扛過亞太（含東南亞）與中國市場的落地執行，從策略制定到素材產出，帶動實際營收成長。</p><div class="tool-label">Supporting toolkit</div><div class="pill-row"><span class="pill">GTM規劃</span><span class="pill">策略夥伴開發</span><span class="pill">SEO／GEO</span></div></article>
+      <article class="skill-cap-item"><h3>跨文化溝通談判</h3><p>中英雙語，直接對接國際策略夥伴與電信商CEO層級決策者，也熟悉台灣與中國兩地的溝通與規範差異。</p><div class="tool-label">Supporting toolkit</div><div class="pill-row"><span class="pill">中英雙語</span><span class="pill">跨部門協作</span><span class="pill">多元文化團隊管理</span></div></article>
     </div>
-    <div class="skill-box">
-      <span class="skill-index">02</span>
-      <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg></div>
-      <h4>視覺內容製作</h4>
-      <div class="pill-row">
-        <span class="pill">Photoshop</span><span class="pill">Premiere Pro</span><span class="pill">Illustrator</span>
-        <span class="pill">Figma（基礎）</span>
-        <span class="pill">CapCut 剪映</span><span class="pill">Affinity</span>
-        <span class="pill">Canva</span><span class="pill">展場平面輸出</span><span class="pill">攝影</span>
-      </div>
-    </div>
-    <div class="skill-box">
-      <span class="skill-index">03</span>
-      <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><rect x="10" y="10" width="4" height="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M4.5 19.5l2-2M17.5 6.5l2-2"/></svg></div>
-      <h4>AI協作與技術轉譯</h4>
-      <div class="pill-row">
-        <span class="pill">技術價值轉譯</span>
-        <span class="pill">工業科技行銷</span><span class="pill">Vibe Coding／AI Agent建置</span>
-      </div>
-    </div>
-    <div class="skill-box">
-      <span class="skill-index">04</span>
-      <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z"/></svg></div>
-      <h4>跨文化溝通與商務拓展</h4>
-      <div class="pill-row">
-        <span class="pill">中英雙語</span><span class="pill">多元文化團隊管理</span>
-        <span class="pill">策略夥伴開發</span>
-      </div>
+    <div class="skill-cap-col">
+      <article class="skill-cap-item"><h3>產品技術 → 價值敘事</h3><p>把AI工業檢測系統的技術特徵，轉化為製造業客戶能理解、願意買單的價值敘事。</p><div class="tool-label">Supporting toolkit</div><div class="pill-row"><span class="pill">技術價值轉譯</span><span class="pill">工業科技行銷</span><span class="pill">Photoshop</span></div></article>
+      <article class="skill-cap-item"><h3>Vibe Coding／AI Agent建置</h3><p>不是工程師，但能獨立打造CRM系統、具備human-in-the-loop審核機制的LinkedIn發文AI Agent，以及公司官網。</p><div class="tool-label">Supporting toolkit</div><div class="pill-row"><span class="pill">Vibe Coding</span><span class="pill">AI Agent</span><span class="pill">Figma（基礎）</span></div></article>
+      <article class="skill-cap-item"><h3>展場視覺與影片產出</h3><p>從資訊架構、版面設計到影片剪輯，一個人完成從內容到視覺的產出，不必等工程師或外包設計師接手。</p><div class="tool-label">Supporting toolkit</div><div class="pill-row"><span class="pill">Premiere Pro</span><span class="pill">CapCut 剪映</span><span class="pill">Affinity</span><span class="pill">展場平面輸出</span><span class="pill">攝影</span></div></article>
     </div>
   </div>
 </section>
@@ -893,7 +855,7 @@
           '#work h2': '代表作品',
           '#experience h2': '我帶往下一站的能力',
           '.experience-intro': '每一段經歷都不只是職稱，而是我一路累積、帶往下一站的能力。向下滑動，看它們如何逐步匯聚。',
-          '#skills h2': '軟實力結合AI工具，將創意落地',
+          '#skills h2': '核心能力與實作工具',
           '#help h2': '我能解決的問題，能提供的價值',
           '#contact h2': '一起聊聊<br>下一個挑戰。',
           '.more-work-head': 'More Work'
@@ -958,8 +920,11 @@
             '負責審核台灣官網產品頁資訊；製作門市人員教育訓練宣傳物',
             '建立銷售指南與競品分析系統，支持第一線銷售與零售團隊'
           ],
-          '.skill-box h4': ['創意策略領導', '視覺內容製作', 'AI協作與技術轉譯', '跨文化溝通與商務拓展'],
-          '.pill': ['品牌敘事策略', 'GTM規劃', '跨部門協作', '市場競品分析', 'Photoshop', 'Premiere Pro', 'Illustrator', 'Figma（基礎）', 'CapCut 剪映', 'Affinity', 'Canva', '展場平面輸出', '攝影', '技術價值轉譯', '工業科技行銷', 'Vibe Coding／AI Agent建置', '中英雙語', '多元文化團隊管理', '策略夥伴開發'],
+          '.skill-cap-title': ['品牌與行銷策略', '技術轉譯與AI實作'],
+          '.skill-cap-item h3': ['品牌敘事策略', 'GTM在地化執行', '跨文化溝通談判', '產品技術 → 價值敘事', 'Vibe Coding／AI Agent建置', '展場視覺與影片產出'],
+          '.skill-cap-item > p': ['把複雜的技術規格轉成客戶聽得懂、買得下手的故事，讓工程團隊的語言變成業務能用的武器。', '獨立扛過亞太（含東南亞）與中國市場的落地執行，從策略制定到素材產出，帶動實際營收成長。', '中英雙語，直接對接國際策略夥伴與電信商CEO層級決策者，也熟悉台灣與中國兩地的溝通與規範差異。', '把AI工業檢測系統的技術特徵，轉化為製造業客戶能理解、願意買單的價值敘事。', '不是工程師，但能獨立打造CRM系統、具備human-in-the-loop審核機制的LinkedIn發文AI Agent，以及公司官網。', '從資訊架構、版面設計到影片剪輯，一個人完成從內容到視覺的產出，不必等工程師或外包設計師接手。'],
+          '.tool-label': ['使用工具', '使用工具', '使用工具', '使用工具', '使用工具', '使用工具'],
+          '.pill': ['市場競品分析', 'Canva', 'Illustrator', 'Keynote', 'GTM規劃', '策略夥伴開發', 'SEO／GEO', '中英雙語', '跨部門協作', '多元文化團隊管理', '技術價值轉譯', '工業科技行銷', 'Photoshop', 'Vibe Coding', 'AI Agent', 'Figma（基礎）', 'Premiere Pro', 'CapCut 剪映', 'Affinity', '展場平面輸出', '攝影'],
           '.close-problem': ['技術很強，但講不清楚在賣什麼', '要打進亞太（含東南亞）或中國市場，缺真正在地化的行銷語言', '需要網站、CRM系統或AI工具，但沒有工程資源可以馬上動工'],
           '.close-value': ['把複雜技術轉譯成客戶想買單的故事與敘事', '具備亞太與中國市場在地化創意轉譯的稀有能力，中英雙語', '獨立打造網站、CRM系統與AI Agent，把AI真正落實到工作流中'],
           '.contact-links a': ['寄 Email', 'LinkedIn']
@@ -979,7 +944,7 @@
           '#work h2': 'Selected Work',
           '#experience h2': 'What I Carry Forward',
           '.experience-intro': 'Each role gave me more than a title. Scroll to see how every chapter built the capabilities I now carry into what comes next.',
-          '#skills h2': 'Soft skills plus AI tools, turning creative ideas into execution',
+          '#skills h2': 'Core Capabilities &amp; Execution Toolkit',
           '#help h2': 'Problems I solve and value I bring',
           '#contact h2': 'Let’s talk about<br>the next challenge.',
           '.more-work-head': 'More Work'
@@ -1044,8 +1009,11 @@
             'Reviewed Taiwan website product page content and produced retail training materials.',
             'Built sales guides and competitive analysis systems to support frontline sales and retail teams.'
           ],
-          '.skill-box h4': ['Creative Strategy Leadership', 'Visual Content Production', 'AI Collaboration &amp; Technical Translation', 'Cross-Cultural Communication &amp; Business Development'],
-          '.pill': ['Brand Narrative Strategy', 'GTM Planning', 'Cross-Functional Collaboration', 'Market &amp; Competitor Analysis', 'Photoshop', 'Premiere Pro', 'Illustrator', 'Figma (Basic)', 'CapCut', 'Affinity', 'Canva', 'Trade Show Print Production', 'Photography', 'Technical Value Translation', 'Industrial Tech Marketing', 'Vibe Coding / AI Agent Building', 'Bilingual English / Chinese', 'Multicultural Team Management', 'Strategic Partnership Development'],
+          '.skill-cap-title': ['Brand &amp; Marketing Strategy', 'Technical Translation &amp; AI Execution'],
+          '.skill-cap-item h3': ['Brand Narrative Strategy', 'Localized GTM Execution', 'Cross-Cultural Communication', 'Product Technology → Value Narrative', 'Vibe Coding / AI Agent Building', 'Trade Show Visuals &amp; Video Production'],
+          '.skill-cap-item > p': ['I turn complex technical specifications into stories customers understand and sales teams can use.', 'I have led market execution across APAC, Southeast Asia, and China, from strategy to creative assets that support revenue growth.', 'Bilingual in English and Chinese, I work directly with international partners, telecom decision makers, and teams across Taiwan and China.', 'I translate AI industrial inspection capabilities into value narratives manufacturers can understand and act on.', 'I am not an engineer, but I can independently build internal CRM systems, human-in-the-loop LinkedIn posting AI Agents, and company websites.', 'From information architecture and layout design to video editing, I can produce content and visuals without waiting on engineering or outsourced design.'],
+          '.tool-label': ['Supporting Toolkit', 'Supporting Toolkit', 'Supporting Toolkit', 'Supporting Toolkit', 'Supporting Toolkit', 'Supporting Toolkit'],
+          '.pill': ['Market &amp; Competitor Analysis', 'Canva', 'Illustrator', 'Keynote', 'GTM Planning', 'Strategic Partnership Development', 'SEO / GEO', 'Bilingual English / Chinese', 'Cross-Functional Collaboration', 'Multicultural Team Management', 'Technical Value Translation', 'Industrial Tech Marketing', 'Photoshop', 'Vibe Coding', 'AI Agent', 'Figma (Basic)', 'Premiere Pro', 'CapCut', 'Affinity', 'Trade Show Print Production', 'Photography'],
           '.close-problem': ['Strong technology, but the value is hard to explain', 'Entering APAC, Southeast Asia, or China without localized marketing language', 'Need a website, CRM system, or AI tool without immediate engineering resources'],
           '.close-value': ['Translate complex technology into stories customers understand and buy into', 'Bring rare APAC and China market localization ability, with bilingual English and Chinese communication', 'Independently build websites, CRM systems, and AI Agents that put AI into real workflows'],
           '.contact-links a': ['Email', 'LinkedIn']
