@@ -261,7 +261,7 @@
     color:var(--muted); font-size:11px; letter-spacing:1px; text-transform:uppercase;
     overflow:hidden; border-radius:12px;
   }
-  .thumb img{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
+  .thumb img,.thumb video{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
   div.thumb img{cursor:zoom-in;}
   a.thumb{cursor:pointer; transition:border-color .2s ease, opacity .2s ease;}
   a.thumb:hover{border-color:#d97706; opacity:.9;}
@@ -574,7 +574,7 @@
     <div class="flagship-item">
       <div class="flagship-label">Flagship Case 02</div>
       <a class="thumb" href="https://www.daoai.com/zh-tw/skyvision" target="_blank" rel="noopener">
-        <img src="thumb-skyvision.webp" alt="DaoAI SkyVision 產品頁">
+        <img src="thumb-skyvision.png" alt="DaoAI SkyVision 產品頁">
       </a>
       <div class="tag-row"><span class="tag">Product Page</span><span class="tag">Campaign Landing Page</span><span class="tag">SEO/GEO</span></div>
       <h3>產品頁／活動落地頁</h3>
@@ -618,9 +618,13 @@
     </div>
 
     <div class="work-item">
-      <a class="thumb" href="https://www.daoai.com/zh-cn/aoi" target="_blank" rel="noopener"><img src="thumb-video.png" alt="AI AOI for PCBA 產品影片截圖"></a>
+      <div class="thumb">
+        <video controls preload="metadata" poster="thumb-video.png" playsinline>
+          <source src="daoai-ai-programming-cn.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="tag-row"><span class="tag">Video</span><span class="tag">CapCut</span><span class="tag">AI生成畫面混剪</span></div>
-      <h3 class="compact-title">AI自動編程CN</h3>
+      <h3>產品與品牌行銷影片</h3>
       <div class="story">
         <p>包辦腳本、拍攝、剪輯，並利用AI工具生成的畫面混合實拍素材，一起剪進同一支片子裡。作品包含產品介紹/短影片等形式。</p>
       </div>
@@ -863,7 +867,7 @@
             '網站獲得 <strong>美國富士康、中國 Dell、Inventec、NXP、Honeywell Aerospace、Advantech</strong> 等製造與科技客戶主動填單。',
             '對應官方數位資產、跨國在地化、AI 技術價值轉譯三種日常戰場。'
           ],
-          '.work-item h3': ['展會平面輸出與現場視覺 — APEX IPC 2026', 'AI自動編程CN', '產品宣傳品設計', 'HTC 研討會簡報'],
+          '.work-item h3': ['展會平面輸出與現場視覺 — APEX IPC 2026', '產品與品牌行銷影片', '產品宣傳品設計', 'HTC 研討會簡報'],
           '.work-item .story p': [
             '主導公司在APEX IPC 2026的展位設計（含背板設計輸出），並負責innoVex Computex現場展示影片與相關宣傳素材。',
             '包辦腳本、拍攝、剪輯，並利用AI工具生成的畫面混合實拍素材，一起剪進同一支片子裡。作品包含產品介紹/短影片等形式。',
@@ -952,7 +956,7 @@
             'Generated inbound form submissions from high-value manufacturing and technology accounts, including <strong>Foxconn US, Dell China, Inventec, NXP, Honeywell Aerospace, and Advantech</strong>.',
             'Connects directly to official digital assets, cross-market localization, and AI technology value translation.'
           ],
-          '.work-item h3': ['Trade Show Print &amp; On-Site Visuals — APEX IPC 2026', 'AI Automated Programming CN', 'Product Collateral Design', 'HTC Seminar Presentation'],
+          '.work-item h3': ['Trade Show Print &amp; On-Site Visuals — APEX IPC 2026', 'Product &amp; Brand Marketing Videos', 'Product Collateral Design', 'HTC Seminar Presentation'],
           '.work-item .story p': [
             'Led booth visual design for APEX IPC 2026, including backdrop production, and supported innoVEX Computex with demo videos and promotional assets.',
             'Owned scripting, shooting, and editing, combining AI-generated visuals with live footage for product introductions and short-form videos.',
