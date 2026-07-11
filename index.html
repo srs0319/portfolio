@@ -117,6 +117,7 @@
   /* HERO — DaoAI dark tech aesthetic (deep navy bg, cyan accent, Inter 800) */
   .hero{
     position:relative; overflow:hidden;
+    padding:0; border-bottom:0; scroll-margin-top:0;
     text-align:left; color:#f5f7fa;
     background:#0b0f19;
   }
@@ -131,33 +132,42 @@
   }
   .hero-fold{
     position:relative; z-index:3;
-    min-height:72vh; display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start;
-    padding:150px 0 40px;
+    min-height:100svh; padding:0;
   }
-  .hero-inner{position:relative; z-index:1; width:100%; display:flex; flex-direction:column; align-items:flex-start;}
+  .hero-inner.wrap{position:relative; z-index:1; width:100%; max-width:none; min-height:100svh; padding-left:clamp(12px,2.7vw,40px); padding-right:clamp(12px,2.7vw,40px);}
   .hero-badge{
-    display:inline-block;
+    position:absolute; top:16.5%; left:clamp(12px,2.7vw,40px); display:inline-block;
     color:#fff; background:none; border:0;
     font-family:"Helvetica Neue",sans-serif; font-weight:600; font-size:12px; letter-spacing:0.15em; text-transform:uppercase;
-    padding:0; border-radius:0; margin-bottom:26px; line-height:1.35;
+    padding:0; border-radius:0; margin:0; line-height:1.35;
   }
   .hero-badge span{display:block;}
   .hero-badge .hero-name{text-transform:none; letter-spacing:.08em; margin-bottom:2px;}
   h1.display{
+    position:static;
     font-family:"PingFang TC","Noto Sans TC","Helvetica Neue",Arial,sans-serif;
-    font-weight:300; font-size:clamp(34px,6.4vw,72px); line-height:1.14; max-width:940px;
+    font-weight:300; font-size:clamp(34px,5vw,72px); line-height:1.14; max-width:none;
     letter-spacing:0; color:#fff;
   }
-  h1.display .accent{color:#fff;}
+  h1.display .hero-first-line{position:absolute; top:22%; left:clamp(12px,2.7vw,40px); right:clamp(12px,2.7vw,40px);}
+  h1.display .hero-second-line{position:absolute; top:72%; left:clamp(12px,2.7vw,40px); right:clamp(12px,2.7vw,40px); color:#fff; white-space:nowrap;}
   .hero-cta{
-    position:relative; z-index:1;
-    margin-top:40px; display:inline-flex; align-items:center; gap:8px;
+    position:absolute; z-index:1; right:clamp(20px,7.5vw,110px); bottom:8%;
+    margin:0; display:inline-flex; align-items:center; gap:8px;
     padding:14px 30px; border:1px solid rgba(255,255,255,.5); border-radius:8px;
     background:rgba(255,255,255,.18); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:none;
     color:#fff; font-family:"Helvetica Neue",sans-serif; font-weight:700; font-size:15px; letter-spacing:0.01em;
     transition:background .2s ease, transform .15s ease;
   }
   .hero-cta:hover{background:rgba(255,255,255,.3); transform:translateY(-2px);}
+  html[lang="en"] h1.display .hero-second-line{white-space:normal; max-width:min(88vw,1050px);}
+  @media(max-width:760px){
+    .hero-badge{top:16.5%; font-size:9px;}
+    h1.display{font-size:clamp(32px,8.2vw,42px);}
+    h1.display .hero-second-line{font-size:clamp(25px,6.7vw,34px);}
+    html[lang="en"] h1.display .hero-second-line{max-width:92vw;}
+    .hero-cta{right:clamp(20px,7.5vw,36px); bottom:8%; padding:10px 18px; font-size:12px;}
+  }
 
   /* HERO INTRO — white section under hero: lede + meta stats */
   .hero-intro{
@@ -204,7 +214,6 @@
     .hero-intro .meta-row > div:nth-child(2n){border-right:none; padding-right:0;}
     .hero-intro .meta-row > div:nth-child(-n+2){padding-top:0;}
   }
-  @media(max-width:760px){.hero-fold{padding:120px 0 40px; min-height:71vh;}}
   @media(max-width:760px){#capabilities.wrap{padding-left:36px; padding-right:36px;}}
 
   /* SECTION */
@@ -506,7 +515,7 @@
   <div class="hero-fold">
     <div class="hero-inner wrap">
       <div class="hero-badge"><span class="hero-name">Rome Ye</span><span>Creative &amp; Integrated<br class="mobile-break"> Marketer</span></div>
-      <h1 class="display">把技術轉換成<br><span class="accent">客戶想買單</span>的畫面與敘事</h1>
+      <h1 class="display"><span class="hero-first-line">把技術轉換成</span><span class="hero-second-line">客戶想買單的畫面與敘事</span></h1>
       <a href="#work" class="hero-cta">查看作品 →</a>
     </div>
   </div>
@@ -849,7 +858,7 @@
         expOpen: '展開更多經歷',
         expClose: '收合經歷',
         text: {
-          'h1.display': '把技術轉換成<br><span class="accent">客戶想買單</span>的畫面與敘事',
+          'h1.display': '<span class="hero-first-line">把技術轉換成</span><span class="hero-second-line">客戶想買單的畫面與敘事</span>',
           '.hero-cta': '查看作品 →',
           '.hero-intro .lede': '具備10年跨國科技與整合行銷經驗的創意驅動行銷領導者，橫跨零售、產品行銷與整合行銷，包含在HTC等全球科技知名品牌的行銷實戰經驗；現任職於AI新創公司，具備<strong>亞太（含東南亞）與中國市場在地化創意轉譯</strong>的稀有能力，中英雙語。近一年自學用AI vibe coding，獨立建置公司網站、CRM系統與AI Agent，把AI工具真正落實到日常工作中。',
           '#work h2': '代表作品',
@@ -938,7 +947,7 @@
         expOpen: 'Show more experience',
         expClose: 'Collapse experience',
         text: {
-          'h1.display': 'Turning technology into<br class="desktop-break"><span class="accent">visuals and stories</span><br class="mobile-break"> customers buy into',
+          'h1.display': '<span class="hero-first-line">Turning technology into</span><span class="hero-second-line">Visuals and stories customers buy into</span>',
           '.hero-cta': 'View Work →',
           '.hero-intro .lede': 'A creative-driven marketing professional with 10+ years of international technology and integrated marketing experience across retail, product marketing, and integrated campaigns, including hands-on work at global technology brands such as HTC. Currently working at an AI startup, I bring a rare ability to translate ideas for <strong>APAC, Southeast Asia, and China markets</strong>, with bilingual English and Chinese communication. Over the past year, I have self-taught AI vibe coding and independently built a company website, CRM system, and AI Agent, turning AI tools into real daily workflows.',
           '#work h2': 'Selected Work',
