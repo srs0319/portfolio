@@ -138,11 +138,13 @@
   .hero-badge{
     position:absolute; top:16.5%; left:clamp(12px,2.7vw,40px); display:inline-block;
     color:#fff; background:none; border:0;
-    font-family:"Helvetica Neue",sans-serif; font-weight:600; font-size:12px; letter-spacing:0.15em; text-transform:uppercase;
+    font-family:"Helvetica Neue",sans-serif; font-weight:600; font-size:14px; letter-spacing:0.15em; text-transform:uppercase;
     padding:0; border-radius:0; margin:0; line-height:1.35;
   }
   .hero-badge span{display:block;}
-  .hero-badge .hero-name{text-transform:none; letter-spacing:.08em; margin-bottom:2px;}
+  .hero-badge span:last-child{white-space:nowrap;}
+  .hero-badge .mobile-break{display:none;}
+  .hero-badge .hero-name{font-size:15px; text-transform:none; letter-spacing:.08em; margin-bottom:3px;}
   h1.display{
     position:static;
     font-family:"PingFang TC","Noto Sans TC","Helvetica Neue",Arial,sans-serif;
@@ -162,7 +164,8 @@
   .hero-cta:hover{background:rgba(255,255,255,.3); transform:translateY(-2px);}
   html[lang="en"] h1.display .hero-second-line{white-space:normal; max-width:min(88vw,1050px);}
   @media(max-width:760px){
-    .hero-badge{top:16.5%; font-size:9px;}
+    .hero-badge{top:16.5%; font-size:11px; letter-spacing:.12em;}
+    .hero-badge .hero-name{font-size:13px;}
     h1.display{font-size:clamp(32px,8.2vw,42px);}
     h1.display .hero-second-line{font-size:clamp(25px,6.7vw,34px);}
     html[lang="en"] h1.display .hero-second-line{max-width:92vw;}
