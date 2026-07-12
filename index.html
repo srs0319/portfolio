@@ -323,7 +323,7 @@
   .rail-progress{position:absolute; left:3px; top:54px; bottom:34px; width:1px; background:var(--line); z-index:-1;}
   .rail-progress span{display:block; width:100%; height:0; background:#d97706; transition:height .5s cubic-bezier(.22,1,.36,1);}
   .experience-chapters{display:flex; flex-direction:column; gap:22vh;}
-  .experience-card{min-height:62vh; display:flex; flex-direction:column; justify-content:center; opacity:.28; transform:translateY(50px); transition:opacity .75s ease, transform .75s cubic-bezier(.22,1,.36,1);}
+  .experience-card{min-height:62vh; display:flex; flex-direction:column; justify-content:flex-start; padding-top:8px; opacity:.28; transform:translateY(50px); transition:opacity .75s ease, transform .75s cubic-bezier(.22,1,.36,1);}
   .experience-card.is-active{opacity:1; transform:translateY(0);}
   .chapter-meta{display:flex; align-items:center; gap:12px; margin-bottom:16px; color:var(--muted); font-size:11px; letter-spacing:1px; text-transform:uppercase;}
   .chapter-index{color:#d97706; font-weight:700;}
@@ -608,7 +608,7 @@
     <div class="work-item">
       <div class="thumb thumb-carousel">
         <img src="thumb-apex-design.png" alt="APEX IPC 2026 展位背板設計輸出" class="active" style="object-position:center 70%">
-        <img src="thumb-apex-2.jpg" alt="APEX IPC 2026 展位現場照片" style="object-position:center 70%">
+        <img src="thumb-apex-2.jpg" alt="APEX IPC 2026 展位現場照片" style="object-position:center 15%">
         <button type="button" class="thumb-arrow prev" aria-label="上一張">&#8249;</button>
         <button type="button" class="thumb-arrow next" aria-label="下一張">&#8250;</button>
       </div>
@@ -792,7 +792,7 @@
 <footer id="contact">
   <div class="wrap">
     <div class="contact-grid">
-      <h2 class="serif">一起聊聊<br>下一個挑戰。</h2>
+      <h2 class="serif">一起聊聊<br>下一個挑戰</h2>
       <div class="contact-links">
         <a href="mailto:srs0319@gmail.com">寄 Email</a>
         <a href="https://www.linkedin.com/in/rome-ye/" target="_blank" rel="noopener">LinkedIn</a>
@@ -834,7 +834,7 @@
           '.experience-intro': '每一段經歷都不只是職稱，而是我一路累積、帶往下一站的能力。向下滑動，看它們如何逐步匯聚。',
           '#skills h2': '核心能力與實作工具',
           '#help h2': '我能解決的問題，能提供的價值',
-          '#contact h2': '一起聊聊<br>下一個挑戰。',
+          '#contact h2': '一起聊聊<br>下一個挑戰',
           '.more-work-head': 'More Work'
         },
         groups: {
