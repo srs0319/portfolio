@@ -625,7 +625,7 @@
 
     <div class="work-item">
       <div class="thumb">
-        <video controls preload="metadata" poster="thumb-ai-programming-cn-v2.jpg" playsinline style="object-position:center 15%">
+        <video controls preload="metadata" poster="thumb-ai-programming-cn-v2.jpg" playsinline style="object-position:center 40%">
           <source src="daoai-ai-programming-cn-v2.mp4" type="video/mp4">
         </video>
       </div>
@@ -1193,6 +1193,7 @@
       lightboxImg.alt = '';
       lightboxVideo.poster = video.getAttribute('poster') || '';
       lightboxVideo.src = video.currentSrc || (video.querySelector('source') && video.querySelector('source').src) || '';
+      lightboxVideo.volume = 0.5;
       lightbox.classList.add('video-mode');
       lightbox.classList.add('open');
       lightboxVideo.play().catch(function () {});
@@ -1214,6 +1215,7 @@
       });
     });
     document.querySelectorAll('div.thumb video').forEach(function (video) {
+      video.volume = 0.5;
       video.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
