@@ -1062,6 +1062,14 @@
         lastScrollY = Math.max(currentScrollY, 0);
       };
       window.addEventListener('scroll', onScroll, { passive: true });
+      header.addEventListener('mouseenter', function () {
+        header.classList.remove('scrolled');
+      });
+      header.addEventListener('mouseleave', function () {
+        if (window.scrollY > heroEl.offsetHeight - 80) {
+          header.classList.add('scrolled');
+        }
+      });
       onScroll();
     }
 
