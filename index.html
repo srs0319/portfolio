@@ -137,11 +137,13 @@
   }
   .hero-inner.wrap{--hero-gutter:40px; position:relative; z-index:1; width:100%; max-width:1100px; min-height:100svh; margin:0 auto; padding-left:var(--hero-gutter); padding-right:var(--hero-gutter);}
   .hero-badge{
-    position:absolute; top:16.5%; left:var(--hero-gutter); display:inline-block;
+    position:absolute; top:16.5%; left:var(--hero-gutter); display:inline-flex; align-items:flex-start; gap:14px;
     color:#fff; background:none; border:0;
     font-family:"Helvetica Neue",sans-serif; font-weight:600; font-size:17px; letter-spacing:0.13em; text-transform:uppercase;
     padding:0; border-radius:0; margin:0; line-height:1.35;
   }
+  .hero-badge::before{content:""; width:2px; height:48px; margin-top:2px; background:rgba(255,255,255,.88); display:block; flex:0 0 auto;}
+  .hero-badge-text{display:block;}
   .hero-badge span{display:block;}
   .hero-badge span:last-child{white-space:nowrap;}
   .hero-badge .mobile-break{display:none;}
@@ -166,7 +168,8 @@
   html[lang="en"] h1.display .hero-second-line{white-space:normal; max-width:min(88vw,1050px);}
   @media(max-width:760px){
     .hero-inner.wrap{--hero-gutter:36px; padding-left:var(--hero-gutter); padding-right:var(--hero-gutter);}
-    .hero-badge{top:16.5%; font-size:13px; letter-spacing:.1em;}
+    .hero-badge{top:16.5%; gap:11px; font-size:13px; letter-spacing:.1em;}
+    .hero-badge::before{height:42px;}
     .hero-badge .hero-name{font-size:15px;}
     h1.display{font-size:clamp(32px,8.2vw,42px);}
     h1.display .hero-first-line{top:30%;}
@@ -525,7 +528,7 @@
   <div class="hero-tint"></div>
   <div class="hero-fold">
     <div class="hero-inner wrap">
-      <div class="hero-badge"><span class="hero-name">Rome Ye</span><span>Creative &amp; Integrated<br class="mobile-break"> Marketer</span></div>
+      <div class="hero-badge"><span class="hero-badge-text"><span class="hero-name">Rome Ye</span><span>Creative &amp; Integrated<br class="mobile-break"> Marketer</span></span></div>
       <h1 class="display"><span class="hero-first-line">把技術轉換成客戶</span><span class="hero-second-line">想買單的畫面與敘事</span></h1>
       <a href="#work" class="hero-cta">查看作品 →</a>
     </div>
