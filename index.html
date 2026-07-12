@@ -36,7 +36,7 @@
     position:fixed; top:18px; left:0; right:0; z-index:50;
     background:transparent;
   }
-  header > .wrap{width:100%; max-width:820px; margin-left:0; margin-right:auto; padding-left:20px; padding-right:0; transition:max-width .5s cubic-bezier(.22,1,.36,1);}
+  header > .wrap{width:100%; max-width:656px; margin-left:0; margin-right:auto; padding-left:20px; padding-right:0; transition:max-width .5s cubic-bezier(.22,1,.36,1);}
   nav{
     display:flex; justify-content:space-between; align-items:center; height:58px;
     padding:0 14px 0 16px; border:1px solid rgba(255,255,255,.13); border-radius:999px;
@@ -262,7 +262,7 @@
     overflow:hidden; border-radius:12px;
   }
   .thumb img,.thumb video{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
-  div.thumb img{cursor:zoom-in;}
+  div.thumb img,div.thumb video{cursor:zoom-in;}
   a.thumb{cursor:pointer; transition:border-color .2s ease, opacity .2s ease;}
   a.thumb:hover{border-color:#d97706; opacity:.9;}
   .thumb-carousel{position:relative;}
@@ -285,7 +285,10 @@
     opacity:0; visibility:hidden; transition:opacity .25s ease;
   }
   .lightbox.open{opacity:1; visibility:visible;}
-  .lightbox img{max-width:100%; max-height:100%; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lightbox img,.lightbox video{max-width:100%; max-height:100%; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lightbox video{display:none; background:#000;}
+  .lightbox.video-mode img{display:none;}
+  .lightbox.video-mode video{display:block;}
   .lightbox-close{
     position:absolute; top:24px; right:28px; width:40px; height:40px; border-radius:50%;
     background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.3); color:#fff;
@@ -622,7 +625,7 @@
 
     <div class="work-item">
       <div class="thumb">
-        <video controls preload="metadata" poster="thumb-ai-programming-cn-v2.jpg" playsinline>
+        <video controls preload="metadata" poster="thumb-ai-programming-cn-v2.jpg" playsinline style="object-position:center 15%">
           <source src="daoai-ai-programming-cn-v2.mp4" type="video/mp4">
         </video>
       </div>
@@ -814,6 +817,7 @@
 <div class="lightbox" id="lightbox">
   <button type="button" class="lightbox-close" aria-label="關閉">&#10005;</button>
   <img src="" alt="">
+  <video controls playsinline></video>
 </div>
 
 <script>
@@ -1177,20 +1181,43 @@
 
     var lightbox = document.getElementById('lightbox');
     var lightboxImg = lightbox.querySelector('img');
+    var lightboxVideo = lightbox.querySelector('video');
     function openLightbox(src, alt) {
+      lightbox.classList.remove('video-mode');
       lightboxImg.src = src;
       lightboxImg.alt = alt || '';
       lightbox.classList.add('open');
     }
+    function openVideoLightbox(video) {
+      lightboxImg.src = '';
+      lightboxImg.alt = '';
+      lightboxVideo.poster = video.getAttribute('poster') || '';
+      lightboxVideo.src = video.currentSrc || (video.querySelector('source') && video.querySelector('source').src) || '';
+      lightbox.classList.add('video-mode');
+      lightbox.classList.add('open');
+      lightboxVideo.play().catch(function () {});
+    }
     function closeLightbox() {
       lightbox.classList.remove('open');
+      lightbox.classList.remove('video-mode');
       lightboxImg.src = '';
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.removeAttribute('poster');
+      lightboxVideo.load();
     }
     document.querySelectorAll('div.thumb img').forEach(function (img) {
       img.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         openLightbox(img.src, img.alt);
+      });
+    });
+    document.querySelectorAll('div.thumb video').forEach(function (video) {
+      video.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openVideoLightbox(video);
       });
     });
     lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
