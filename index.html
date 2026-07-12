@@ -1048,13 +1048,18 @@
     var header = document.querySelector('header');
     var heroEl = document.querySelector('.hero');
     if (header && heroEl) {
+      var lastScrollY = window.scrollY;
       var onScroll = function () {
+        var currentScrollY = window.scrollY;
         var threshold = heroEl.offsetHeight - 80;
-        if (window.scrollY > threshold) {
+        if (currentScrollY <= threshold) {
+          header.classList.remove('scrolled');
+        } else if (currentScrollY > lastScrollY + 4) {
           header.classList.add('scrolled');
-        } else {
+        } else if (currentScrollY < lastScrollY - 4) {
           header.classList.remove('scrolled');
         }
+        lastScrollY = Math.max(currentScrollY, 0);
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
