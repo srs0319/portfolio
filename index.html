@@ -47,10 +47,13 @@
   }
   header.scrolled > .wrap{max-width:78px;}
   header.scrolled nav{width:58px; padding:0 9px; overflow:hidden; background:rgba(24,29,42,.34); box-shadow:0 6px 18px rgba(8,12,24,.08);}
+  header.over-light:not(.scrolled) nav{background:rgba(255,255,255,.82); border-color:rgba(20,24,34,.08); box-shadow:0 10px 28px rgba(8,12,24,.08);}
   .logo{font-weight:700; letter-spacing:2px; font-size:14px; text-transform:uppercase; color:#fff; transition:color .3s ease;}
   .logo img{height:38px; width:auto; display:block; filter:brightness(0) invert(1);}
+  header.over-light:not(.scrolled) .logo img{filter:none;}
   header.scrolled .logo{color:#fff;}
   .navlinks{display:flex; align-items:center; gap:20px; font-size:11px; letter-spacing:1px; color:rgba(255,255,255,.72); text-transform:uppercase; transition:color .3s ease, opacity .25s ease, visibility .25s ease;}
+  header.over-light:not(.scrolled) .navlinks{color:rgba(17,24,39,.72);}
   header.scrolled .navlinks{opacity:0; visibility:hidden; pointer-events:none;}
   header.scrolled .navlinks{color:rgba(255,255,255,.78);}
   .navlinks a{position:relative; display:inline-flex; align-items:center; min-height:28px; padding:0;}
@@ -58,6 +61,8 @@
   header.scrolled .navlinks a::after{background:#fff;}
   .navlinks a:hover::after{transform:scaleX(1);}
   .navlinks a:hover{color:#fff;}
+  header.over-light:not(.scrolled) .navlinks a::after{background:#111827;}
+  header.over-light:not(.scrolled) .navlinks a:hover{color:#111827;}
   header.scrolled .navlinks a:hover{color:#fff;}
   .lang-toggle{
     display:inline-flex; align-items:center; justify-content:center; min-width:0; height:28px;
@@ -66,6 +71,8 @@
     transition:color .2s ease;
   }
   .lang-toggle:hover, header.scrolled .lang-toggle:hover{background:none; color:#fff;}
+  header.over-light:not(.scrolled) .lang-toggle{color:rgba(17,24,39,.62);}
+  header.over-light:not(.scrolled) .lang-toggle:hover{color:#111827;}
   .navlinks .contact-link{
     min-width:86px; height:36px; justify-content:center; padding:0 18px;
     color:#20283a; background:rgba(255,255,255,.9); border:1px solid rgba(255,255,255,.55); border-radius:999px;
@@ -74,6 +81,8 @@
   }
   .navlinks .contact-link::after{display:none;}
   .navlinks .contact-link:hover{background:#fff; color:#111827;}
+  header.over-light:not(.scrolled) .navlinks .contact-link{color:#fff; background:#111827; border-color:#111827;}
+  header.over-light:not(.scrolled) .navlinks .contact-link:hover{background:#000; color:#fff;}
 
   /* NAV — mobile hamburger */
   .nav-toggle{
@@ -1055,6 +1064,7 @@
       var onScroll = function () {
         var currentScrollY = window.scrollY;
         var threshold = heroEl.offsetHeight - 80;
+        header.classList.toggle('over-light', currentScrollY > threshold);
         if (currentScrollY <= threshold) {
           header.classList.remove('scrolled');
         } else if (currentScrollY > lastScrollY + 4) {
