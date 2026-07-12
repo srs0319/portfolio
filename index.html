@@ -312,7 +312,7 @@
   .story-label{font-weight:700; color:var(--ink); text-transform:uppercase; font-size:10px; letter-spacing:1px; margin-right:8px;}
 
   /* EXPERIENCE — scroll-led career growth story */
-  .experience-intro{max-width:720px; margin-bottom:56px; color:var(--muted); font-size:17px;}
+  .experience-intro{max-width:none; margin-bottom:56px; color:var(--muted); font-size:17px; white-space:nowrap;}
   .experience-layout{display:grid; grid-template-columns:250px minmax(0,1fr); gap:72px; align-items:start;}
   .experience-rail{position:sticky; top:120px; padding-bottom:24px;}
   .rail-label{font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:22px;}
@@ -350,7 +350,7 @@
   .future-direction p{font-size:12px; line-height:1.6; color:rgba(255,255,255,.6);}
   .future-direction:hover p{color:#5f5f5a;}
   @media(max-width:760px){
-    .experience-intro{font-size:15px; margin-bottom:38px;}
+    .experience-intro{font-size:15px; margin-bottom:38px; white-space:normal;}
     .experience-layout{grid-template-columns:1fr; gap:0;}
     .experience-rail{position:relative; top:auto; z-index:1; display:flex; gap:8px; overflow-x:auto; margin:0 0 36px; padding:0 0 10px; border-bottom:1px solid var(--line); scrollbar-width:none;}
     .experience-rail::-webkit-scrollbar{display:none;}
