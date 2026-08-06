@@ -2,7 +2,7 @@
   var header = document.querySelector('.portfolio-header');
   var navToggle = document.getElementById('portfolioNavToggle');
   var navLinks = document.getElementById('portfolioNavLinks');
-  var hero = document.querySelector('.sky-hero');
+  var hero = document.querySelector('.sky-hero, .hero');
   var lastY = window.scrollY;
 
   if (header) {
