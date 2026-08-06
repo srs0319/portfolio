@@ -21,6 +21,9 @@
       if (window.scrollY > threshold) header.classList.add('scrolled');
     });
     updateHeader();
+    if (window.matchMedia('(max-width: 700px)').matches) {
+      header.classList.add('scrolled');
+    }
   }
 
   if (navToggle && navLinks) {

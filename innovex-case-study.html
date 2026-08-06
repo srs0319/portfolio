@@ -1810,6 +1810,12 @@
     visibility: hidden !important;
     pointer-events: none !important;
   }
+  @media (min-width: 901px) {
+    .hero-meta,
+    .hero-actions {
+      transform: translateY(20px);
+    }
+  }
   @media (max-width: 700px) {
     .hero > .container {
       padding-left: 14px;
@@ -1817,6 +1823,9 @@
     }
   }
   @media (max-width: 900px) {
+    html {
+      background-color: #164b68;
+    }
     #hero-particles {
       background-size: auto 120% !important;
       background-position: 60% 0% !important;
