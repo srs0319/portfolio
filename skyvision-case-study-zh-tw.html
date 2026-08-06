@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="zh-TW"><head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DQRJHSRHQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQRJHSRHQW', {
+    'content_group': 'zh-TW',
+    'language': 'zh-TW'
+  });
+</script>
+
+<meta charset="utf-8"/>
+<title>DaoAI World SkyVision AI 視訊監控平台 | DaoAI</title>
+<link href="daoai_robotics_inc_logo.jpeg" rel="shortcut icon"/>
+<meta content="DaoAI World SkyVision：無程式碼 AI 視覺平台，支援現場自訂模型訓練、邊緣運算隱私保護與智慧監控分析。" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="無程式碼 AI 視覺平台，將您現有的攝影機轉變為智慧感測器。邊緣運算，100% 資料隱私。" property="og:description"/>
+<meta content="DaoAI World SkyVision AI 視訊監控 | DaoAI" property="og:title"/>
+<meta content="無程式碼 AI 視覺平台，將您現有的攝影機轉變為智慧感測器。邊緣運算，100% 資料隱私。" name="twitter:description"/>
+<meta content="DaoAI World SkyVision AI 視訊監控 | DaoAI" name="twitter:title"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Oswald:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+html, body { overscroll-behavior: none !important; background-color: #0b0f19 !important; }
+</style>
+<style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+<link href="template_main.min.css" rel="stylesheet"/>
+<link href="template_theme-overrides.css" rel="stylesheet"/>
+<link href="template_child.min.css" rel="stylesheet"/>
+<link href="module_DaoAI_Header.css" rel="stylesheet"/>
+<link href="module_DaoAI_Header_v3.min.css" rel="stylesheet"/>
+<style>
+.header-nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:transparent!important;border-bottom:none!important;transition:transform 0.3s ease!important;}
+.header-nav.header-hidden{transform:translateY(-100%)!important;}
+.header-nav .header-cta{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:transparent!important;border:1px solid hsla(0,0%,100%,.3)!important;box-shadow:none!important;}
+html,body{overscroll-behavior:none;background:#0b0f19;}
+</style>
+<link href="module_Daoai_sky_Hero.min.css" rel="stylesheet"/>
+<style>
+    .sky-hero-content { max-width: 700px !important; }
+    .sky-hero h1 { font-size: clamp(40px, 5vw, 68px) !important; line-height: 1.15 !important; }
+
+    @media (max-width: 768px) {
+        .sky-hero h1 { font-size: 38px !important; }
+    }
+    /* Force HubSpot wrapper divs to allow full-height hero */
+    .sky-hero,
+    .sky-hero-left {
+        height: {
+                {
+                module.section_height
+            }
+        }
+
+        !important;
+
+        min-height: {
+                {
+                module.section_height
+            }
+        }
+
+        !important;
+    }
+</style>
+<link href="module_Daoai_sky_ScrollText.min.css" rel="stylesheet"/>
+<link href="module_Daoai_sky_Features.min.css" rel="stylesheet"/>
+<link href="module_Daoai_sky_ViaI.min.css" rel="stylesheet"/>
+<link href="module_Daoai_sky_Platform.min.css" rel="stylesheet"/>
+<link href="module_Daoai_sky_Showcase.min.css" rel="stylesheet"/>
+<link href="module_Daoai_sky_Industry.min.css" rel="stylesheet"/>
+<link href="module_Daoai_sky_TechSpecs.min.css" rel="stylesheet"/>
+<link href="module_Daoai_sky_CTA.min.css" rel="stylesheet"/>
+<link href="module_DaoAI_Footer.min.css" rel="stylesheet"/>
+<style>
+  @font-face {
+    font-family: "Inter";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://daoai.com/_hcms/googlefonts/Inter/700.woff2") format("woff2"), url("https://daoai.com/_hcms/googlefonts/Inter/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://daoai.com/_hcms/googlefonts/Inter/regular.woff2") format("woff2"), url("https://daoai.com/_hcms/googlefonts/Inter/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://daoai.com/_hcms/googlefonts/Inter/600.woff2") format("woff2"), url("https://daoai.com/_hcms/googlefonts/Inter/600.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://daoai.com/_hcms/googlefonts/Inter/regular.woff2") format("woff2"), url("https://daoai.com/_hcms/googlefonts/Inter/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://daoai.com/_hcms/googlefonts/Poppins/600.woff2") format("woff2"), url("https://daoai.com/_hcms/googlefonts/Poppins/600.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://daoai.com/_hcms/googlefonts/Poppins/regular.woff2") format("woff2"), url("https://daoai.com/_hcms/googlefonts/Poppins/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://daoai.com/_hcms/googlefonts/Poppins/700.woff2") format("woff2"), url("https://daoai.com/_hcms/googlefonts/Poppins/700.woff") format("woff");
+  }
+</style>
+<!-- Editor Styles -->
+<style id="hs_editor_style" type="text/css">
+.header-row-0-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+.dnd_area-row-1-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+.footer-row-0-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+/* HubSpot Non-stacked Media Query Styles */
+@media (min-width:768px) {
+  .dnd_area-row-1-vertical-alignment > .row-fluid {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: row;
+    display: flex !important;
+    flex-direction: row;
+  }
+  .cell_1770776725466-vertical-alignment {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: column !important;
+    -ms-flex-pack: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+  .cell_1770776725466-vertical-alignment > div {
+    flex-shrink: 0 !important;
+  }
+  .cell_1770776725466-row-7-vertical-alignment > .row-fluid {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: row;
+    display: flex !important;
+    flex-direction: row;
+  }
+  .cell_17716276478842-vertical-alignment {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: column !important;
+    -ms-flex-pack: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  .cell_17716276478842-vertical-alignment > div {
+    flex-shrink: 0 !important;
+  }
+}
+/* HubSpot Styles (default) */
+.header-row-0-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-row-0-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.dnd_area-row-1-margin {
+  margin-top: 0px !important;
+}
+.dnd_area-row-1-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.footer-row-0-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+/* HubSpot Styles (mobile) */
+@media (max-width: 767px) {
+  .dnd_area-row-1-padding {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+</style>
+<link href="https://daoai.com/zh-tw/skyvision" rel="canonical"/>
+<meta content="https://daoai.com/zh-tw/skyvision" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="zh-TW" http-equiv="content-language"/>
+<style>
+    /* Fix the massive black gap between CTA and ROI section */
+    .dnd_area-row-2-padding {
+        padding-bottom: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    .dnd_area-row-3-padding {
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
+    .widget_1770419895726-padding {
+        padding-top: 0px !important; 
+        margin-top: 0px !important;
+    }
+    .dnd_area-row-3-background-gradient,
+    .dnd_area-row-3-background-layers {
+        background-color: #020C1B !important; 
+        background-image: none !important;
+    }
+</style>
+<style>h1,h2,h3,h4,h5,h6{font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif!important}</style><style>h1,h2,h3,h4,h5,h6{font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif!important}</style><style>@media(max-width:768px){section.sky-hero .sky-hero-content-wrapper{padding-top:90px!important;}.feature-card-content{padding:20px 16px!important;}.via-i-description{white-space:normal!important;}}</style><style>
+.header-nav {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: transparent !important;
+    border-bottom: none !important;
+    transition: transform 0.3s ease !important;
+}
+.header-nav.header-hidden {
+    transform: translateY(-100%) !important;
+}
+.header-nav .header-cta {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: transparent !important;
+    border: 1px solid hsla(0,0%,100%,.3) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.header-nav .header-cta.desktop-only {
+    box-shadow: none !important;
+    outline: none !important;
+}
+</style>
+<meta content="https://daoai.com/daoai_robotics_inc_logo.jpeg" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="zh_TW" property="og:locale"/>
+<meta content="DaoAI Robotics" property="og:site_name"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "inLanguage": "zh-TW",
+  "@type": "SoftwareApplication",
+  "name": "DaoAI World SkyVision",
+  "description": "No-code AI video surveillance platform. Build and deploy custom visual AI models without an AI team. Edge computing with 100% on-premise data processing, supporting up to 256 camera streams with under 12ms inference latency.",
+  "image": "https://daoai.com/daoai_robotics_inc_logo.jpeg",
+  "brand": {
+    "@type": "Brand",
+    "name": "DaoAI"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Maximum Camera Streams",
+      "value": "256"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Inference Latency",
+      "value": "<12ms"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Cloud Dependency",
+      "value": "None - 100% On-Premise"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Coding Required",
+      "value": "No"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Camera Compatibility",
+      "value": "RTSP/ONVIF"
+    }
+  ],
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Linux, Windows"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "inLanguage": "zh-TW",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://daoai.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SkyVision",
+      "item": "https://daoai.com/skyvision"
+    }
+  ]
+}
+</script>
+<link href="lang-switcher.css" rel="stylesheet"/><link href="https://www.daoai.com/skyvision" hreflang="en" rel="alternate"/><link href="https://www.daoai.com/zh-cn/skyvision" hreflang="zh-CN" rel="alternate"/><link href="https://www.daoai.com/zh-tw/skyvision" hreflang="zh-TW" rel="alternate"/><link href="https://www.daoai.com/skyvision" hreflang="x-default" rel="alternate"/><style>header.header{background:transparent!important}</style>
+<link href="skyvision-portfolio-shell.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="portfolio-header">
+  <div class="portfolio-wrap">
+    <nav class="portfolio-nav" aria-label="Portfolio navigation">
+      <a class="portfolio-logo" href="index.html" aria-label="Back to portfolio"><img src="Rome Logo.png" alt="Rome"/></a>
+      <div class="portfolio-navlinks" id="portfolioNavLinks">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#skills">Skills</a>
+        <span class="portfolio-language-switcher" aria-label="Language"><a href="skyvision-case-study.html" lang="en">EN</a><span>/</span><a class="active" href="skyvision-case-study-zh-tw.html" lang="zh-TW" aria-current="page">繁</a><span>/</span><a href="skyvision-case-study-zh-cn.html" lang="zh-CN">简</a></span>
+        <a class="portfolio-contact-link" href="index.html#contact">Contact Me</a>
+      </div>
+      <button type="button" class="portfolio-nav-toggle" id="portfolioNavToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</div>
+<div class="body-wrapper hs-content-id-207305802501 hs-site-page page">
+<div data-global-resource-path="Generator child theme/templates/partials/header.html"><header class="header">
+<a class="header__skip" href="/zh-tw/skyvision">Skip to content</a>
+<div class="container-fluid">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell" data-w="12" data-widget-type="cell" data-x="0" style="">
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd-section header-row-0-padding header-row-0-force-full-width-section">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell dnd-column" data-w="12" data-widget-type="cell" data-x="0" style="">
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<!-- old header removed, using v3 header below -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+</header>
+</div>
+<main id="main-content">
+<div class="container-fluid">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell" data-w="12" data-widget-type="cell" data-x="0" style="">
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd-section dnd_area-row-0-padding">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell dnd-column" data-w="12" data-widget-type="cell" data-x="0" style="">
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1771635427055" style=""><!-- Hidden checkbox MUST be BEFORE nav and drawer in the DOM (CSS ~ sibling selector) -->
+<input class="daoai-mobile-menu-checkbox" id="daoai-mobile-menu-toggle" style="display:none!important;position:absolute;opacity:0;pointer-events:none;" type="checkbox"/>
+<!--#include virtual="/_partials/nav-zh-tw.html" -->
+<!-- Mobile Drawer — OUTSIDE <nav> to avoid backdrop-filter containment issue.
+     position:fixed children of backdrop-filter elements are positioned relative
+     to that element, not the viewport. Moving it here fixes the zero-height bug. -->
+<!--#include virtual="/_partials/drawer-zh-tw.html" -->
+<!-- ============================================================
+     CONTACT MODAL
+     ============================================================ -->
+<div aria-labelledby="contact-modal-title" aria-modal="true" class="contact-modal-overlay" id="daoai-contact-modal" role="dialog">
+<div class="contact-modal-card">
+<!-- Close button -->
+<button aria-label="Close contact form" class="contact-modal-close" data-contact-modal-close="">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<!-- Modal header -->
+<div class="contact-modal-header">
+<h2 class="contact-modal-title" id="contact-modal-title">與我們聯絡</h2>
+<p class="contact-modal-subtitle">請告訴我們您的專案需求，我們將在2個工作日內回覆您。</p>
+</div>
+<!-- Formspree form injected via HTML -->
+<style>
+        .contact-modal-form-wrap .form-columns-2 {
+            display: flex !important;
+            gap: 1rem !important;
+            margin-bottom: 1.5rem !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+        .contact-modal-form-wrap .form-columns-2 .hs-form-field {
+            width: 50% !important;
+            margin-bottom: 0 !important;
+        }
+        .contact-modal-form-wrap .hs-form fieldset { margin-bottom: 1.5rem !important; border:none; padding:0; }
+        
+        .contact-modal-form-wrap .hs-form label.hs-form-label,
+        .contact-modal-form-wrap .hs-form label {
+            text-transform: none !important;
+            letter-spacing: normal !important;
+            color: #9ca3af !important;
+            font-size: 0.9rem !important;
+            font-weight: 500 !important;
+            margin-bottom: 0.5rem !important;
+            display: block !important;
+        }
+        .contact-modal-form-wrap .hs-form-required {
+            color: #38bdf8 !important; /* light blue asterisk */
+            margin-left: 2px;
+        }
+        
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form input[type="text"],
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form input[type="email"],
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form textarea,
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form select {
+            background: #111827 !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 6px !important;
+            padding: 0.75rem 1rem !important;
+            color: #e5e7eb !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            font-size: 0.95rem !important;
+            transition: border-color 0.2s ease !important;
+        }
+        
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form input:focus,
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form textarea:focus,
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form select:focus {
+            border-color: #38bdf8 !important;
+            outline: none !important;
+        }
+
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form input::placeholder,
+        #daoai-contact-modal .contact-modal-form-wrap .hs-form textarea::placeholder {
+            color: #4b5563 !important;
+        }
+        
+        .contact-modal-form-wrap .hs-form .hs-button {
+            background: #38bdf8 !important;
+            color: #0b0f19 !important;
+            border-radius: 6px !important;
+            font-weight: 600 !important;
+        }
+        .contact-modal-form-wrap .hs-form .hs-button:hover {
+            background: #7dd3fc !important;
+        }
+
+        @media (max-width: 640px) {
+            .contact-modal-form-wrap .form-columns-2 {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+            }
+            .contact-modal-form-wrap .form-columns-2 .hs-form-field {
+                width: 100% !important;
+            }
+        }
+        </style>
+<div class="contact-modal-form-wrap">
+<form action="/api/cn/form" class="hs-form" method="POST">
+<div aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden"><input autocomplete="off" name="website" tabindex="-1" type="text"/></div>
+<input name="form_source" type="hidden" value="Contact Us"/>
+<fieldset class="form-columns-2">
+<div class="hs-form-field">
+<label>名<span class="hs-form-required">*</span></label>
+<div class="input">
+<input class="hs-input" name="firstname" placeholder="您的名字" required="" type="text"/>
+</div>
+</div>
+<div class="hs-form-field">
+<label>姓<span class="hs-form-required">*</span></label>
+<div class="input">
+<input class="hs-input" name="lastname" placeholder="您的姓氏" required="" type="text"/>
+</div>
+</div>
+</fieldset>
+<fieldset class="form-columns-2">
+<div class="hs-form-field">
+<label>企業郵箱<span class="hs-form-required">*</span></label>
+<div class="input">
+<input class="hs-input" name="email" placeholder="您的郵箱地址" required="" type="email"/>
+</div>
+</div>
+<div class="hs-form-field">
+<label>公司名稱<span class="hs-form-required">*</span></label>
+<div class="input">
+<input class="hs-input" name="company" placeholder="您的公司" required="" type="text"/>
+</div>
+</div>
+</fieldset>
+<fieldset class="form-columns-2">
+<div class="hs-form-field">
+<label>職稱</label>
+<div class="input">
+<input class="hs-input" name="jobtitle" placeholder="您的職稱" type="text"/>
+</div>
+</div>
+<div class="hs-form-field">
+<label>國家/地區</label>
+<div class="input">
+<input class="hs-input" name="country" placeholder="國家/地區" type="text"/>
+</div>
+</div>
+</fieldset>
+<fieldset class="form-columns-1" style="margin-bottom:1.5rem;">
+<div class="hs-form-field">
+<label>公司名稱</label>
+<div class="input">
+<select class="hs-input is-placeholder" name="company_type">
+<option disabled="" selected="" value="">請選擇</option>
+<option value="End User">最終用戶</option>
+<option value="System Integrator">系統整合商</option>
+<option value="Distributor">經銷商</option>
+<option value="Other">其他</option>
+</select>
+</div>
+</div>
+</fieldset>
+<fieldset class="form-columns-1" style="margin-bottom:1.5rem;">
+<div class="hs-form-field">
+<label>諮詢主題</label>
+<div class="input">
+<textarea class="hs-input" name="message" placeholder="請描述您的需求..."></textarea>
+</div>
+</div>
+</fieldset>
+<div class="hs-submit">
+<div class="actions">
+<button class="hs-button primary large" type="submit">提交</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div></div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-3 dnd_area-row-1-padding dnd_area-row-1-vertical-alignment dnd-section dnd_area-row-1-margin dnd_area-row-1-force-full-width-section">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell cell_1770776725466-vertical-alignment dnd-column" data-w="12" data-widget-type="cell" data-x="0" style="">
+<div class="row-fluid-wrapper row-depth-1 row-number-4 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1771634775842" style=""><!-- Fonts -->
+<!-- Hero Section -->
+<section class="sky-hero sky-hero--no-mobile">
+<!-- Layer 1: Background Image/Video -->
+<div class="sky-hero-background">
+<img alt="DaoAI 3D vision sensor" class="sky-hero-slide sky-hero-bg-desktop active" fetchpriority="high" height="743" src="r441-1.webp" style="object-fit: cover;" width="1440"/>
+</div>
+<!-- Layer 2: Gradient Overlay (Lumana Style) — NO opacity on this! -->
+<div class="sky-hero-grad"></div>
+<!-- Layer 3: Content -->
+<div class="sky-hero-content-wrapper">
+<div class="sky-hero-content">
+<div class="sky-badge">DaoAI World 天眼監控智能體</div>
+<h1>打破算法困局！<br/>0代碼、1小時<br/>構建專屬視覺監控AI</h1>
+<p>無需AI工程師團隊，即可構建專屬AI能力，並可由自有數據進行訓練。0代碼部署靈活的檢測工作流。從訓練到推理完全本地化，保障數據安全。</p>
+<div class="sky-cta-row">
+<button class="sky-btn sky-btn-primary" data-sky-live-demo-trigger="" type="button">觀看即時演示</button>
+<button class="sky-btn sky-btn-secondary" data-sky-download-trigger="" type="button">下載產品概覽</button>
+</div>
+</div>
+</div>
+</section>
+<div class="skyvision-entity-intro" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+<p style="color:#ccc;font-size:1.05rem;line-height:1.8;font-family:Inter,sans-serif;">DaoAI 天眼監控智能體 is a no-code AI video surveillance platform that enables operators to build, train, and deploy custom visual AI models without writing a single line of code. All video processing runs on-premise with zero cloud dependency — data never leaves your facility. SkyVision supports up to 256 simultaneous camera streams with under 12ms inference latency, and is compatible with any RTSP/ONVIF camera, making it a drop-in upgrade for existing surveillance infrastructure.</p>
+</div>
+<!-- ============================================================
+     DEMO REQUEST MODAL (First CTA)
+     ============================================================ -->
+<div aria-labelledby="sky-demo-modal-title" aria-modal="true" class="sky-demo-modal-overlay" id="sky-demo-modal" role="dialog">
+<div class="sky-demo-modal-card">
+<button aria-label="Close" class="sky-demo-modal-close" data-sky-modal-close="demo">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="sky-demo-modal-header">
+<h2 class="sky-demo-modal-title" id="sky-demo-modal-title">申請即時演示</h2>
+<p class="sky-demo-modal-subtitle">填寫您的資訊，我們的團隊將聯絡您安排個人化演示。</p>
+</div>
+<div class="sky-demo-modal-form-wrap">
+<div id="sky-demo-form-view">
+<form action="/api/cn/form" class="hs-form" id="sky-demo-formspree" method="POST" style="margin:0;">
+<div aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden"><input autocomplete="off" name="website" tabindex="-1" type="text"/></div>
+<fieldset class="form-columns-2">
+<div class="hs-form-field">
+<label>名<span class="hs-form-required">*</span></label>
+<div class="input">
+<input class="hs-input" name="firstname" placeholder="名字" required="" type="text"/>
+</div>
+</div>
+<div class="hs-form-field">
+<label>姓<span class="hs-form-required">*</span></label>
+<div class="input">
+<input class="hs-input" name="lastname" placeholder="姓氏" required="" type="text"/>
+</div>
+</div>
+</fieldset>
+<fieldset class="form-columns-2">
+<div class="hs-form-field">
+<label>企業信箱<span class="hs-form-required">*</span></label>
+<div class="input">
+<input class="hs-input" name="email" placeholder="you@company.com" required="" type="email"/>
+</div>
+</div>
+<div class="hs-form-field">
+<label>公司名稱<span class="hs-form-required">*</span></label>
+<div class="input">
+<input class="hs-input" name="company" placeholder="您的公司名稱" required="" type="text"/>
+</div>
+</div>
+</fieldset>
+<fieldset class="form-columns-2">
+<div class="hs-form-field">
+<label>職稱</label>
+<div class="input">
+<input class="hs-input" name="jobtitle" placeholder="您的職稱" type="text"/>
+</div>
+</div>
+<div class="hs-form-field">
+<label>國家/地區</label>
+<div class="input">
+<input class="hs-input" name="country" placeholder="國家/地區" type="text"/>
+</div>
+</div>
+</fieldset>
+<fieldset class="form-columns-1" style="margin-bottom:1.5rem;">
+<div class="hs-form-field">
+<label>留言</label>
+<div class="input">
+<textarea class="hs-input" name="message" placeholder="請告訴我們您的使用場景或您希望在演示中了解的內容..."></textarea>
+</div>
+</div>
+</fieldset>
+<input name="form_type" type="hidden" value="live_demo_request"/>
+<div class="hs-submit">
+<div class="actions">
+<button class="hs-button primary large" id="sky-demo-submit-btn" type="submit">申請演示</button>
+</div>
+</div>
+</form>
+</div>
+<div id="sky-demo-success-view" style="display:none; text-align:center; padding:2rem 0;">
+<div style="color:#38bdf8; margin-bottom:1rem; display:flex; justify-content:center;">
+<div style="width:72px; height:72px; background:rgba(56,189,248,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="32" stroke="#38bdf8" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="32">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<h3 style="color:#fff; margin-bottom:0.5rem; margin-top:0; font-size:1.5rem;">感謝您！</h3>
+<p style="color:#9ca3af;">我們已收到您的申請，將在 2 個工作日內與您聯絡以安排演示。</p>
+</div>
+</div>
+<!-- Formspree submit handler for demo modal -->
+<script>
+        (function() {
+            function initDemoForm() {
+                var form = document.getElementById('sky-demo-formspree');
+                if (!form) return;
+                var submitBtn = document.getElementById('sky-demo-submit-btn');
+                var formView = document.getElementById('sky-demo-form-view');
+                var successView = document.getElementById('sky-demo-success-view');
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    submitBtn.textContent = '傳送中...';
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.7';
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    }).then(function(r) {
+                        if (r.ok) {
+                            formView.style.display = 'none';
+                            successView.style.display = 'block';
+                        } else {
+                            submitBtn.textContent = '申請演示';
+                            submitBtn.disabled = false;
+                            submitBtn.style.opacity = '1';
+                            alert('傳送失敗，請重試。');
+                        }
+                    }).catch(function() {
+                        submitBtn.textContent = '申請演示';
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        alert('傳送失敗，請重試。');
+                    });
+                });
+
+                // Reset form & success state when modal closes
+                var modal = document.getElementById('sky-demo-modal');
+                if (modal) {
+                    var observer = new MutationObserver(function(mutations) {
+                        mutations.forEach(function(m) {
+                            if (m.type === 'attributes' && m.attributeName === 'class') {
+                                if (!modal.classList.contains('is-open')) {
+                                    setTimeout(function() {
+                                        form.reset();
+                                        formView.style.display = '';
+                                        successView.style.display = 'none';
+                                        submitBtn.textContent = '申請演示';
+                                        submitBtn.disabled = false;
+                                        submitBtn.style.opacity = '1';
+                                    }, 300);
+                                }
+                            }
+                        });
+                    });
+                    observer.observe(modal, { attributes: true });
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initDemoForm);
+            } else {
+                initDemoForm();
+            }
+        })();
+        </script>
+</div>
+</div>
+<!-- ============================================================
+     DOWNLOAD MODAL (Second CTA)
+     ============================================================ -->
+<div aria-labelledby="sky-download-modal-title" aria-modal="true" class="sky-demo-modal-overlay" id="sky-download-modal" role="dialog">
+<div class="sky-demo-modal-card">
+<button aria-label="Close" class="sky-demo-modal-close" data-sky-modal-close="download">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="sky-demo-modal-header">
+<h2 class="sky-demo-modal-title" id="sky-download-modal-title">下載天眼監控智能體產品概覽</h2>
+</div>
+<div class="sky-demo-modal-form-wrap">
+<div id="sky-download-hs-form"></div>
+</div>
+</div>
+</div>
+<!-- Modal JS -->
+<script>
+    (function () {
+        var demoFormCreated = false;
+        var downloadFormCreated = false;
+
+        function loadHsScript(cb) {
+            if (window.hbspt) { cb(); return; }
+            var s = document.createElement('script');
+            s.charset = 'utf-8';
+            s.src = ''; /* hsforms removed */
+            s.onload = cb;
+            document.head.appendChild(s);
+        }
+
+        function openModal(id) {
+            var modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+
+            if (id === 'sky-download-modal' && !downloadFormCreated) {
+                loadHsScript(function () {
+                    /* HubSpot form removed — using /api/form */
+                    downloadFormCreated = true;
+                });
+            }
+        }
+
+        function closeModal(id) {
+            var modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        function init() {
+            document.addEventListener('click', function (e) {
+                var trigger = e.target.closest('[data-sky-trigger]');
+                if (trigger) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var type = trigger.getAttribute('data-sky-trigger');
+                    openModal(type === 'demo' ? 'sky-demo-modal' : 'sky-download-modal');
+                    return;
+                }
+                var closeBtn = e.target.closest('[data-sky-modal-close]');
+                if (closeBtn) {
+                    var type = closeBtn.getAttribute('data-sky-modal-close');
+                    closeModal(type === 'demo' ? 'sky-demo-modal' : 'sky-download-modal');
+                    return;
+                }
+                if (e.target.id === 'sky-demo-modal') closeModal('sky-demo-modal');
+                if (e.target.id === 'sky-download-modal') closeModal('sky-download-modal');
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeModal('sky-demo-modal');
+                    closeModal('sky-download-modal');
+                }
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+</script></div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-5 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1770857104387" style="">
+<section class="sky-scroll-text-section" id="scroll-text-widget_1770857104387" style="background-color: #000000; padding: 100px 0;">
+<div class="sky-scroll-text-container" style="max-width: 1100px;">
+<div class="sky-scroll-text-content" data-inactive-opacity="0.3" style="color: #FFFFFF; font-size: 41px;">自訓可迭代專用視覺AI模型 精準貼合您的監控場景</div>
+</div>
+</section>
+</div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-6 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1770848804682" style=""><!-- Features Section - Lumana Style 2x2 Grid Layout -->
+<section class="features-lumana">
+<!-- Optional Header (hidden if empty) -->
+<div class="section-header">
+<div class="section-label">// DaoAI World 天眼監控智能體</div>
+<h2 class="section-title">0程式碼平台<br/>覆蓋所有場景</h2>
+</div>
+<div class="features-grid-lumana">
+<!-- Card 1 -->
+<div class="feature-card-lumana" style="background-image: url(ALert3.png);">
+<div class="feature-card-overlay" style="background:
+                linear-gradient(to bottom, rgba(0,0,0,0.6375) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.675) 85%, rgba(0,0,0,0.75) 100%),
+                linear-gradient(to right, rgba(0,0,0,0.22499999999999998) 0%, rgba(0,0,0,0) 45%);"></div>
+<div class="feature-card-content">
+<h3>自訓練 AI</h3>
+<div class="feature-card-spacer"></div>
+<p style="margin-bottom: 0;">無需AI工程師團隊，即可構建專屬AI能力，並可由自有數據進行訓練。</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="feature-card-lumana" style="background-image: url(Screenshot%202026-02-13%20at%2017.47.29.png);">
+<div class="feature-card-overlay" style="background:
+                linear-gradient(to bottom, rgba(0,0,0,0.51) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.54) 85%, rgba(0,0,0,0.6) 100%),
+                linear-gradient(to right, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 45%);"></div>
+<div class="feature-card-content">
+<h3>靈活工作流程</h3>
+<div class="feature-card-spacer"></div>
+<p style="margin-bottom: 0;">0代碼以靈活工作流配置檢測任務。</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="feature-card-lumana" style="background-image: url(ALert5.png);">
+<div class="feature-card-overlay" style="background:
+                linear-gradient(to bottom, rgba(0,0,0,0.6375) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.675) 85%, rgba(0,0,0,0.75) 100%),
+                linear-gradient(to right, rgba(0,0,0,0.22499999999999998) 0%, rgba(0,0,0,0) 45%);"></div>
+<div class="feature-card-content">
+<h3>一站式整合平台</h3>
+<div class="feature-card-spacer"></div>
+<p style="margin-bottom: 0;">攝影機、模型、報警一站式整合，檢測到異常立即報警。</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="feature-card-lumana" style="background-image: url(security_dashboard_glassmorphism_blue.png);">
+<div class="feature-card-overlay" style="background:
+                linear-gradient(to bottom, rgba(0,0,0,0.6375) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.675) 85%, rgba(0,0,0,0.75) 100%),
+                linear-gradient(to right, rgba(0,0,0,0.22499999999999998) 0%, rgba(0,0,0,0) 45%);"></div>
+<div class="feature-card-content">
+<h3>事件導出與管理</h3>
+<div class="feature-card-spacer"></div>
+<p style="margin-bottom: 0;">事件數據一鍵匯出，工作流集中管理。</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-7 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1770859251706" style=""><!-- VIA-I Section - Interactive Carousel Style -->
+<section class="sky-via-i" style="background-color: rgba(0, 0, 0, 1.0); color: #FFFFFF; --via-text-color: #FFFFFF;">
+<div class="via-i-container">
+<!-- Header -->
+<div class="via-i-header">
+<h2 class="via-i-title" style="color: #FFFFFF !important;">DaoAI World<br/><span style="color:#FF6B35;">天眼監控智能體</span></h2>
+<p class="via-i-subtitle" style="color: #FFFFFF !important; opacity: 0.8;">AI視頻監控解決方案，適配您的現實場景。</p>
+</div>
+<!-- Interactive Features Tabs -->
+<div class="via-i-tabs">
+<div class="via-i-tab-item active" data-index="0" onclick="openViaTab(this, 0)">
+<span class="via-i-icon-wrapper">
+</span>
+<span class="via-i-tab-text" style="color: #FFFFFF;">支持GB28181/RTSP/ONVIF接入現有攝影機</span>
+</div>
+<div class="via-i-tab-item" data-index="1" onclick="openViaTab(this, 1)">
+<span class="via-i-icon-wrapper">
+</span>
+<span class="via-i-tab-text" style="color: #FFFFFF;">邊緣即時處理，低延遲</span>
+</div>
+<div class="via-i-tab-item" data-index="2" onclick="openViaTab(this, 2)">
+<span class="via-i-icon-wrapper">
+</span>
+<span class="via-i-tab-text" style="color: #FFFFFF;">本地部署</span>
+</div>
+<!-- Mobile Progress Bar -->
+<div class="via-i-mobile-progress">
+<div class="bar"></div>
+</div>
+</div>
+<!-- Carousel Media Container -->
+<div class="via-i-carousel-container" onmouseenter="stopAutoplay()" onmouseleave="startAutoplay()">
+<!-- Navigation Arrow (Next Only) -->
+<button aria-label="Next Slide" class="via-i-nav-btn next" onclick="nextViaSlide()">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12H19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M12 5L19 12L12 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="via-i-carousel-track">
+<div class="via-i-carousel-slide slide-0 active" id="via-slide-0">
+<div class="via-i-image-wrapper">
+<img alt="AI-generated illustration" class="via-i-image" height="1024" src="ChatGPT%20Image%20Feb%2017,%202026,%2003_04_10%20PM.png" width="1536"/>
+<div class="via-i-glow"></div>
+<!-- Label Overlay (Visible on side previews) -->
+</div>
+</div>
+<div class="via-i-carousel-slide slide-1 next" id="via-slide-1">
+<div class="via-i-image-wrapper">
+<img alt="Screenshot 2026-02-17 at 15.09.59" class="via-i-image" height="443" src="Screenshot%202026-02-17%20at%2015.09.59.png" width="645"/>
+<div class="via-i-glow"></div>
+<!-- Label Overlay (Visible on side previews) -->
+</div>
+</div>
+<div class="via-i-carousel-slide slide-2 prev" id="via-slide-2">
+<div class="via-i-image-wrapper">
+<img alt="AI-generated illustration" class="via-i-image" height="1024" src="ChatGPT%20Image%20Feb%2017,%202026,%2003_49_21%20PM.png" width="1536"/>
+<div class="via-i-glow"></div>
+<!-- Label Overlay (Visible on side previews) -->
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Description -->
+<div class="via-i-footer-section">
+<p class="via-i-description" style="color: #FFFFFF !important; opacity: 0.8; white-space: nowrap;">專為工業和商業監控而構建。隨時將新資料納入模型重新訓練，並隨著時間持續進化。</p>
+</div>
+</div>
+</section>
+</div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-8 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1771467663560" style=""><!-- Platform Section -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<section class="platform" style="background: rgba(0, 0, 0, 1.0);">
+<div class="section-header platform-header">
+<div class="section-label" style="color: #FF6B35 !important;">// 即時視訊分析</div>
+<h2 class="section-title" style="color: #FFFFFF !important;">適配任意攝影機的監控智能體</h2>
+<p class="section-desc" style="color: #8A8A8A !important;">應用廣泛，不受演算法限制，從物品偵測到人員行為，可通過7大AI模型自行設定偵測任務與檢測條件，不受單一算法限制。</p>
+</div>
+<div class="platform-content">
+<div class="platform-image">
+<img alt="AI-generated illustration" height="1024" src="ChatGPT%20Image%20Feb%2017,%202026,%2004_16_28%20PM.png" width="1536"/>
+</div>
+<div class="platform-text">
+<h3 style="font-size: 28px; margin-bottom: 24px; color: #FFFFFF !important;">0代碼構建專屬監控AI</h3>
+<div style="font-size: 16px; color: #8A8A8A !important; line-height: 1.8; margin-bottom: 20px;">
+<div style="line-height: 1.8; color: #ffffff;">
+<p>從訓練到部署只需三步。無需AI工程師團隊，即可構建專屬AI能力，由自有數據進行訓練，從訓練到推理完全本地化。</p>
+</div>
+</div>
+<ul style="list-style: none; font-size: 14px; color: #777777 !important;">
+<li style="margin-bottom: 12px;"></li>
+<li style="margin-bottom: 12px;"></li>
+<li style="margin-bottom: 12px;"></li>
+</ul>
+</div>
+</div>
+<div class="pillars-grid">
+<div class="pillar-card" style="background: rgba(255, 255, 255, 0.1);">
+<div class="pillar-icon" style="background: rgba(255, 107, 53, 0.15); display: flex; justify-content: center; align-items: center; color: #FF6B35;">
+<svg fill="none" height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+<rect height="24" rx="6" stroke="currentColor" stroke-width="1.8" width="24" x="4" y="4"></rect>
+<circle cx="16" cy="16" r="4.5" stroke="currentColor" stroke-width="1.8"></circle>
+<line stroke="currentColor" stroke-width="1.8" x1="16" x2="16" y1="6" y2="10"></line>
+<line stroke="currentColor" stroke-width="1.8" x1="16" x2="16" y1="22" y2="26"></line>
+</svg>
+</div>
+<h3 style="color: #FFFFFF !important;">快速</h3>
+<p style="color: #777777 !important;">縮短開發週期與人力。無需AI工程師團隊，即可構建專屬AI能力，並可由自有數據進行訓練。</p>
+</div>
+<div class="pillar-card" style="background: rgba(255, 255, 255, 0.1);">
+<div class="pillar-icon" style="background: rgba(255, 107, 53, 0.15); display: flex; justify-content: center; align-items: center; color: #FF6B35;">
+<svg fill="none" height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 18c1.5 4 6 6 10 4" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M24 14c-1.5-4-6-6-10-4" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+<circle cx="8" cy="18" fill="currentColor" r="2"></circle>
+<circle cx="24" cy="14" fill="currentColor" r="2"></circle>
+</svg>
+</div>
+<h3 style="color: #FFFFFF !important;">廣泛</h3>
+<p style="color: #777777 !important;">應用廣泛，不受算法限制。從物品偵測到人員行為，可通過7大AI模型自行設置檢測任務與檢測條件。</p>
+</div>
+<div class="pillar-card" style="background: rgba(255, 255, 255, 0.1);">
+<div class="pillar-icon" style="background: rgba(255, 107, 53, 0.15); display: flex; justify-content: center; align-items: center; color: #FF6B35;">
+<svg fill="none" height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+<rect height="8" rx="3" stroke="currentColor" stroke-width="1.8" width="10" x="4" y="6"></rect>
+<rect height="8" rx="3" stroke="currentColor" stroke-width="1.8" width="10" x="18" y="6"></rect>
+<rect height="8" rx="3" stroke="currentColor" stroke-width="1.8" width="10" x="11" y="18"></rect>
+<line stroke="currentColor" stroke-width="1.8" x1="9" x2="16" y1="14" y2="18"></line>
+<line stroke="currentColor" stroke-width="1.8" x1="23" x2="16" y1="14" y2="18"></line>
+</svg>
+</div>
+<h3 style="color: #FFFFFF !important;">安全</h3>
+<p style="color: #777777 !important;">本地部署，保障數據安全。從訓練到推理完全本地化，以自有數據進行訓練，保障完全適配場景與數據安全。</p>
+</div>
+</div>
+</section>
+</div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-9 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1770849026591" style=""><!-- Product Showcase -->
+<section class="product-showcase">
+<div class="showcase-grid">
+<div class="showcase-image">
+<img alt="overhead_safety_scenario" height="640" src="overhead_safety_scenario.png" width="640"/>
+<div class="detection-overlay overlay-1">PPE 違規：B區缺少安全帽</div>
+<div class="detection-overlay overlay-2">周界安全：一切正常</div>
+<div class="detection-overlay overlay-3">洩漏偵測：4號通道</div>
+</div>
+<div class="showcase-stats">
+<h2 style="margin-top: 10px;">全場景實時視頻監控</h2>
+<div class="stat-item">
+<div class="stat-number">最高 256</div>
+<div class="stat-label">活躍視訊串流</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">&lt; 12ms</div>
+<div class="stat-label">推理延遲</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">0</div>
+<div class="stat-label">雲端上傳</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-10 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1771442885314" style=""><!-- Swiper CSS -->
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+<!-- Industry Section -->
+<section class="industry">
+<div class="section-header">
+<div class="section-label">// 行業解決方案</div>
+<h2 class="section-title">覆蓋多個行業<br/>落地驗證</h2>
+<div class="industry-nav">
+<button aria-label="Previous" class="industry-nav-btn industry-swiper-prev">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20">
+<path d="M12.5 15L7.5 10L12.5 5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button aria-label="Next" class="industry-nav-btn industry-swiper-next">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20">
+<path d="M7.5 5L12.5 10L7.5 15" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="swiper industry-swiper">
+<div class="swiper-wrapper">
+<!-- Card 1 -->
+<div class="swiper-slide industry-card" style="background-image: url(construction_safety_detection.png);">
+<div class="industry-overlay"></div>
+<div class="industry-content">
+<h3>建築與安全</h3>
+<p>即時監控 PPE 合規、限制區域進入及重型設備作業情況。</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="swiper-slide industry-card" style="background-image: url(ChatGPT%20Image%20Feb%2017,%202026,%2006_24_37%20PM.png);">
+<div class="industry-overlay"></div>
+<div class="industry-content">
+<h3>公路與交通</h3>
+<p>偵測路面危險、遺棄車輛及攝影機網路中的異常交通模式。</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="swiper-slide industry-card" style="background-image: url(Screenshot%202026-02-18%20at%2015.39.12.png);">
+<div class="industry-overlay"></div>
+<div class="industry-content">
+<h3>酒店與餐飲</h3>
+<p>即時監控衛生合規、追蹤翻台率並最佳化廚房生產流程。</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="swiper-slide industry-card" style="background-image: url(factory_engine_tool_ai.png);">
+<div class="industry-overlay"></div>
+<div class="industry-content">
+<h3>製造與生產</h3>
+<p>自動追蹤裝配序列、偵測產品缺陷並驗證品質檢查點。</p>
+</div>
+</div>
+<!-- Duplicates for seamless loop -->
+<div class="swiper-slide industry-card" style="background-image: url(construction_safety_detection.png);">
+<div class="industry-overlay"></div>
+<div class="industry-content">
+<h3>建築與安全</h3>
+<p>即時監控 PPE 合規、限制區域進入及重型設備作業情況。</p>
+</div>
+</div>
+<div class="swiper-slide industry-card" style="background-image: url(ChatGPT%20Image%20Feb%2017,%202026,%2006_24_37%20PM.png);">
+<div class="industry-overlay"></div>
+<div class="industry-content">
+<h3>公路與交通</h3>
+<p>偵測路面危險、遺棄車輛及攝影機網路中的異常交通模式。</p>
+</div>
+</div>
+<div class="swiper-slide industry-card" style="background-image: url(Screenshot%202026-02-18%20at%2015.39.12.png);">
+<div class="industry-overlay"></div>
+<div class="industry-content">
+<h3>酒店與餐飲</h3>
+<p>即時監控衛生合規、追蹤翻台率並最佳化廚房生產流程。</p>
+</div>
+</div>
+<div class="swiper-slide industry-card" style="background-image: url(factory_engine_tool_ai.png);">
+<div class="industry-overlay"></div>
+<div class="industry-content">
+<h3>製造與生產</h3>
+<p>自動追蹤裝配序列、偵測產品缺陷並驗證品質檢查點。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Swiper JS — loaded inline to guarantee order -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    (function () {
+        function initIndustrySwiper() {
+            if (typeof Swiper === 'undefined') {
+                setTimeout(initIndustrySwiper, 50);
+                return;
+            }
+
+            new Swiper('.industry-swiper', {
+                slidesPerView: 3.5,
+                spaceBetween: 24,
+                loop: true,
+                loopAdditionalSlides: 4,
+                speed: 700,
+                grabCursor: true,
+                cssMode: false,
+                navigation: {
+                    nextEl: '.industry-swiper-next',
+                    prevEl: '.industry-swiper-prev',
+                },
+                breakpoints: {
+                    0:    { slidesPerView: 1.2, spaceBetween: 16 },
+                    768:  { slidesPerView: 2.3, spaceBetween: 20 },
+                    1024: { slidesPerView: 3.5, spaceBetween: 24 }
+                }
+            });
+
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.from('.industry-card', {
+                    opacity: 0, y: 60, stagger: 0.15, duration: 0.8, ease: 'power3.out',
+                    scrollTrigger: { trigger: '.industry-swiper', start: 'top 80%', toggleActions: 'play none none reverse' }
+                });
+            }
+        }
+
+        initIndustrySwiper();
+    })();
+</script></div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-11 cell_1770776725466-row-7-vertical-alignment dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell cell_17716276478842-vertical-alignment dnd-column" data-w="12" data-widget-type="cell" data-x="0" style="">
+<div class="row-fluid-wrapper row-depth-1 row-number-12 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1771464719965" style=""><!-- Tech Specs -->
+<section class="tech-specs">
+<div class="section-header">
+<div class="section-label">// 硬體規格</div>
+<h2 class="section-title">專用客製硬體</h2>
+<p class="section-desc">SkyVision 伺服器——為各種規模預先設定的即插即用邊緣 AI 設備。</p>
+</div>
+<div class="stats-grid">
+<div class="stat-card accent">
+<span class="stat-value">最高 256</span>
+<span class="stat-label-card">攝影機視訊串流</span>
+</div>
+<div class="stat-card accent">
+<span class="stat-value">自訓練</span>
+<span class="stat-label-card">構建專屬AI能力</span>
+</div>
+<div class="stat-card accent">
+<span class="stat-value">100%本地部署</span>
+<span class="stat-label-card">訓練與推理完全在本地執行</span>
+</div>
+</div>
+</section>
+</div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+<div class="row-fluid-wrapper row-depth-1 row-number-13 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1771638720856" style=""><!-- Final CTA -->
+<section class="final-cta">
+<h2>立即開始使用天眼監控智能體</h2>
+<p>1小時即可構建專屬視覺監控AI。</p>
+<div class="cta-row">
+<!-- Primary Button → Request a personal demo modal -->
+<button class="btn btn-primary" data-sky-live-demo-trigger="" type="button">申請演示</button>
+<!-- Secondary Button → Download modal -->
+<button class="btn btn-outline" data-sky-download-trigger="" type="button">下載產品概覽</button>
+</div>
+</section>
+<!-- ============================================================
+     DEMO REQUEST MODAL (Primary CTA)
+     ============================================================ -->
+<div aria-labelledby="sky-cta-demo-modal-title" aria-modal="true" class="sky-demo-modal-overlay" id="sky-cta-demo-modal" role="dialog">
+<div class="sky-demo-modal-card">
+<button aria-label="Close" class="sky-demo-modal-close" data-sky-modal-close="demo">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="sky-demo-modal-header">
+<h2 class="sky-demo-modal-title" id="sky-cta-demo-modal-title">申請個人化演示</h2>
+</div>
+<div class="sky-demo-modal-form-wrap">
+<div id="sky-cta-demo-hs-form"></div>
+</div>
+</div>
+</div>
+<!-- ============================================================
+     DOWNLOAD MODAL (Secondary CTA)
+     ============================================================ -->
+<div aria-labelledby="sky-cta-download-modal-title" aria-modal="true" class="sky-demo-modal-overlay" id="sky-cta-download-modal" role="dialog">
+<div class="sky-demo-modal-card">
+<button aria-label="Close" class="sky-demo-modal-close" data-sky-modal-close="download">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</button>
+<div class="sky-demo-modal-header">
+<h2 class="sky-demo-modal-title" id="sky-cta-download-modal-title">下載天眼監控智能體產品概覽</h2>
+</div>
+<div class="sky-demo-modal-form-wrap">
+<div id="sky-cta-download-hs-form"></div>
+</div>
+</div>
+</div>
+</div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+</main>
+<div data-global-resource-path="Generator child theme/templates/partials/website-footer.html"><footer class="footer">
+<div class="container-fluid">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell" data-w="12" data-widget-type="cell" data-x="0" style="">
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd-section footer-row-0-padding footer-row-0-force-full-width-section">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell dnd-column" data-w="12" data-widget-type="cell" data-x="0" style="">
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-row">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" data-w="12" data-widget-type="custom_widget" data-x="0" style="">
+<div class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" data-hs-cos-general-type="widget" data-hs-cos-type="module" id="hs_cos_wrapper_widget_1770075996445" style=""><footer class="footer-section daoai-footer-section">
+<div class="footer-grid">
+<!-- Brand Column -->
+<div class="footer-brand">
+<img alt="DaoAI logo" class="footer-logo-img" height="1353" src="DaoAI%20Logos%20white%20tranparent.png" width="3521"/>
+<p class="footer-description">我們將 AI 引入 AOI 與視訊監控，提供更快的部署速度、更高的偵測精度，提供可靠的規模化解決方案。</p>
+<div class="footer-social" style="margin-top: 1.5rem;">
+<a aria-label="LinkedIn" class="footer-social-link" href="https://ca.linkedin.com/company/daoai?trk=public_post_feed-actor-name" rel="noopener" target="_blank">
+<svg fill="currentColor" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- AI AOI Column -->
+<div class="footer-column aoi">
+<h3 class="footer-column-title">AI AOI</h3>
+<a class="footer-link" href="/zh-tw/aoi">2D PCBA AOI</a>
+</div>
+<!-- AI Surveillance Column -->
+<div class="footer-column security">
+<h3 class="footer-column-title">AI 智慧監控</h3>
+<a class="footer-link" href="/zh-tw/skyvision">DaoAI World 天眼監控智能體</a>
+</div>
+<!-- Resource Column -->
+<div class="footer-column resource">
+<h3 class="footer-column-title">資源中心</h3>
+<a class="footer-link" href="/zh-tw/blog">部落格</a>
+<a class="footer-link" href="/zh-tw/download">白皮書與產品手冊</a>
+</div>
+<!-- Company Column -->
+<div class="footer-column company">
+<h3 class="footer-column-title">公司</h3>
+<a class="footer-link" href="/zh-tw/about">關於我們</a>
+<a class="footer-link" data-contact-modal-trigger="" href="#contact">聯絡我們</a>
+<a class="footer-link" data-contact-modal-trigger="" href="#contact">成為合作夥伴</a>
+</div>
+<!-- Bottom Bar (Within Grid Flow for Flexbox Layout or Separate?) -->
+<!-- Keeping it separate but ensuring width: 100% -->
+<div class="footer-bottom" style="width:100%;flex:0 0 100%;display:flex!important;justify-content:center!important;align-items:center!important;gap:24px!important;">
+<p class="footer-copyright" style="margin:0!important;">創立於溫哥華 服務全球</p>
+<span class="footer-sep" style="opacity:0.4;user-select:none;">·</span>
+<p class="footer-copyright" style="margin:0!important;">© 2026 DaoAI Robotics Inc.</p>
+<span class="footer-sep" style="opacity:0.4;user-select:none;">·</span>
+<a class="footer-privacy-link" href="/zh-tw/privacy" style="margin:0!important;">隱私權政策</a>
+</div>
+</div>
+</footer></div>
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+</footer></div>
+</div>
+<script src="template_child.min.js"></script>
+<script src="template_main.min.js"></script>
+<script>
+var hsVars = hsVars || {}; hsVars['language'] = 'en';
+</script>
+<script src="project.js"></script>
+<script src="module_DaoAI_Header.min.js"></script>
+<script src="module_DaoAI_Header_v3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+    (function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const container = document.querySelector('#scroll-text-widget_1770857104387 .sky-scroll-text-content');
+        if (!container) return;
+
+        // Simple JS to split text into word spans (mimicking SplitText)
+        const originalHTML = container.innerHTML;
+        const text = container.textContent.trim();
+        const words = text.split(/\s+/);
+
+        container.innerHTML = words.map(word => `<span class="sky-word">${word}</span>`).join(' ');
+
+        const inactiveOpacity = parseFloat(container.getAttribute('data-inactive-opacity')) || 0.3;
+        const wordElements = container.querySelectorAll('.sky-word');
+
+        // Set initial state
+        gsap.set(wordElements, { opacity: inactiveOpacity });
+
+        // Scroll animation: words light up as they hit the center of the viewport
+        gsap.to(wordElements, {
+            opacity: 1,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: container,
+                start: "top 75%",
+                end: "bottom 35%",
+                scrub: true,
+                markers: false
+            }
+        });
+    })();
+</script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Header Animation
+    gsap.to('.features-lumana .section-header', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.features-lumana',
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    // Cards Animation
+    gsap.to('.feature-card-lumana', {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: '.features-grid-lumana',
+            start: "top 75%",
+            toggleActions: "play none none reverse"
+        }
+    });
+</script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial Animations
+    gsap.from(".via-i-header", { opacity: 0, y: 30, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".sky-via-i", start: "top 75%" } });
+    gsap.from(".via-i-tabs", { opacity: 0, y: 20, duration: 1, delay: 0.2, ease: "power3.out", scrollTrigger: { trigger: ".sky-via-i", start: "top 75%" } });
+    gsap.from(".via-i-carousel-container", { scale: 0.95, opacity: 0, duration: 1.2, delay: 0.3, ease: "power2.out", scrollTrigger: { trigger: ".via-i-carousel-container", start: "top 70%" } });
+    gsap.from(".via-i-footer-section", { opacity: 0, y: 20, duration: 1, delay: 0.5, ease: "power3.out", scrollTrigger: { trigger: ".via-i-carousel-container", start: "top 70%" } });
+
+    // Carousel Logic
+    let currentIndex = 0;
+    const totalSlides = 3;
+    let autoplayInterval;
+    const progressBar = document.querySelector('.via-i-mobile-progress-bar');
+
+    function updateCarousel(index) {
+        currentIndex = index;
+
+        // Update Tabs
+        const tabs = document.querySelectorAll('.via-i-tab-item');
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+            // Mobile: Hide inactive tabs logic is handled in CSS
+        });
+        if (tabs[index]) tabs[index].classList.add('active');
+
+        // Update Slides (Carousel Rotation)
+        const slides = document.querySelectorAll('.via-i-carousel-slide');
+
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active', 'prev', 'next');
+
+            // Calculate relationship to active index
+            if (i === index) {
+                slide.classList.add('active');
+            } else if (i === (index + 1) % totalSlides) {
+                slide.classList.add('next');
+            } else {
+                slide.classList.add('prev');
+            }
+        });
+
+        // Reset Progress Bar
+        resetProgressBar();
+    }
+
+    function resetProgressBar() {
+        const bar = document.querySelector('.via-i-mobile-progress .bar');
+        if (bar) {
+            bar.style.animation = 'none';
+            bar.offsetHeight; /* trigger reflow */
+            bar.style.animation = 'viaProgress 5s linear forwards';
+        }
+    }
+
+    window.openViaTab = function (element, index) {
+        updateCarousel(index);
+        stopAutoplay();
+        startAutoplay();
+    };
+
+    window.nextViaSlide = function () {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel(nextIndex);
+        stopAutoplay();
+        startAutoplay();
+    };
+
+    window.prevViaSlide = function () {
+        let prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel(prevIndex);
+        stopAutoplay();
+        startAutoplay();
+    };
+
+    window.startAutoplay = function () {
+        clearInterval(autoplayInterval);
+        resetProgressBar(); // Start animation
+        autoplayInterval = setInterval(() => {
+            let nextIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel(nextIndex);
+        }, 5000); // 5 seconds interval
+    };
+
+    window.stopAutoplay = function () {
+        clearInterval(autoplayInterval);
+        const bar = document.querySelector('.via-i-mobile-progress .bar');
+        if (bar) bar.style.animation = 'none'; // Stop animation
+    };
+
+    // Start on load
+    document.addEventListener("DOMContentLoaded", function () {
+        startAutoplay();
+
+        // Mobile Swipe Support
+        let touchstartX = 0;
+        let touchendX = 0;
+        const slider = document.querySelector('.via-i-carousel-container');
+
+        if (slider) {
+            slider.addEventListener('touchstart', e => {
+                touchstartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            slider.addEventListener('touchend', e => {
+                touchendX = e.changedTouches[0].screenX;
+                handleGesture();
+            }, { passive: true });
+        }
+
+        function handleGesture() {
+            const threshold = 50;
+            if (touchendX < touchstartX - threshold) {
+                nextViaSlide(); // Swipe Left -> Next
+            } else if (touchendX > touchstartX + threshold) {
+                prevViaSlide(); // Swipe Right -> Previous
+            }
+        }
+    });
+</script>
+<script>
+    gsap.to('.platform-header', { opacity: 1, y: 0, duration: 0.8, scrollTrigger: { trigger: '.platform', start: "top 80%", toggleActions: "play none none reverse" } });
+    gsap.to('.platform-image', { opacity: 1, x: 0, duration: 0.8, scrollTrigger: { trigger: '.platform-content', start: "top 75%", toggleActions: "play none none reverse" } });
+    gsap.to('.platform-text', { opacity: 1, x: 0, duration: 0.8, delay: 0.2, scrollTrigger: { trigger: '.platform-content', start: "top 75%", toggleActions: "play none none reverse" } });
+    gsap.to('.pillar-card', { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: '.pillars-grid', start: "top 75%", toggleActions: "play none none reverse" } });
+</script>
+<script>
+    gsap.to('.showcase-image', { opacity: 1, x: 0, duration: 0.8, scrollTrigger: { trigger: '.showcase-grid', start: "top 75%", toggleActions: "play none none reverse" } });
+    gsap.to('.showcase-stats', { opacity: 1, x: 0, duration: 0.8, delay: 0.2, scrollTrigger: { trigger: '.showcase-grid', start: "top 75%", toggleActions: "play none none reverse" } });
+</script>
+<script>
+    gsap.to('.tech-specs .section-header', { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: '.tech-specs .section-header', start: "top 85%", toggleActions: "play none none reverse" } });
+    gsap.to('.stat-card', { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: "power3.out", scrollTrigger: { trigger: '.stats-grid', start: "top 75%", toggleActions: "play none none reverse" } });
+
+    // Glow only activates when accent card scrolls into view
+    ScrollTrigger.create({
+        trigger: '.stat-card.accent',
+        start: 'top 80%',
+        onEnter: function () {
+            document.querySelectorAll('.stat-card.accent').forEach(function (el) {
+                el.classList.add('glow-active');
+            });
+        },
+        onLeaveBack: function () {
+            document.querySelectorAll('.stat-card.accent').forEach(function (el) {
+                el.classList.remove('glow-active');
+            });
+        }
+    });
+</script>
+<script>
+    (function () {
+        var demoFormCreated = false;
+        var downloadFormCreated = false;
+
+        function loadHsScript(cb) {
+            if (window.hbspt) { cb(); return; }
+            var s = document.createElement('script');
+            s.charset = 'utf-8';
+            s.src = ''; /* hsforms removed */
+            s.onload = cb;
+            document.head.appendChild(s);
+        }
+
+        function openModal(id) {
+            var modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+
+            if (id === 'sky-cta-demo-modal' && !demoFormCreated) {
+                loadHsScript(function () {
+                    /* HubSpot form removed — using /api/form */
+                    demoFormCreated = true;
+                });
+            }
+
+            if (id === 'sky-cta-download-modal' && !downloadFormCreated) {
+                loadHsScript(function () {
+                    /* HubSpot form removed — using /api/form */
+                    downloadFormCreated = true;
+                });
+            }
+        }
+
+        function closeModal(id) {
+            var modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('click', function (e) {
+            var trigger = e.target.closest('[data-sky-trigger]');
+            if (trigger) {
+                e.preventDefault();
+                e.stopPropagation();
+                var type = trigger.getAttribute('data-sky-trigger');
+                openModal(type === 'demo' ? 'sky-cta-demo-modal' : 'sky-cta-download-modal');
+                return;
+            }
+            var closeBtn = e.target.closest('[data-sky-modal-close]');
+            if (closeBtn) {
+                var type = closeBtn.getAttribute('data-sky-modal-close');
+                closeModal(type === 'demo' ? 'sky-cta-demo-modal' : 'sky-cta-download-modal');
+                return;
+            }
+            if (e.target.id === 'sky-cta-demo-modal') closeModal('sky-cta-demo-modal');
+            if (e.target.id === 'sky-cta-download-modal') closeModal('sky-cta-download-modal');
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal('sky-cta-demo-modal');
+                closeModal('sky-cta-download-modal');
+            }
+        });
+    })();
+</script>
+<script type="text/javascript">
+var hsVars = {
+    render_id: "75c7c3ab-35dc-4cc0-8475-f18cef312c41",
+    ticks: 1771642283168,
+    page_id: 207305802501,
+    
+    content_group_id: 0,
+    portal_id: 39868957,
+    language: "en",
+    analytics_page_type: "standard-page",
+    scp_content_type: "",
+    
+    analytics_page_id: "207305802501",
+    category_id: 1,
+    folder_id: 0,
+}
+</script>
+<!-- SKY LIVE DEMO MODAL (Formspree) -->
+<div aria-modal="true" class="contact-modal-overlay" id="sky-live-demo-modal" role="dialog" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:999999;
+               background:rgba(0,0,0,0.8); backdrop-filter:blur(8px);
+               align-items:center; justify-content:center; padding:1rem;">
+<div class="contact-modal-card" style="background:#0b0f19; border:1px solid rgba(255,255,255,0.1); border-radius:12px;
+                   width:100%; max-width:520px; padding:2rem; position:relative; max-height:90vh; overflow-y:auto;">
+<button aria-label="Close" id="sky-live-demo-close" style="position:absolute; top:1rem; right:1rem; background:transparent; border:none;
+                       color:#9ca3af; cursor:pointer; padding:0.5rem;">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+<h2 style="color:#fff; font-size:1.6rem; margin-top:0; margin-bottom:0.5rem; font-weight:700;">申請即時演示</h2>
+<p style="color:#9ca3af; margin-bottom:1.5rem; font-size:0.95rem;">填寫您的資訊，我們的團隊將聯絡您安排個人化演示。</p>
+<div id="sky-live-demo-form-wrap">
+<form action="/api/cn/form" id="sky-live-demo-form" method="POST" style="margin:0;">
+<div aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden"><input autocomplete="off" name="website" tabindex="-1" type="text"/></div>
+<input name="form_source" type="hidden" value="Live Demo Request"/>
+<input name="form_source" type="hidden" value="Live Demo Request"/>
+<div style="display:flex; gap:1rem; margin-bottom:1rem;">
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">名<span style="color:#FF6B35">*</span></label>
+<input name="firstname" placeholder="名字" required="" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="text"/>
+</div>
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">姓<span style="color:#FF6B35">*</span></label>
+<input name="lastname" placeholder="姓氏" required="" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="text"/>
+</div>
+</div>
+<div style="display:flex; gap:1rem; margin-bottom:1rem;">
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">企業信箱<span style="color:#FF6B35">*</span></label>
+<input name="email" placeholder="you@company.com" required="" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="email"/>
+</div>
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">公司名稱<span style="color:#FF6B35">*</span></label>
+<input name="company" placeholder="您的公司名稱" required="" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="text"/>
+</div>
+</div>
+<div style="display:flex; gap:1rem; margin-bottom:1rem;">
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">職稱</label>
+<input name="jobtitle" placeholder="您的職稱" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="text"/>
+</div>
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">國家/地區</label>
+<input name="country" placeholder="國家/地區" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="text"/>
+</div>
+</div>
+<div style="margin-bottom:1.5rem;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">留言</label>
+<textarea name="message" placeholder="請描述您的使用需求..." rows="3" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                   border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;
+                                   resize:vertical;"></textarea>
+</div>
+<input name="form_type" type="hidden" value="live_demo_request"/>
+<button id="sky-live-demo-submit" style="width:100%; background:#FF6B35; color:#fff; font-weight:bold; border:none;
+                               border-radius:6px; padding:0.875rem; cursor:pointer; font-size:1rem;
+                               transition:background 0.2s;" type="submit">申請演示</button>
+</form>
+</div>
+<div id="sky-live-demo-success" style="display:none; text-align:center; padding:2rem 0;">
+<div style="color:#FF6B35; margin-bottom:1rem; display:flex; justify-content:center;">
+<div style="width:72px; height:72px; background:rgba(255,107,53,0.15); border-radius:50%;
+                                display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="32" stroke="#FF6B35" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="32">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<h3 style="color:#fff; margin-bottom:0.5rem; margin-top:0; font-size:1.5rem;">感謝您！</h3>
+<p style="color:#9ca3af;">我們已收到您的申請，將在 2 個工作日內與您聯絡以安排演示。</p>
+</div>
+</div>
+</div>
+<script>
+        (function () {
+            var initLiveDemoModal = function () {
+                var modal    = document.getElementById('sky-live-demo-modal');
+                var closeBtn = document.getElementById('sky-live-demo-close');
+                var form     = document.getElementById('sky-live-demo-form');
+                var formWrap = document.getElementById('sky-live-demo-form-wrap');
+                var success  = document.getElementById('sky-live-demo-success');
+                var submitBtn= document.getElementById('sky-live-demo-submit');
+                if (!modal) return;
+
+                // Open on trigger click
+                document.addEventListener('click', function (e) {
+                    var trigger = e.target.closest('[data-sky-live-demo-trigger]');
+                    if (trigger) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        modal.style.display = '';
+                        modal.classList.add('is-open');
+                        document.body.style.overflow = 'hidden';
+                    }
+                }, true);
+
+                // Close
+                function closeModal() {
+                    modal.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                    setTimeout(function () {
+                        modal.style.display = 'none';
+                        form.reset();
+                        formWrap.style.display = '';
+                        success.style.display = 'none';
+                        submitBtn.textContent = '申請演示';
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                    }, 300);
+                }
+
+                closeBtn.addEventListener('click', closeModal);
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) closeModal();
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+                });
+
+                // Submit via fetch
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    submitBtn.textContent = '傳送中...';
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.7';
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    }).then(function (r) {
+                        if (r.ok) {
+                            formWrap.style.display = 'none';
+                            success.style.display = 'block';
+                        } else {
+                            submitBtn.textContent = '申請演示';
+                            submitBtn.disabled = false;
+                            submitBtn.style.opacity = '1';
+                            alert('傳送失敗，請重試。');
+                        }
+                    }).catch(function () {
+                        submitBtn.textContent = '申請演示';
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        alert('傳送失敗，請重試。');
+                    });
+                });
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLiveDemoModal);
+            } else {
+                initLiveDemoModal();
+            }
+        })();
+    </script>
+<!-- SKY DOWNLOAD MODAL (Formspree) -->
+<div aria-modal="true" class="contact-modal-overlay" id="sky-download-form-modal" role="dialog" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:999999;
+               background:rgba(0,0,0,0.8); backdrop-filter:blur(8px);
+               align-items:center; justify-content:center; padding:1rem;">
+<div class="contact-modal-card" style="background:#0b0f19; border:1px solid rgba(255,255,255,0.1); border-radius:12px;
+                   width:100%; max-width:520px; padding:2rem; position:relative; max-height:90vh; overflow-y:auto;">
+<button aria-label="Close" id="sky-dl-modal-close" style="position:absolute; top:1rem; right:1rem; background:transparent; border:none;
+                       color:#9ca3af; cursor:pointer; padding:0.5rem;">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+<h2 style="color:#fff; font-size:1.6rem; margin-top:0; margin-bottom:0.5rem; font-weight:700;">下載產品概覽</h2>
+<p style="color:#9ca3af; margin-bottom:1.5rem; font-size:0.95rem;">請填寫您的資訊，立即下載天眼監控智能體產品概覽。</p>
+<div id="sky-dl-form-wrap">
+<form action="/api/cn/form" id="sky-dl-form" method="POST" style="margin:0;">
+<div aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden"><input autocomplete="off" name="website" tabindex="-1" type="text"/></div>
+<input name="form_source" type="hidden" value="下載產品概覽"/>
+<div style="display:flex; gap:1rem; margin-bottom:1rem;">
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">名<span style="color:#FF6B35">*</span></label>
+<input name="firstname" placeholder="名字" required="" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="text"/>
+</div>
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">姓<span style="color:#FF6B35">*</span></label>
+<input name="lastname" placeholder="姓氏" required="" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="text"/>
+</div>
+</div>
+<div style="display:flex; gap:1rem; margin-bottom:1rem;">
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">企業信箱<span style="color:#FF6B35">*</span></label>
+<input name="email" placeholder="you@company.com" required="" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="email"/>
+</div>
+<div style="flex:1;">
+<label style="color:#9ca3af; font-size:0.9rem; margin-bottom:0.5rem; display:block;">公司名稱<span style="color:#FF6B35">*</span></label>
+<input name="company" placeholder="您的公司名稱" required="" style="width:100%; background:#111827; border:1px solid rgba(255,255,255,0.1);
+                                       border-radius:6px; padding:0.75rem; color:#fff; box-sizing:border-box;" type="text"/>
+</div>
+</div>
+<input name="form_type" type="hidden" value="product_overview_download"/>
+<button id="sky-dl-submit" style="width:100%; background:#FF6B35; color:#fff; font-weight:bold; border:none;
+                               border-radius:6px; padding:0.875rem; cursor:pointer; font-size:1rem;
+                               transition:background 0.2s;" type="submit">立即下載</button>
+</form>
+</div>
+<div id="sky-dl-success" style="display:none; text-align:center; padding:2rem 0;">
+<div style="color:#FF6B35; margin-bottom:1rem; display:flex; justify-content:center;">
+<div style="width:72px; height:72px; background:rgba(255,107,53,0.15); border-radius:50%;
+                                display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="32" stroke="#FF6B35" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="32">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<h3 style="color:#fff; margin-bottom:0.5rem; margin-top:0; font-size:1.5rem;">下載已就緒！</h3>
+<p style="color:#9ca3af; margin-bottom:1.5rem;">下載應會自動開始；如果沒有開始，請點擊下方按鈕。</p>
+<a download="DaoAI World 天眼监控智能体.pdf" href="/CN/DaoAI%20World%20%E5%A4%A9%E7%9C%BC%E7%9B%91%E6%8E%A7%E6%99%BA%E8%83%BD%E4%BD%93.pdf" id="sky-dl-link" style="display:inline-block; background:#FF6B35; color:#fff; font-weight:bold;
+                          padding:0.75rem 2rem; border-radius:6px; text-decoration:none;" target="_blank">下載 PDF</a>
+</div>
+</div>
+</div>
+<script>
+        (function () {
+            var initDownloadModal = function () {
+                var modal    = document.getElementById('sky-download-form-modal');
+                var closeBtn = document.getElementById('sky-dl-modal-close');
+                var form     = document.getElementById('sky-dl-form');
+                var formWrap = document.getElementById('sky-dl-form-wrap');
+                var success  = document.getElementById('sky-dl-success');
+                var submitBtn= document.getElementById('sky-dl-submit');
+                if (!modal) return;
+
+                document.addEventListener('click', function (e) {
+                    var trigger = e.target.closest('[data-sky-download-trigger]');
+                    if (trigger) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        modal.style.display = '';
+                        modal.classList.add('is-open');
+                        document.body.style.overflow = 'hidden';
+                    }
+                }, true);
+
+                function closeModal() {
+                    modal.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                    setTimeout(function () {
+                        modal.style.display = 'none';
+                        form.reset();
+                        formWrap.style.display = '';
+                        success.style.display = 'none';
+                        submitBtn.textContent = '立即下載';
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                    }, 300);
+                }
+
+                closeBtn.addEventListener('click', closeModal);
+                modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+                });
+
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    submitBtn.textContent = '傳送中...';
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.7';
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    }).then(function (r) {
+                        if (r.ok) {
+                            formWrap.style.display = 'none';
+                            success.style.display = 'block';
+                            var dl = document.getElementById('sky-dl-link');
+                            if (dl) dl.click();
+                        } else {
+                            submitBtn.textContent = '立即下載';
+                            submitBtn.disabled = false;
+                            submitBtn.style.opacity = '1';
+                            alert('傳送失敗，請重試。');
+                        }
+                    }).catch(function () {
+                        submitBtn.textContent = '立即下載';
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        alert('傳送失敗，請重試。');
+                    });
+                });
+            };
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initDownloadModal);
+            } else {
+                initDownloadModal();
+            }
+        })();
+    </script>
+<script>
+(function(){
+    var header = document.querySelector('.header-nav');
+    if(!header) return;
+    var lastY = 0;
+    window.addEventListener('scroll', function(){
+        var y = window.scrollY;
+        if(y > lastY && y > 80) {
+            header.classList.add('header-hidden');
+        } else {
+            header.classList.remove('header-hidden');
+        }
+        lastY = y;
+    });
+})();
+</script>
+<script defer="True" src="lang-switcher.js"></script><script defer src="/ga-events.js"></script>
+<footer class="portfolio-footer" id="portfolio-contact">
+  <div class="portfolio-wrap">
+    <div class="portfolio-contact-grid">
+      <h2>Let's talk about<br/>the next challenge.</h2>
+      <div class="portfolio-contact-links"><a href="mailto:srs0319@gmail.com">Email</a><a href="https://www.linkedin.com/in/rome-ye/" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+    <div class="portfolio-footer-grid">
+      <a href="index.html" aria-label="Back to portfolio"><img class="portfolio-footer-logo" src="Rome Logo.png" alt="Rome"/></a>
+      <div class="portfolio-footer-links"><a href="index.html#work">Work</a><a href="index.html#experience">Experience</a><a href="index.html#skills">Skills</a></div>
+    </div>
+    <div class="portfolio-copyright">Rome All Rights Reserved © 2026</div>
+    <div class="portfolio-archive-notice">PORTFOLIO NOTICE — This portfolio contains selected work created by Rome Ye, including work produced during employment with respective organizations. Company names, trademarks, product names, and related assets remain the property of their respective owners. Archived materials are presented solely for portfolio purposes and do not represent current official company websites or communications.</div>
+  </div>
+</footer>
+<script src="skyvision-portfolio-shell.js"></script>
+</body></html>

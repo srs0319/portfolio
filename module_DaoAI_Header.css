@@ -1,0 +1,102 @@
+function daoaiHeaderInit() {
+
+    // Mobile drawer
+    var headers = document.querySelectorAll('.header-nav');
+    headers.forEach(function(header) {
+        var toggleBtn = header.querySelector('.header-mobile-toggle');
+        var drawer = header.querySelector('.header-mobile-drawer');
+
+        if (toggleBtn && drawer) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                drawer.classList.toggle('active');
+                document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : '';
+            });
+
+            drawer.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    drawer.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    });
+
+    // Contact modal
+    var contactModal = document.getElementById('daoai-contact-modal');
+    if (!contactModal) return;
+
+    var hsFormCreated = false;
+
+    function loadHubSpotForm() {
+        if (hsFormCreated) return;
+
+        function createForm() {
+            window.hbspt.forms.create({
+                portalId: "39868957",
+                formId: "b54e7e02-35d0-4367-955f-dd122da9dcf1",
+                region: "na1",
+                locale: "en",
+                target: "#hs-contact-modal-form"
+            });
+            hsFormCreated = true;
+        }
+
+        if (window.hbspt) {
+            createForm();
+        } else {
+            var script = document.createElement('script');
+            script.charset = 'utf-8';
+            script.src = '//js.hsforms.net/forms/embed/v2.js';
+            script.onload = createForm;
+            document.head.appendChild(script);
+        }
+    }
+
+    function openContactModal() {
+        contactModal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        loadHubSpotForm();
+
+        var drawer = document.querySelector('.header-mobile-drawer');
+        if (drawer) drawer.classList.remove('active');
+    }
+
+    function closeContactModal() {
+        contactModal.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-contact-modal-trigger]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openContactModal();
+        });
+    });
+
+    var closeBtn = contactModal.querySelector('[data-contact-modal-close]');
+    if (closeBtn) closeBtn.addEventListener('click', closeContactModal);
+
+    contactModal.addEventListener('click', function(e) {
+        if (e.target === contactModal) closeContactModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && contactModal.classList.contains('is-open')) closeContactModal();
+    });
+
+    // Intercept /contact-us links
+    document.querySelectorAll('a[href="/contact-us"], a[href="https://daoai.com/contact-us"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            openContactModal();
+        });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', daoaiHeaderInit);
+} else {
+    daoaiHeaderInit();
+}
