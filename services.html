@@ -536,14 +536,8 @@
   @media(max-width:760px){.copyright{margin-top:12px;}}
 </style><style>
   /* ===== SERVICES PAGE ===== */
-  .svc-hero{background:#05070c url('hero-poster.jpg') center/cover no-repeat;}
-  .svc-hero .hero-fold{min-height:78svh;}
-  .svc-hero .hero-inner.wrap{min-height:78svh;}
-  .svc-hero .hero-copy{top:auto; bottom:22%;}
-  @media(max-width:760px){
-    .svc-hero .hero-fold, .svc-hero .hero-inner.wrap{min-height:72svh;}
-    .svc-hero .hero-copy{bottom:24%;}
-  }
+  /* hero 完全沿用 index.html 的 .hero（100svh + 影片背景 + .hero-copy top:17%），
+     不做任何覆寫——先前覆寫成 78svh 會讓 .hero-copy 與 bottom:9% 的 .hero-cta 擠在一起。 */
 
   .svc-sec{padding:84px 0 0;}
   .svc-sec:last-of-type{padding-bottom:20px;}
@@ -668,7 +662,10 @@
   </div>
 </header>
 
-<section class="hero svc-hero">
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
+    <source src="hero-bg-clean.mp4" type="video/mp4">
+  </video>
   <div class="hero-tint"></div>
   <div class="hero-fold">
     <div class="hero-inner wrap">
