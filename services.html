@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rome Ye | 服務與合作</title>
+<meta name="description" content="協助 B2B 技術產品進入台灣與亞太市場：技術轉譯與業務賦能、繁中 B2B 網站與 SEO/GEO、展會整包、AI 工作流建置。">
+<style>
+  @import url('https://fonts.cdnfonts.com/css/noto-serif-tc');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  :root{
+    --bg:#ffffff;
+    --ink:#141414;
+    --muted:#6b6b66;
+    --line:#dedcd4;
+    --paper:#faf9f6;
+    --accent:#141414;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; background:#05070c; overscroll-behavior-y:none;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Helvetica Neue", "Noto Sans TC", Arial, sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overscroll-behavior-y:none;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1100px; margin:0 auto; padding-left:40px; padding-right:40px;}
+  @media(max-width:760px){.wrap{padding-left:28px; padding-right:28px;}}
+
+  .serif{font-family:"Noto Serif TC","Georgia",serif;}
+
+  /* NAV — inset floating glass capsule */
+  header{
+    position:fixed; top:18px; left:0; right:0; z-index:50;
+    background:transparent;
+  }
+  header > .wrap{width:100%; max-width:1100px; margin:0 auto; padding-left:40px; padding-right:40px;}
+  nav{
+    display:flex; justify-content:space-between; align-items:center; height:58px;
+    padding:0 14px 0 16px; border:1px solid rgba(255,255,255,.13); border-radius:999px;
+    background:rgba(255,255,255,.07); backdrop-filter:blur(14px) saturate(115%); -webkit-backdrop-filter:blur(14px) saturate(115%);
+    box-shadow:0 6px 18px rgba(8,12,24,.06);
+    width:525px; max-width:100%; overflow:visible;
+    transition:width .5s cubic-bezier(.22,1,.36,1), background .3s ease, box-shadow .3s ease, padding .5s cubic-bezier(.22,1,.36,1);
+  }
+  header.scrolled nav{width:58px; padding:0 9px; overflow:hidden; background:rgba(24,29,42,.34); box-shadow:0 6px 18px rgba(8,12,24,.08);}
+  header.over-light:not(.scrolled) nav{background:rgba(255,255,255,.82); border-color:rgba(20,24,34,.08); box-shadow:0 10px 28px rgba(8,12,24,.08);}
+  .logo{font-weight:700; letter-spacing:2px; font-size:14px; text-transform:uppercase; color:#fff; transition:color .3s ease;}
+  .logo img{height:38px; width:auto; display:block; filter:brightness(0) invert(1);}
+  header.over-light:not(.scrolled) .logo img{filter:none;}
+  header.scrolled .logo{color:#fff;}
+  .navlinks{display:flex; align-items:center; gap:20px; font-size:11px; letter-spacing:1px; color:rgba(255,255,255,.72); text-transform:uppercase; transition:color .3s ease, opacity .25s ease, visibility .25s ease;}
+  header.over-light:not(.scrolled) .navlinks{color:rgba(17,24,39,.72);}
+  header.scrolled .navlinks{opacity:0; visibility:hidden; pointer-events:none;}
+  header.scrolled .navlinks{color:rgba(255,255,255,.78);}
+  .navlinks a{position:relative; display:inline-flex; align-items:center; min-height:28px; padding:0;}
+  .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:#fff;transform:scaleX(0);transition:transform .25s ease;}
+  header.scrolled .navlinks a::after{background:#fff;}
+  .navlinks a:hover::after{transform:scaleX(1);}
+  .navlinks a:hover{color:#fff;}
+  header.over-light:not(.scrolled) .navlinks a::after{background:#111827;}
+  header.over-light:not(.scrolled) .navlinks a:hover{color:#111827;}
+  header.scrolled .navlinks a:hover{color:#fff;}
+  .lang-toggle{
+    display:inline-flex; align-items:center; justify-content:center; min-width:0; height:28px;
+    color:rgba(255,255,255,.62); background:none; border:0; border-radius:0;
+    padding:0; font:inherit; font-size:9px; line-height:1; letter-spacing:1px; text-transform:uppercase; cursor:pointer;
+    transition:color .2s ease;
+  }
+  .lang-toggle:hover, header.scrolled .lang-toggle:hover{background:none; color:#fff;}
+  header.over-light:not(.scrolled) .lang-toggle{color:rgba(17,24,39,.62);}
+  header.over-light:not(.scrolled) .lang-toggle:hover{color:#111827;}
+  .navlinks .contact-link{
+    min-width:86px; height:36px; justify-content:center; padding:0 18px;
+    color:#20283a; background:rgba(255,255,255,.9); border:1px solid rgba(255,255,255,.55); border-radius:999px;
+    font-size:11px; font-weight:500; letter-spacing:0;
+    transition:background .2s ease, color .2s ease;
+  }
+  .navlinks .contact-link::after{display:none;}
+  .navlinks .contact-link:hover{background:#fff; color:#111827;}
+  header.over-light:not(.scrolled) .navlinks .contact-link{color:#fff; background:#111827; border-color:#111827;}
+  header.over-light:not(.scrolled) .navlinks .contact-link:hover{background:#000; color:#fff;}
+
+  /* NAV — mobile hamburger */
+  .nav-toggle{
+    display:none; flex-direction:column; justify-content:center; align-items:flex-end; gap:5px;
+    width:30px; height:28px; background:none; border:none; padding:0; cursor:pointer; z-index:2;
+  }
+  .nav-toggle span{display:block; width:100%; height:2px; background:#fff; transition:background .3s ease, transform .3s ease, opacity .3s ease, width .3s ease;}
+  header.scrolled .nav-toggle span{background:#fff;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg); width:100%;}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg); width:100%;}
+  header.scrolled .nav-toggle{display:none;}
+  @media(max-width:700px){
+    header{top:18px;}
+    header > .wrap{margin-left:auto; margin-right:auto; padding-left:14px; padding-right:14px;}
+    header.scrolled > .wrap{max-width:72px; margin-left:0; margin-right:auto; padding-right:0;}
+    header.scrolled nav{width:54px;}
+    nav{height:54px; padding:0 16px;}
+    .logo img{height:34px;}
+    .nav-toggle{display:flex;}
+    .navlinks{
+      position:fixed; top:72px; left:auto; right:14px; z-index:49;
+      width:max-content; max-width:calc(100vw - 28px); flex-direction:row; align-items:center; justify-content:flex-end; gap:10px;
+      background:rgba(32,39,58,.28); backdrop-filter:blur(16px) saturate(115%); -webkit-backdrop-filter:blur(16px) saturate(115%);
+      overflow:visible; opacity:0; visibility:hidden; pointer-events:none; padding:10px 14px;
+      transform:translateY(-8px); transition:opacity .3s ease, transform .35s cubic-bezier(.22,1,.36,1), visibility .3s ease;
+      border:1px solid rgba(255,255,255,.14); border-radius:999px;
+      box-shadow:0 8px 22px rgba(8,12,24,.08);
+    }
+    .navlinks.open{opacity:1; visibility:visible; pointer-events:auto; padding:10px 14px; transform:translateY(0);}
+    .navlinks a{width:auto; min-height:24px; padding:0; border:0; color:rgba(255,255,255,.78); font-size:8px; white-space:nowrap;}
+    .navlinks a::after{display:none;}
+    .lang-toggle{
+      width:auto; border:0; border-radius:0;
+      height:24px; min-height:0; padding:0; justify-content:center; color:rgba(255,255,255,.68); background:none; font-size:8px; white-space:nowrap;
+    }
+    .lang-toggle:hover{background:none; color:#fff;}
+    .navlinks .contact-link{width:auto; min-width:0; height:26px; justify-content:center; padding:0 10px; color:#20283a; background:rgba(255,255,255,.88); border:1px solid rgba(255,255,255,.5); border-radius:999px; font-size:8px;}
+    .navlinks .contact-link:hover{background:#fff; color:#111827;}
+  }
+
+  /* HERO — DaoAI dark tech aesthetic (deep navy bg, cyan accent, Inter 800) */
+  .hero{
+    position:relative; overflow:hidden;
+    padding:0; border-bottom:0; scroll-margin-top:0;
+    text-align:left; color:#f5f7fa;
+    background:#05070c url('hero-poster.jpg') center/cover no-repeat;
+  }
+  .hero-video{
+    position:absolute; inset:0; z-index:0; width:100%; height:100%;
+    object-fit:cover; object-position:28% 50%; opacity:1; pointer-events:none;
+  }
+  @media(max-width:760px){.hero-video{inset:-6% 0 0; height:112%; object-position:50% 12%;}}
+  .hero-tint{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:rgba(0,0,0,.5);
+  }
+  .hero-fold{
+    position:relative; z-index:3;
+    min-height:100svh; padding:0;
+  }
+  .hero-inner.wrap{--hero-gutter:40px; position:relative; z-index:1; width:100%; max-width:1100px; min-height:100svh; margin:0 auto; padding-left:var(--hero-gutter); padding-right:var(--hero-gutter);}
+  .hero-copy{
+    position:absolute; top:17%; left:var(--hero-gutter); right:var(--hero-gutter);
+  }
+  .hero-badge{
+    display:block;
+    color:#fff; background:none; border:0;
+    font-family:"Helvetica Neue",sans-serif; font-weight:600; font-size:15px; letter-spacing:.08em;
+    padding:0; border-radius:0; margin:0 0 12px; line-height:1.2;
+  }
+  .hero-badge .hero-name{font-size:15px;}
+  h1.display{
+    position:static;
+    font-family:"PingFang TC","Noto Sans TC","Helvetica Neue",Arial,sans-serif;
+    font-weight:300; font-size:clamp(34px,5vw,72px); line-height:1.14; max-width:none;
+    letter-spacing:0; color:#fff;
+  }
+  h1.display span{display:block;}
+  h1.display .hero-first-line{color:#fff; white-space:nowrap;}
+  h1.display .hero-second-line{color:#fff; white-space:nowrap;}
+  .hero-role{margin-top:14px; color:#fff; font-family:"Helvetica Neue",sans-serif; font-size:13px; font-weight:600; letter-spacing:.13em; line-height:1.3; text-transform:uppercase;}
+  .hero-cta{
+    position:absolute; z-index:1; left:var(--hero-gutter); right:auto; bottom:9%;
+    margin:0; display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border:1px solid rgba(255,255,255,.5); border-radius:8px;
+    background:rgba(255,255,255,.18); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:none;
+    color:#fff; font-family:"Helvetica Neue",sans-serif; font-weight:700; font-size:15px; letter-spacing:0.01em;
+    transition:background .2s ease, transform .15s ease;
+  }
+  .hero-cta:hover{background:rgba(255,255,255,.3); transform:translateY(-2px);}
+  html[lang="en"] h1.display .hero-first-line{white-space:normal;}
+  html[lang="en"] h1.display .hero-second-line{white-space:normal; max-width:min(88vw,1050px);}
+  @media(max-width:760px){
+    .hero-inner.wrap{--hero-gutter:20px; padding-left:var(--hero-gutter); padding-right:var(--hero-gutter);}
+    .hero-copy{top:17%;}
+    .hero-badge{margin-bottom:10px; font-size:13px;}
+    .hero-badge .hero-name{font-size:13px;}
+    h1.display{font-size:clamp(20px,6.2vw,34px); line-height:1.2;}
+    h1.display .hero-first-line{font-size:inherit;}
+    h1.display .hero-second-line{font-size:inherit;}
+    .hero-role{margin-top:11px; font-size:10px; letter-spacing:.11em; white-space:nowrap;}
+    html[lang="en"] h1.display .hero-first-line{white-space:normal;}
+    html[lang="en"] h1.display .hero-second-line{white-space:normal; max-width:none;}
+    .hero-cta{left:var(--hero-gutter); right:auto; top:auto; bottom:7%; padding:10px 18px; font-size:12px;}
+  }
+
+  /* HERO INTRO — white section under hero: lede + meta stats */
+  .hero-intro{
+    background:var(--bg); padding-top:64px; padding-bottom:20px; border-bottom:none;
+  }
+  @media(max-width:760px){.hero-intro{padding-top:48px; padding-bottom:20px;} .hero-intro.wrap{padding-left:36px; padding-right:36px;}}
+  .hero-intro .lede{
+    max-width:1020px; margin:0 auto; color:var(--muted); font-size:17px; line-height:1.75;
+    font-family:"Helvetica Neue","Noto Sans TC",sans-serif; text-align:center;
+    opacity:0; transform:translateY(24px);
+    transition:opacity 1.1s cubic-bezier(.22,1,.36,1), transform 1.1s cubic-bezier(.22,1,.36,1);
+  }
+  .hero-intro .lede.is-visible{opacity:1; transform:translateY(0);}
+  @media(max-width:760px){.hero-intro .lede{text-align:left; padding:0;}}
+  .hero-intro .lede strong{color:var(--ink); font-weight:600;}
+  .hero-intro .meta-row{
+    width:100%; max-width:1020px;
+    margin:44px auto 0; padding:30px 0 10px; display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid var(--line);
+  }
+  .hero-intro .meta-row > div{
+    padding:22px 24px 0 0; border-right:1px solid var(--line);
+    opacity:0; transform:translateY(24px);
+    transition:opacity 1.4s cubic-bezier(.22,1,.36,1), transform 1.4s cubic-bezier(.22,1,.36,1), border-color .2s ease;
+  }
+  .hero-intro .meta-row > div::before{
+    content:""; display:block; width:0; height:2px; background:var(--ink); margin-bottom:16px;
+    transition:width 1.1s cubic-bezier(.22,1,.36,1) .3s;
+  }
+  .hero-intro .meta-row > div:hover::before{width:44px;}
+  .hero-intro .meta-row > div:hover .val{color:var(--ink);}
+  .hero-intro .meta-row.is-visible > div{opacity:1; transform:translateY(0);}
+  .hero-intro .meta-row.is-visible > div::before{width:28px;}
+  .hero-intro .meta-row.is-visible > div:nth-child(1){transition-delay:.5s;}
+  .hero-intro .meta-row.is-visible > div:nth-child(2){transition-delay:.75s;}
+  .hero-intro .meta-row.is-visible > div:nth-child(3){transition-delay:1s;}
+  .hero-intro .meta-row.is-visible > div:nth-child(4){transition-delay:1.25s;}
+  .hero-intro .meta-row > div:last-child{border-right:none;}
+  .hero-intro .meta-row .num{font-size:11px; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;}
+  .hero-intro .meta-row .val{font-size:18px; font-weight:600; color:var(--ink); transition:color .2s ease;}
+  @media(max-width:760px){
+    .hero-intro .meta-row{grid-template-columns:repeat(2,1fr); padding:30px 0 10px; row-gap:24px; column-gap:20px;}
+    .hero-intro .meta-row > div{border-bottom:none; padding-bottom:0; padding-right:16px; margin-bottom:0;}
+    .hero-intro .meta-row > div:nth-child(2n){border-right:none; padding-right:0;}
+    .hero-intro .meta-row > div:nth-child(-n+2){padding-top:0;}
+  }
+  @media(max-width:760px){#capabilities.wrap{padding-left:36px; padding-right:36px;}}
+
+  /* SECTION */
+  section{padding:120px 0; border-bottom:1px solid var(--line); scroll-margin-top:100px;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;
+    margin-bottom:64px; padding-bottom:24px; border-bottom:1px solid var(--line);
+  }
+  .section-num{display:flex; align-items:center; gap:26px; font-size:12px; letter-spacing:2px; color:var(--muted); text-transform:uppercase;}
+  .section-num .num-line{flex:0 0 64px; height:1px; background:var(--line);}
+  h2{font-size:clamp(28px,3.4vw,40px); font-weight:400;}
+  #capabilities .section-head{display:block; border-bottom:none; padding-bottom:0;}
+  .cap-title-grid{position:relative; display:grid; grid-template-columns:1fr 1fr; gap:0 64px; margin-top:12px;}
+  .cap-title-grid::before{content:"×"; position:absolute; left:50%; top:.18em; transform:translateX(-50%); font-family:var(--serif); font-size:clamp(30px,3vw,36px); line-height:1; color:var(--ink);}
+  .cap-title{font-size:clamp(30px,3.1vw,38px); line-height:1.2;}
+  html[lang="en"] #capabilities .cap-title{font-size:clamp(27px,2.8vw,31px); line-height:1.22;}
+  @media(max-width:760px){
+    .cap-title-grid{grid-template-columns:1fr; gap:8px;}
+    .cap-title-grid::before{position:static; display:block; transform:none; margin:2px 0; font-size:clamp(26px,7vw,32px);}
+    .cap-title{font-size:clamp(28px,7vw,34px);}
+  }
+  @media(max-width:700px){h2{font-size:clamp(26px,7vw,32px); line-height:1.25;}}
+  .mobile-break{display:none;}
+  @media(max-width:700px){.mobile-break{display:block;}}
+  .desktop-break{display:block;}
+  @media(max-width:700px){.desktop-break{display:none;}}
+  .section-sub{color:var(--muted); margin-top:14px; max-width:520px; font-size:14px;}
+
+  /* WORK — editorial grid, no boxes/cards, rule-separated */
+  .work-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px;}
+  @media(max-width:760px){.work-grid{grid-template-columns:1fr; gap:32px;}}
+  .work-item{border-top:1px solid var(--line); padding-top:22px;}
+  .work-grid .tag-row{min-height:64px; align-content:flex-start;}
+  @media(max-width:760px){.work-grid .tag-row{min-height:0;}}
+  @media(max-width:400px){.work-grid .tag-row{min-height:0;}}
+  .thumb{
+    aspect-ratio:16/9; background:var(--paper); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+    color:var(--muted); font-size:11px; letter-spacing:1px; text-transform:uppercase;
+    overflow:hidden; border-radius:12px;
+  }
+  .thumb img,.thumb video{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
+  div.thumb img,div.thumb video{cursor:zoom-in;}
+  a.thumb{cursor:pointer; transition:border-color .2s ease, opacity .2s ease;}
+  a.thumb:hover{border-color:#d97706; opacity:.9;}
+  .thumb-carousel{position:relative;}
+  .thumb-carousel img{position:absolute; inset:0; opacity:0; transition:opacity .35s ease; pointer-events:none;}
+  .thumb-carousel img.active{position:relative; opacity:1; pointer-events:auto;}
+  .thumb-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+    width:32px; height:32px; border-radius:50%; border:1px solid rgba(255,255,255,.6);
+    background:rgba(20,20,20,.35); color:#fff; font-size:18px; line-height:1;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    opacity:0; transition:opacity .2s ease, background .2s ease;
+  }
+  .thumb-carousel:hover .thumb-arrow{opacity:1;}
+  .thumb-arrow:hover{background:rgba(20,20,20,.6);}
+  .thumb-arrow.prev{left:12px;}
+  .thumb-arrow.next{right:12px;}
+  .lightbox{
+    position:fixed; inset:0; z-index:200; background:rgba(11,15,25,.92);
+    display:flex; align-items:center; justify-content:center; padding:40px;
+    opacity:0; visibility:hidden; transition:opacity .25s ease;
+  }
+  .lightbox.open{opacity:1; visibility:visible;}
+  .lightbox img,.lightbox video{max-width:100%; max-height:100%; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lightbox video{display:none; background:#000;}
+  .lightbox.video-mode img{display:none;}
+  .lightbox.video-mode video{display:block;}
+  .lightbox-close{
+    position:absolute; top:24px; right:28px; width:40px; height:40px; border-radius:50%;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.3); color:#fff;
+    font-size:20px; display:flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.18);}
+  .tag-row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;}
+  .tag{
+    font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted);
+    border:1px solid var(--line); border-radius:999px; padding:5px 12px;
+  }
+  .flagship-item h3, .work-item h3{font-size:19px; font-weight:600; min-height:32px; margin-bottom:12px;}
+  .work-item h3.compact-title{font-size:16px;}
+  @media(max-width:760px){.work-item h3{min-height:52px;}}
+  .work-item p{color:var(--muted); font-size:14px; text-align:justify;}
+  @media(max-width:760px){.work-item p{text-align:left;}}
+  .work-item .stat{font-weight:700; font-size:13px; margin-top:14px; display:block;}
+  .placeholder-note{color:#a8a6a0; font-style:italic; font-weight:400;}
+  .story p{margin-bottom:10px;}
+  .impact-list{list-style:none; margin:16px 0 0; padding:0; border-top:1px solid var(--line);}
+  .impact-list li{padding:10px 0; border-bottom:1px solid var(--line); color:var(--muted); font-size:13px; line-height:1.6;}
+  .impact-list strong{color:var(--ink); font-weight:600;}
+  .performance-proof{
+    display:grid; grid-template-columns:minmax(0,1.55fr) minmax(280px,.85fr); gap:30px;
+    align-items:stretch; margin-top:28px; padding-top:24px; border-top:1px solid var(--line);
+  }
+  .performance-shot{
+    margin:0; aspect-ratio:1283/852; border:1px solid var(--line); border-radius:8px;
+    overflow:hidden; background:#eef3fa; cursor:zoom-in;
+  }
+  .performance-shot img{width:100%; height:100%; object-fit:cover; display:block;}
+  .performance-summary{display:flex; flex-direction:column; justify-content:space-between; min-width:0;}
+  .performance-kicker{font-size:10px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:var(--ink);}
+  .performance-context{margin-top:5px; color:var(--muted); font-size:12px; line-height:1.5;}
+  .performance-metrics{display:grid; grid-template-columns:1fr 1fr; margin-top:20px; border-top:1px solid var(--line);}
+  .performance-metric{padding:14px 12px 12px 0; border-bottom:1px solid var(--line);}
+  .performance-metric:nth-child(odd){border-right:1px solid var(--line);}
+  .performance-metric:nth-child(even){padding-left:14px;}
+  .performance-value{display:block; color:var(--ink); font-size:28px; font-weight:500; line-height:1.15; letter-spacing:0;}
+  .performance-label{display:block; margin-top:5px; color:var(--muted); font-size:10px; letter-spacing:.6px; text-transform:uppercase; line-height:1.4;}
+  @media(max-width:760px){
+    .performance-proof{grid-template-columns:1fr; gap:18px; margin-top:22px; padding-top:20px;}
+    .performance-value{font-size:24px;}
+  }
+  .flagship-item .story, .work-item .story{min-height:56px;}
+  .story-label{font-weight:700; color:var(--ink); text-transform:uppercase; font-size:10px; letter-spacing:1px; margin-right:8px;}
+
+  /* EXPERIENCE — scroll-led career growth story */
+  .experience-intro{max-width:none; margin-bottom:56px; color:var(--muted); font-size:17px; white-space:nowrap;}
+  .experience-layout{display:grid; grid-template-columns:250px minmax(0,1fr); gap:72px; align-items:start;}
+  .experience-rail{position:sticky; top:120px; padding-bottom:24px;}
+  .rail-label{font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:22px;}
+  .rail-step{display:grid; grid-template-columns:22px 1fr; gap:12px; align-items:center; color:#aaa8a1; font-size:12px; padding:8px 0; transition:color .45s ease;}
+  .rail-dot{width:8px; height:8px; border:1px solid currentColor; border-radius:50%; position:relative; transition:background .45s ease, transform .45s ease;}
+  .rail-step.is-active{color:var(--ink);}
+  .rail-step.is-active .rail-dot{background:#d97706; border-color:#d97706; transform:scale(1.35);}
+  .rail-progress{position:absolute; left:3px; top:54px; bottom:34px; width:1px; background:var(--line); z-index:-1;}
+  .rail-progress span{display:block; width:100%; height:0; background:#d97706; transition:height .5s cubic-bezier(.22,1,.36,1);}
+  .experience-chapters{display:flex; flex-direction:column; gap:22vh;}
+  .experience-card{min-height:62vh; display:flex; flex-direction:column; justify-content:flex-start; padding-top:8px; opacity:.28; transform:translateY(50px); transition:opacity .75s ease, transform .75s cubic-bezier(.22,1,.36,1);}
+  .experience-card.is-active{opacity:1; transform:translateY(0);}
+  .chapter-meta{display:flex; align-items:center; gap:12px; margin-bottom:16px; color:var(--muted); font-size:11px; letter-spacing:1px; text-transform:uppercase;}
+  .chapter-index{color:#d97706; font-weight:700;}
+  .experience-card h3{font-family:"Noto Serif TC","Georgia",serif; font-size:clamp(30px,4vw,48px); line-height:1.25; font-weight:400; margin-bottom:8px; text-wrap:balance;}
+  .chapter-org{font-size:14px; color:var(--muted); margin-bottom:30px;}
+  .chapter-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; padding-top:24px; border-top:1px solid var(--line);}
+  .chapter-block h4{font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-bottom:9px;}
+  .chapter-block p{font-size:15px; line-height:1.75;}
+  .carry-label{font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin:28px 0 10px;}
+  .carry-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .carry-tag{border:1px solid var(--line); border-radius:999px; padding:7px 13px; font-size:12px; background:#fff; transform:scale(.9); opacity:0; transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1), border-color .3s ease;}
+  .experience-card.is-active .carry-tag{opacity:1; transform:scale(1);}
+  .experience-card.is-active .carry-tag:nth-child(2){transition-delay:.12s;}
+  .experience-card.is-active .carry-tag:nth-child(3){transition-delay:.24s;}
+  .experience-card.is-active .carry-tag:nth-child(4){transition-delay:.36s;}
+  .future-card{background:#111; color:#fff; padding:48px; border-radius:8px; min-height:70vh;}
+  .future-card .chapter-meta,.future-card .chapter-org,.future-card .chapter-block h4,.future-card .carry-label{color:rgba(255,255,255,.58);}
+  .future-card .chapter-grid{border-color:rgba(255,255,255,.2); grid-template-columns:1fr;}
+  .future-directions{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:30px; background:rgba(255,255,255,.2);}
+  .future-direction{background:#111; padding:22px 18px; transition:background .3s ease, color .3s ease;}
+  .future-direction:hover{background:#fff; color:#111;}
+  .future-direction span{display:block; color:#d97706; font-size:11px; margin-bottom:18px;}
+  .future-direction h4{font-size:16px; line-height:1.4; margin-bottom:10px;}
+  .future-direction p{font-size:12px; line-height:1.6; color:rgba(255,255,255,.6);}
+  .future-direction:hover p{color:#5f5f5a;}
+  @media(max-width:760px){
+    .experience-intro{font-size:15px; margin-bottom:38px; white-space:normal;}
+    .experience-layout{grid-template-columns:1fr; gap:0;}
+    .experience-rail{position:relative; top:auto; z-index:1; display:flex; gap:8px; overflow-x:auto; margin:0 0 36px; padding:0 0 10px; border-bottom:1px solid var(--line); scrollbar-width:none;}
+    .experience-rail::-webkit-scrollbar{display:none;}
+    .rail-label,.rail-progress{display:none;}
+    .rail-step{display:flex; flex:0 0 auto; grid-template-columns:none; gap:7px; align-items:center; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:#fff; color:#8b8982; font-size:11px; line-height:1; white-space:nowrap;}
+    .rail-step.is-active{color:var(--ink); border-color:#d8a15d; background:#fff8ef;}
+    .rail-dot{width:6px; height:6px;}
+    .rail-step.is-active .rail-dot{transform:none;}
+    .experience-chapters{gap:12vh;}
+    .experience-card{min-height:auto; padding:48px 0; opacity:1; transform:none;}
+    .experience-card h3{font-size:30px;}
+    .chapter-grid{grid-template-columns:1fr; gap:22px;}
+    .future-card{padding:32px 22px; margin:0 -8px; min-height:auto;}
+    .future-directions{grid-template-columns:1fr;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .experience-card,.carry-tag{transition:none;}
+  }
+
+  /* SKILLS — capabilities first, supporting toolkit second */
+  .skill-cap-title-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; position:relative; margin-bottom:42px;}
+  .skill-cap-title-grid::before{content:"×"; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); font-size:30px; font-weight:300;}
+  .skill-cap-title{font-family:"Noto Serif TC","Georgia",serif; font-size:clamp(30px,4vw,42px); line-height:1.25; font-weight:400;}
+  .skill-cap-title:last-child{text-align:left;}
+  .skill-cap-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
+  .skill-cap-col{display:flex; flex-direction:column;}
+  .skill-cap-item{padding:26px 0; border-top:1px solid var(--line);}
+  .skill-cap-item h3{font-size:17px; font-weight:600; margin-bottom:8px;}
+  .skill-cap-item > p{color:var(--muted); font-size:14px; min-height:48px;}
+  .tool-label{font-size:9px; letter-spacing:1.4px; text-transform:uppercase; color:#9a9891; margin:18px 0 8px;}
+  .skill-cap-item .pill-row{display:flex; flex-wrap:wrap; gap:7px;}
+  .pill{
+    font-size:10px; color:var(--muted); border:1px solid var(--line); border-radius:999px;
+    padding:5px 10px; transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .skill-cap-item:hover .pill{color:var(--ink); border-color:#b9b6ad; background:#fff;}
+  @media(max-width:700px){
+    .skill-cap-title-grid{grid-template-columns:1fr; gap:8px; margin-bottom:28px;}
+    .skill-cap-title-grid::before{position:static; display:block; transform:none; margin:2px 0; font-size:28px;}
+    .skill-cap-title{font-size:30px;}
+    .skill-cap-grid{grid-template-columns:1fr; gap:0;}
+    .skill-cap-item > p{min-height:0;}
+    .pill{border-radius:8px; padding:7px 10px; line-height:1.35;}
+  }
+
+  /* CAPABILITIES — dual-axis matrix (mirrors DaoAI's paired feature grid) */
+  .cap-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
+  @media(max-width:760px){.cap-grid{grid-template-columns:1fr; gap:0;}}
+  .cap-col-head{display:none;}
+  html[lang="en"] .cap-col-head:empty{display:none;}
+  .cap-item{padding:26px 0; border-top:1px solid var(--line);}
+  .cap-grid.cap-animated .cap-item{
+    overflow:hidden; max-height:0; padding-top:0; padding-bottom:0; opacity:0;
+    transform:translateY(8px); border-top-color:transparent;
+    transition:
+      max-height .9s cubic-bezier(.22,1,.36,1),
+      padding .9s cubic-bezier(.22,1,.36,1),
+      opacity .7s ease,
+      transform .85s cubic-bezier(.22,1,.36,1),
+      border-color .7s ease;
+    transition-delay:var(--cap-delay, 0ms);
+  }
+  .cap-grid.cap-animated.is-visible .cap-item{
+    max-height:260px; padding-top:26px; padding-bottom:26px; opacity:1;
+    transform:translateY(0); border-top-color:var(--line);
+  }
+  @media(max-width:760px){.cap-grid.cap-animated.is-visible .cap-item{max-height:360px;}}
+  @media(prefers-reduced-motion:reduce){
+    .cap-grid.cap-animated .cap-item{transition:none; max-height:none; padding-top:26px; padding-bottom:26px; opacity:1; transform:none; border-top-color:var(--line);}
+  }
+  .cap-item h4{font-size:17px; font-weight:600; margin-bottom:8px;}
+  .cap-item p{color:var(--muted); font-size:14px;}
+  @media(max-width:760px){.cap-col-head{margin-top:40px;} .cap-col:first-child .cap-col-head{margin-top:0;}}
+
+  /* WORK — flagship deep-dive cards (mirrors DaoAI's Visual Intelligence product cards) */
+  .flagship-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px 48px; margin-bottom:48px;}
+  @media(max-width:760px){.flagship-grid{grid-template-columns:1fr;}}
+  .flagship-item{border-top:2px solid var(--ink); padding-top:22px;}
+  .flagship-item.is-primary{grid-column:1/-1;}
+  .flagship-label{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:14px;}
+  .flagship-item .tag-row{min-height:64px; align-content:flex-start;}
+  .more-work-head{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding-bottom:20px; border-bottom:1px solid var(--line); margin-bottom:40px;}
+
+  /* UPDATES — Latest-Insights-style cards */
+  .updates-grid{display:flex; flex-wrap:wrap; gap:40px;}
+  .update-card{flex:1 1 300px; max-width:360px; border-top:1px solid var(--line); padding-top:20px;}
+
+  /* CLOSING CTA — two-column "how I can help" (mirrors DaoAI's final tabbed CTA) */
+  .close-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 64px;}
+  @media(max-width:760px){.close-grid{grid-template-columns:1fr;}}
+  .close-col{border-top:1px solid var(--line); padding-top:24px;}
+  .close-col h4{font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:20px;}
+
+  /* CLOSING CTA (alt) — paired problem → value rows */
+  .close-pairs{display:flex; flex-direction:column;}
+  .close-pair{
+    display:grid; grid-template-columns:1fr 40px 1fr; align-items:center; gap:8px;
+    border-top:1px solid var(--line); padding:26px 0;
+  }
+  @media(max-width:760px){.close-pair{grid-template-columns:1fr; gap:10px; padding:20px 0;}}
+  .close-problem{color:var(--muted); font-size:15px;}
+  .close-value{color:var(--ink); font-size:15px; font-weight:500;}
+  .close-arrow{
+    display:flex; align-items:center; justify-content:center;
+    width:32px; height:32px; border-radius:50%; border:1px solid var(--line);
+    color:#d97706; font-size:0; line-height:1; transition:border-color .2s ease, background .2s ease;
+  }
+  .close-arrow::before{content:"→"; font-size:14px; line-height:1; transform:translateY(-.5px);}
+  @media(max-width:760px){.close-arrow{transform:rotate(90deg); width:24px; height:24px;}}
+  .close-pair:hover .close-arrow{border-color:#d97706; background:rgba(217,119,6,.08);}
+  .close-col ul{list-style:none;}
+  .close-col li{font-size:14px; padding:12px 0; border-top:1px solid var(--line);}
+  .close-col li:first-child{border-top:none;}
+
+  /* CONTACT */
+  footer{padding:100px 0 60px;}
+  #contact{
+    background-image: linear-gradient(to right, rgba(255,255,255,.82), rgba(255,255,255,.6)), url('footer-bg.png');
+    background-size: cover; background-position: center;
+  }
+  .contact-grid{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .contact-grid h2{max-width:520px;}
+  .contact-links{display:flex; gap:14px; flex-wrap:wrap;}
+  .contact-links a{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--ink); border-radius:999px; padding:12px 26px;
+    font-size:13px; font-weight:600; letter-spacing:.02em;
+    color:var(--ink); background:none;
+    transition:background .2s ease, color .2s ease;
+  }
+  .contact-links a:hover{background:var(--ink); color:#fff;}
+  .footer-grid{display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:64px; padding-top:32px; border-top:1px solid var(--line); flex-wrap:wrap;}
+  .footer-col h4{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:14px;}
+  .footer-logo{height:40px; width:auto; display:block;}
+  .footer-links{display:flex; flex-wrap:wrap; gap:8px 24px;}
+  @media(max-width:760px){.footer-grid{flex-direction:column; align-items:flex-start; gap:12px;} .footer-links{gap:8px 18px;}}
+  .footer-col a{font-size:13px; color:var(--muted);}
+  .footer-col a:hover{color:var(--ink);}
+  .footer-col p{font-size:13px; color:var(--muted); max-width:260px;}
+  .copyright{color:var(--muted); font-size:11px; margin-top:24px; letter-spacing:1px;}
+  .portfolio-notice{max-width:780px; color:var(--muted); font-size:11px; line-height:1.7; margin-top:12px;}
+  @media(max-width:760px){.copyright{margin-top:12px;}}
+</style><style>
+  /* ===== SERVICES PAGE ===== */
+  .svc-hero{background:#05070c url('hero-poster.jpg') center/cover no-repeat;}
+  .svc-hero .hero-fold{min-height:78svh;}
+  .svc-hero .hero-inner.wrap{min-height:78svh;}
+  .svc-hero .hero-copy{top:auto; bottom:22%;}
+  @media(max-width:760px){
+    .svc-hero .hero-fold, .svc-hero .hero-inner.wrap{min-height:72svh;}
+    .svc-hero .hero-copy{bottom:24%;}
+  }
+
+  .svc-sec{padding:84px 0 0;}
+  .svc-sec:last-of-type{padding-bottom:20px;}
+  @media(max-width:760px){.svc-sec{padding-top:58px;}}
+
+  .svc-kicker{display:flex; align-items:center; gap:22px; font-size:12px; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-bottom:20px;}
+  .svc-kicker .num-line{flex:1; height:1px; background:var(--line); max-width:120px;}
+  .svc-h2{font-family:"Noto Serif TC","Georgia",serif; font-size:clamp(25px,3.3vw,38px); line-height:1.35; letter-spacing:.01em;}
+  .svc-lede{margin-top:20px; max-width:760px; font-size:16.5px; line-height:1.95; color:#3c3c39;}
+  .svc-lede strong{color:var(--ink); font-weight:600;}
+  @media(max-width:760px){.svc-lede{font-size:15.5px; line-height:1.9;}}
+
+  /* 問題對照 */
+  .pain{margin-top:34px; border-top:1px solid var(--line);}
+  .pain-row{display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:1px solid var(--line);}
+  .pain-row > div{padding:22px 26px 22px 0;}
+  .pain-row > div + div{padding-left:26px; border-left:1px solid var(--line);}
+  .pain-lab{font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--muted); margin-bottom:9px;}
+  .pain-txt{font-size:15px; line-height:1.85;}
+  .pain-row .is-right .pain-txt{font-weight:600;}
+  @media(max-width:760px){
+    .pain-row{grid-template-columns:1fr;}
+    .pain-row > div{padding:18px 0;}
+    .pain-row > div + div{padding-left:0; border-left:0; border-top:1px dashed var(--line);}
+  }
+
+  /* 四個模組 */
+  .svc-grid{margin-top:38px; display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .svc-card{background:var(--bg); padding:32px 30px 34px;}
+  .svc-card .step{font-size:11px; letter-spacing:2px; color:var(--muted); text-transform:uppercase;}
+  .svc-card h3{margin-top:14px; font-size:19px; line-height:1.5; letter-spacing:.01em;}
+  .svc-card .ask{margin-top:14px; padding-left:14px; border-left:2px solid var(--ink); font-size:14.5px; line-height:1.8; color:#4a4a46;}
+  .svc-card ul{margin-top:18px; list-style:none;}
+  .svc-card li{position:relative; padding-left:16px; margin-bottom:9px; font-size:14.5px; line-height:1.75; color:#3c3c39;}
+  .svc-card li::before{content:""; position:absolute; left:0; top:11px; width:5px; height:1px; background:#9a9a92;}
+  @media(max-width:900px){.svc-grid{grid-template-columns:1fr;} .svc-card{padding:28px 24px 30px;}}
+
+  /* 方案 */
+  .pkg-grid{margin-top:38px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .pkg{display:flex; flex-direction:column; border:1px solid var(--line); background:var(--paper); padding:30px 26px 28px;}
+  .pkg.is-pick{background:var(--ink); border-color:var(--ink); color:#f2f1ec;}
+  .pkg-tag{font-size:10.5px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted);}
+  .pkg.is-pick .pkg-tag{color:rgba(255,255,255,.62);}
+  .pkg h3{margin-top:12px; font-size:18px; line-height:1.5;}
+  .pkg .term{margin-top:7px; font-size:12.5px; color:var(--muted); letter-spacing:.04em;}
+  .pkg.is-pick .term{color:rgba(255,255,255,.6);}
+  .pkg .price{margin-top:20px; padding-top:18px; border-top:1px solid var(--line); font-family:"Helvetica Neue",sans-serif; font-size:23px; font-weight:700; letter-spacing:.01em;}
+  .pkg.is-pick .price{border-top-color:rgba(255,255,255,.2);}
+  .pkg .price small{display:block; margin-top:5px; font-size:11.5px; font-weight:400; letter-spacing:.06em; color:var(--muted);}
+  .pkg.is-pick .price small{color:rgba(255,255,255,.6);}
+  .pkg ul{margin-top:20px; list-style:none; flex:1;}
+  .pkg li{position:relative; padding-left:16px; margin-bottom:10px; font-size:14px; line-height:1.7; color:#3c3c39;}
+  .pkg.is-pick li{color:rgba(242,241,236,.86);}
+  .pkg li::before{content:""; position:absolute; left:0; top:10px; width:5px; height:1px; background:#9a9a92;}
+  .pkg.is-pick li::before{background:rgba(255,255,255,.5);}
+  .pkg .ref{margin-top:18px; padding-top:14px; border-top:1px dashed var(--line); font-size:12px; line-height:1.7; color:var(--muted);}
+  .pkg.is-pick .ref{border-top-color:rgba(255,255,255,.18); color:rgba(255,255,255,.58);}
+  @media(max-width:900px){.pkg-grid{grid-template-columns:1fr;}}
+
+  .pkg-note{margin-top:22px; padding:18px 22px; border:1px solid var(--line); background:var(--paper); font-size:13.5px; line-height:1.85; color:#4a4a46;}
+  .pkg-note strong{color:var(--ink); font-weight:600;}
+
+  /* 實績 */
+  .proof{margin-top:38px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .proof-item{background:var(--bg); padding:28px 24px 30px;}
+  .proof-num{font-family:"Helvetica Neue",sans-serif; font-size:33px; font-weight:700; letter-spacing:-.01em; line-height:1.15;}
+  .proof-lab{margin-top:10px; font-size:14.5px; line-height:1.7;}
+  .proof-src{margin-top:12px; font-size:12px; line-height:1.65; color:var(--muted);}
+  @media(max-width:900px){.proof{grid-template-columns:1fr;}}
+
+  /* 流程 */
+  .flow{margin-top:34px; border-top:1px solid var(--line);}
+  .flow-row{display:grid; grid-template-columns:76px 190px 1fr; gap:24px; align-items:start; padding:24px 0; border-bottom:1px solid var(--line);}
+  .flow-n{font-family:"Helvetica Neue",sans-serif; font-size:12px; letter-spacing:2px; color:var(--muted); padding-top:4px;}
+  .flow-t{font-size:15.5px; font-weight:600; line-height:1.7;}
+  .flow-d{font-size:14.5px; line-height:1.85; color:#4a4a46;}
+  @media(max-width:760px){
+    .flow-row{grid-template-columns:1fr; gap:8px; padding:20px 0;}
+    .flow-n{padding-top:0;}
+  }
+
+  /* 誠實區 */
+  .honest{margin-top:38px; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .honest-col{background:var(--bg); padding:30px 28px 32px;}
+  .honest-col h3{font-size:16px; letter-spacing:.02em; margin-bottom:16px;}
+  .honest-col ul{list-style:none;}
+  .honest-col li{position:relative; padding-left:18px; margin-bottom:11px; font-size:14.5px; line-height:1.78; color:#3c3c39;}
+  .honest-col li::before{position:absolute; left:0; top:0; font-size:14px; color:#9a9a92;}
+  .honest-col.yes li::before{content:"—";}
+  .honest-col.no li::before{content:"×";}
+  @media(max-width:760px){.honest{grid-template-columns:1fr;} .honest-col{padding:26px 22px 28px;}}
+
+  /* CTA */
+  .svc-cta{margin-top:52px; padding:44px 40px 46px; background:var(--ink); color:#f2f1ec;}
+  .svc-cta h2{font-family:"Noto Serif TC","Georgia",serif; font-size:clamp(22px,2.8vw,31px); line-height:1.45;}
+  .svc-cta p{margin-top:16px; max-width:620px; font-size:15px; line-height:1.9; color:rgba(242,241,236,.8);}
+  .svc-cta .acts{margin-top:28px; display:flex; flex-wrap:wrap; gap:12px;}
+  .svc-cta .acts a{display:inline-flex; align-items:center; padding:13px 24px; border:1px solid rgba(255,255,255,.28); border-radius:999px; font-size:13.5px; letter-spacing:.05em; transition:background .25s ease, transform .25s ease;}
+  .svc-cta .acts a:hover{background:rgba(255,255,255,.14); transform:translateY(-2px);}
+  .svc-cta .acts a.primary{background:#f2f1ec; color:#141414; border-color:#f2f1ec;}
+  .svc-cta .acts a.primary:hover{background:#fff;}
+  @media(max-width:760px){.svc-cta{padding:34px 24px 36px; margin-top:42px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html" aria-label="回到首頁"><img src="Rome Logo.png" alt="Rome"></a>
+      <div class="navlinks" id="navLinks">
+        <a href="index.html#work">作品</a>
+        <a href="index.html#experience">經歷</a>
+        <a href="services.html">服務</a>
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
+        <a class="contact-link" href="#contact">談談需求</a>
+      </div>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero svc-hero">
+  <div class="hero-tint"></div>
+  <div class="hero-fold">
+    <div class="hero-inner wrap">
+      <div class="hero-copy">
+        <div class="hero-badge"><span class="hero-name">Rome Ye</span></div>
+        <h1 class="display"><span class="hero-first-line">讓你的技術產品</span><span class="hero-second-line">在台灣被看懂、被買單</span></h1>
+        <div class="hero-role">Taiwan &amp; APAC GTM · Technical Marketing · AI Workflow</div>
+      </div>
+      <a href="#packages" class="hero-cta">看合作方案 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="hero-intro wrap">
+  <p class="lede">
+    要把 B2B 技術產品帶進台灣，真正的門檻不是語言。<strong>把技術規格翻成中文，換不到富士康、英業達或研華的一場會議。</strong>需要的是有人把你的產品能力，翻譯成本地採購、代理商與第一線業務願意採用、也說得出口的商業語言——而且能親手把網站、素材與流程做出來。
+  </p>
+</section>
+
+<div class="wrap">
+
+  <section class="svc-sec" id="why">
+    <div class="svc-kicker"><span>01</span><span class="num-line"></span><span>The Gap</span></div>
+    <h2 class="svc-h2">外商進台灣，通常卡在兩種人中間</h2>
+    <div class="pain">
+      <div class="pain-row">
+        <div><div class="pain-lab">翻譯社／在地創意公司</div><div class="pain-txt">語言沒問題，但不熟企業級技術規格，也沒跟國外總部協作過。做出來的東西，本地業務拿不去用。</div></div>
+        <div class="is-right"><div class="pain-lab">我的位置</div><div class="pain-txt">13 年在科技公司內部做產品行銷與業務賦能，同時能自己把網站、素材與 AI 流程做出來。懂總部要什麼，也懂台灣現場要什麼。</div></div>
+      </div>
+      <div class="pain-row">
+        <div><div class="pain-lab">國際行銷顧問</div><div class="pain-txt">策略講得漂亮，但交付停在一份簡報。落地的部分要你自己再找人做，時程與品質都失控。</div></div>
+        <div class="is-right"><div class="pain-lab">我的位置</div><div class="pain-txt">策略跟交付同一個人。從買家語境分析、繁中網站與 SEO/GEO，到展會漏斗與業務教材，一條線做到底。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-sec" id="services">
+    <div class="svc-kicker"><span>02</span><span class="num-line"></span><span>Services</span></div>
+    <h2 class="svc-h2">四段路徑：看懂 → 被找到 → 現場成交 → 內部跑起來</h2>
+    <p class="svc-lede">這是同一條採用路徑的四段，可以整包，也可以只買其中一段。</p>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="step">A ／ 看懂</div>
+        <h3>技術轉譯與業務賦能</h3>
+        <div class="ask">「我們的工程師講不清楚產品，業務賣不動。」</div>
+        <ul>
+          <li>把產品能力改寫成本地買家聽得懂的價值敘事與使用情境</li>
+          <li>競品定位、買家輪廓、訊息層級</li>
+          <li>Battlecard、產品一頁紙、業務話術、教育訓練教材</li>
+          <li>總部訊息與台灣市場需求的對齊</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div class="step">B ／ 被找到</div>
+        <h3>繁中 B2B 網站、產品頁與 SEO・GEO</h3>
+        <div class="ask">「在台灣沒人搜得到我們，官網不帶詢問。」</div>
+        <ul>
+          <li>資訊架構與漏斗設計先做，視覺後做</li>
+          <li>繁體中文 B2B 網站、產品頁、活動落地頁</li>
+          <li>SEO 與 GEO：讓搜尋引擎與 AI 摘要正確引用你的內容</li>
+          <li>把官網變成 inbound 入口，不只是型錄</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div class="step">C ／ 現場成交</div>
+        <h3>展會整包與現場執行</h3>
+        <div class="ask">「花百萬參展，收了一疊名片就沒了。」</div>
+        <ul>
+          <li>展前雙語預約漏斗落地頁，把流量收斂成排定的會議</li>
+          <li>展位背板與宣傳品設計檔</li>
+          <li>產品示範影片中文化與混剪</li>
+          <li>展後跟進信件與名單分流流程</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div class="step">D ／ 內部跑起來</div>
+        <h3>AI 工作流、Agent 與輕量 CRM</h3>
+        <div class="ask">「AI 買了沒人用，不知道從哪導入。」</div>
+        <ul>
+          <li>先盤流程，找出 AI 真正省下時間的那兩三步</li>
+          <li>在出錯代價高的環節保留人工審核關卡</li>
+          <li>輕量 CRM 與內容發布工作流建置</li>
+          <li>交付可以讓團隊自己維運的文件</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="svc-sec" id="packages">
+    <div class="svc-kicker"><span>03</span><span class="num-line"></span><span>Packages</span></div>
+    <h2 class="svc-h2">三種合作方式</h2>
+    <p class="svc-lede">報價依實際範圍調整。下列為專案起始區間，第一次通話會先確認你的目標與現況，再給正式報價。</p>
+    <div class="pkg-grid">
+
+      <div class="pkg">
+        <div class="pkg-tag">方案一</div>
+        <h3>台灣市場落地包<br>Market Entry Starter Kit</h3>
+        <div class="term">2–3 週交付</div>
+        <div class="price">USD 3,500 起<small>約 NTD 11 萬起</small></div>
+        <ul>
+          <li>繁體中文 B2B 落地頁一式，含 SEO/GEO 架構</li>
+          <li>在地化業務一頁紙（Battlecard）一份</li>
+          <li>競品與在地買家語境分析</li>
+          <li>台灣市場訊息層級建議</li>
+        </ul>
+        <div class="ref">適合：第一次進台灣，想先驗證市場反應。</div>
+      </div>
+
+      <div class="pkg is-pick">
+        <div class="pkg-tag">方案二 ／ 最多人選</div>
+        <h3>展會 GTM 整包<br>Trade Show Turnkey</h3>
+        <div class="term">4–6 週交付</div>
+        <div class="price">USD 5,500 起<small>約 NTD 17 萬起</small></div>
+        <ul>
+          <li>展前雙語預約漏斗落地頁</li>
+          <li>展位背板與宣傳摺頁設計檔</li>
+          <li>產品示範影片中文化／混剪</li>
+          <li>展後客戶跟進信件模板與名單分流</li>
+          <li>現場業務話術與 FAQ 一份</li>
+        </ul>
+        <div class="ref">適合：已排定台灣展會，要把攤位變成排定好的會議。</div>
+      </div>
+
+      <div class="pkg">
+        <div class="pkg-tag">方案三</div>
+        <h3>兼職 GTM 負責人<br>Fractional GTM Lead</h3>
+        <div class="term">每週 10–20 小時，月度合作</div>
+        <div class="price">另行報價<small>依投入時數與範圍</small></div>
+        <ul>
+          <li>持續擔任你在台灣的 GTM 與行銷窗口</li>
+          <li>總部與本地代理商之間的溝通與素材產出</li>
+          <li>網站、內容與 inbound 的持續經營</li>
+          <li>AI 工作流導入與內部採用推動</li>
+        </ul>
+        <div class="ref">適合：還不需要開台灣正職，但需要有人穩定推進。</div>
+      </div>
+
+    </div>
+    <div class="pkg-note">
+      <strong>報價不含：</strong>實體輸出印刷與展位施工、第三方素材與字型授權費、影片外包拍攝、廣告投放預算、網域與主機費用。這些會另列，由你直接支付供應商，我不加成。
+    </div>
+  </section>
+
+  <section class="svc-sec" id="proof">
+    <div class="svc-kicker"><span>04</span><span class="num-line"></span><span>Track Record</span></div>
+    <h2 class="svc-h2">做過的，不是說過的</h2>
+    <div class="proof">
+      <div class="proof-item">
+        <div class="proof-num">月均 10+</div>
+        <div class="proof-lab">自然搜尋帶進的企業詢問</div>
+        <div class="proof-src">我獨立規劃並建置一家工業 AI 檢測公司的官網與部落格。詢問來源包含美國富士康、中國 Dell、英業達、NXP、Honeywell Aerospace、研華。<br>其中一個三個月區間的 Search Console 數據：曝光 3.22K、點擊 203、點閱率 6.3%、平均排名 7.3。</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">40% QoQ</div>
+        <div class="proof-lab">HTC 亞太營收季增期間</div>
+        <div class="proof-src">我負責亞太與東南亞的在地化策略與業務賦能素材，是團隊成果的其中一塊，不是我一個人的功勞。</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">100+ 場</div>
+        <div class="proof-lab">第一線產品訓練（高峰年度）</div>
+        <div class="proof-src">2013–2019 於 HTC，並建立種子講師制度，讓產品知識能在通路與門市擴散，不必每一場都由我親自上。</div>
+      </div>
+    </div>
+    <p class="svc-lede">代表案例、展會現場與設計輸出，都在 <a href="index.html#work" style="border-bottom:1px solid var(--ink);">作品集</a>。實際參與過的國際展會：Computex、InnoVEX、Hannover Messe、APEX EXPO。</p>
+  </section>
+
+  <section class="svc-sec" id="process">
+    <div class="svc-kicker"><span>05</span><span class="num-line"></span><span>How We Work</span></div>
+    <h2 class="svc-h2">合作流程</h2>
+    <div class="flow">
+      <div class="flow-row"><div class="flow-n">01</div><div class="flow-t">30 分鐘通話</div><div class="flow-d">先問三件事：現在誰在做這件事、上一次做花了多少、成功長什麼樣。不在這通電話報價。</div></div>
+      <div class="flow-row"><div class="flow-n">02</div><div class="flow-t">範圍與驗收標準</div><div class="flow-d">寫下明確的交付清單與完成定義。「幫我們做行銷」不是專案，「三個月內官網自然詢問從 0 到每月 5 件」才是。</div></div>
+      <div class="flow-row"><div class="flow-n">03</div><div class="flow-t">正式報價與時程</div><div class="flow-d">固定總價，付款分期，含修改輪次上限與不含項目。沒有隱藏費用。</div></div>
+      <div class="flow-row"><div class="flow-n">04</div><div class="flow-t">交付與交接</div><div class="flow-d">交付原始檔與可維運文件。你的團隊要能在我離開後自己接手。</div></div>
+    </div>
+  </section>
+
+  <section class="svc-sec" id="fit">
+    <div class="svc-kicker"><span>06</span><span class="num-line"></span><span>Fit</span></div>
+    <h2 class="svc-h2">適合與不適合</h2>
+    <div class="honest">
+      <div class="honest-col yes">
+        <h3>適合一起做的</h3>
+        <ul>
+          <li>B2B 技術產品要進台灣或亞太市場</li>
+          <li>工業自動化、機器視覺、企業軟體、AI 應用</li>
+          <li>總部在海外，台灣還沒有行銷編制</li>
+          <li>有明確的商業目標與驗收標準</li>
+          <li>要的是能落地的交付，不只是一份策略簡報</li>
+        </ul>
+      </div>
+      <div class="honest-col no">
+        <h3>不接的</h3>
+        <ul>
+          <li>需要半導體製程、記憶體或車用電子產業資歷的專案——我沒有，不會假裝有</li>
+          <li>純套版網站與比價型的網頁製作</li>
+          <li>電商購物車與金流串接</li>
+          <li>模型開發、演算法或後端工程</li>
+          <li>沒有明確驗收標準的長期外包</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="svc-cta">
+    <h2>先聊 30 分鐘，看看是不是同一件事</h2>
+    <p>告訴我你的產品、目標市場，還有現在卡在哪。如果我不是對的人，我會直接說，並盡量指給你比較合適的方向。</p>
+    <div class="acts">
+      <a class="primary" href="mailto:srs0319@gmail.com?subject=Taiwan%20GTM%20-%20%E5%90%88%E4%BD%9C%E8%A9%A2%E5%95%8F">寄 Email 給我</a>
+      <a href="https://www.linkedin.com/in/rome-ye/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="index.html#work">先看作品集</a>
+    </div>
+  </div>
+
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <h2 class="serif">一起聊聊<br>下一個合作</h2>
+      <div class="contact-links">
+        <a href="mailto:srs0319@gmail.com">寄 Email</a>
+        <a href="https://www.linkedin.com/in/rome-ye/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <a href="index.html" aria-label="回到首頁"><img class="footer-logo" src="Rome Logo.png" alt="Rome"></a>
+      <div class="footer-links">
+        <a href="index.html#work">作品</a>
+        <a href="index.html#experience">經歷</a>
+        <a href="services.html">服務</a>
+      </div>
+    </div>
+    <div class="copyright">Rome All Rights Reserved © 2026</div>
+    <div class="portfolio-notice">PORTFOLIO NOTICE — This portfolio contains selected work created by Rome Ye, including work produced during employment with respective organizations. Company names, trademarks, product names, and related assets remain the property of their respective owners. Archived materials are presented solely for portfolio purposes and do not represent current official company websites or communications.</div>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var translations = {
+      zh: {
+        lang: 'zh-Hant',
+        title: 'Rome Ye | 服務與合作',
+        toggleLabel: 'EN',
+        toggleAria: 'Switch to English',
+        text: {
+          'h1.display': '<span class="hero-first-line">讓你的技術產品</span><span class="hero-second-line">在台灣被看懂、被買單</span>',
+          '.hero-role': 'Taiwan &amp; APAC GTM · Technical Marketing · AI Workflow',
+          '.hero-cta': '看合作方案 →',
+          '.hero-intro .lede': '要把 B2B 技術產品帶進台灣，真正的門檻不是語言。<strong>把技術規格翻成中文，換不到富士康、英業達或研華的一場會議。</strong>需要的是有人把你的產品能力，翻譯成本地採購、代理商與第一線業務願意採用、也說得出口的商業語言——而且能親手把網站、素材與流程做出來。',
+          '#why .svc-h2': '外商進台灣，通常卡在兩種人中間',
+          '#services .svc-h2': '四段路徑：看懂 → 被找到 → 現場成交 → 內部跑起來',
+          '#services .svc-lede': '這是同一條採用路徑的四段，可以整包，也可以只買其中一段。',
+          '#packages .svc-h2': '三種合作方式',
+          '#packages .svc-lede': '報價依實際範圍調整。下列為專案起始區間，第一次通話會先確認你的目標與現況，再給正式報價。',
+          '.pkg-note': '<strong>報價不含：</strong>實體輸出印刷與展位施工、第三方素材與字型授權費、影片外包拍攝、廣告投放預算、網域與主機費用。這些會另列，由你直接支付供應商，我不加成。',
+          '#proof .svc-h2': '做過的，不是說過的',
+          '#proof .svc-lede': '代表案例、展會現場與設計輸出，都在 <a href="index.html#work" style="border-bottom:1px solid var(--ink);">作品集</a>。實際參與過的國際展會：Computex、InnoVEX、Hannover Messe、APEX EXPO。',
+          '#process .svc-h2': '合作流程',
+          '#fit .svc-h2': '適合與不適合',
+          '.svc-cta h2': '先聊 30 分鐘，看看是不是同一件事',
+          '.svc-cta p': '告訴我你的產品、目標市場，還有現在卡在哪。如果我不是對的人，我會直接說，並盡量指給你比較合適的方向。',
+          '#contact h2': '一起聊聊<br>下一個合作'
+        },
+        groups: {
+          'header .navlinks a': ['作品', '經歷', '服務', '談談需求'],
+          '.footer-links a': ['作品', '經歷', '服務'],
+          '.contact-links a': ['寄 Email', 'LinkedIn'],
+          '.svc-kicker span:nth-child(3)': ['The Gap', 'Services', 'Packages', 'Track Record', 'How We Work', 'Fit'],
+          '.pain-lab': ['翻譯社／在地創意公司', '我的位置', '國際行銷顧問', '我的位置'],
+          '.pain-txt': [
+            '語言沒問題，但不熟企業級技術規格，也沒跟國外總部協作過。做出來的東西，本地業務拿不去用。',
+            '13 年在科技公司內部做產品行銷與業務賦能，同時能自己把網站、素材與 AI 流程做出來。懂總部要什麼，也懂台灣現場要什麼。',
+            '策略講得漂亮，但交付停在一份簡報。落地的部分要你自己再找人做，時程與品質都失控。',
+            '策略跟交付同一個人。從買家語境分析、繁中網站與 SEO/GEO，到展會漏斗與業務教材，一條線做到底。'
+          ],
+          '.svc-card .step': ['A ／ 看懂', 'B ／ 被找到', 'C ／ 現場成交', 'D ／ 內部跑起來'],
+          '.svc-card h3': ['技術轉譯與業務賦能', '繁中 B2B 網站、產品頁與 SEO・GEO', '展會整包與現場執行', 'AI 工作流、Agent 與輕量 CRM'],
+          '.svc-card .ask': ['「我們的工程師講不清楚產品，業務賣不動。」', '「在台灣沒人搜得到我們，官網不帶詢問。」', '「花百萬參展，收了一疊名片就沒了。」', '「AI 買了沒人用，不知道從哪導入。」'],
+          '.svc-card li': [
+            '把產品能力改寫成本地買家聽得懂的價值敘事與使用情境', '競品定位、買家輪廓、訊息層級', 'Battlecard、產品一頁紙、業務話術、教育訓練教材', '總部訊息與台灣市場需求的對齊',
+            '資訊架構與漏斗設計先做，視覺後做', '繁體中文 B2B 網站、產品頁、活動落地頁', 'SEO 與 GEO：讓搜尋引擎與 AI 摘要正確引用你的內容', '把官網變成 inbound 入口，不只是型錄',
+            '展前雙語預約漏斗落地頁，把流量收斂成排定的會議', '展位背板與宣傳品設計檔', '產品示範影片中文化與混剪', '展後跟進信件與名單分流流程',
+            '先盤流程，找出 AI 真正省下時間的那兩三步', '在出錯代價高的環節保留人工審核關卡', '輕量 CRM 與內容發布工作流建置', '交付可以讓團隊自己維運的文件'
+          ],
+          '.pkg-tag': ['方案一', '方案二 ／ 最多人選', '方案三'],
+          '.pkg h3': ['台灣市場落地包<br>Market Entry Starter Kit', '展會 GTM 整包<br>Trade Show Turnkey', '兼職 GTM 負責人<br>Fractional GTM Lead'],
+          '.pkg .term': ['2–3 週交付', '4–6 週交付', '每週 10–20 小時，月度合作'],
+          '.pkg .price': ['USD 3,500 起<small>約 NTD 11 萬起</small>', 'USD 5,500 起<small>約 NTD 17 萬起</small>', '另行報價<small>依投入時數與範圍</small>'],
+          '.pkg li': [
+            '繁體中文 B2B 落地頁一式，含 SEO/GEO 架構', '在地化業務一頁紙（Battlecard）一份', '競品與在地買家語境分析', '台灣市場訊息層級建議',
+            '展前雙語預約漏斗落地頁', '展位背板與宣傳摺頁設計檔', '產品示範影片中文化／混剪', '展後客戶跟進信件模板與名單分流', '現場業務話術與 FAQ 一份',
+            '持續擔任你在台灣的 GTM 與行銷窗口', '總部與本地代理商之間的溝通與素材產出', '網站、內容與 inbound 的持續經營', 'AI 工作流導入與內部採用推動'
+          ],
+          '.pkg .ref': ['適合：第一次進台灣，想先驗證市場反應。', '適合：已排定台灣展會，要把攤位變成排定好的會議。', '適合：還不需要開台灣正職，但需要有人穩定推進。'],
+          '.proof-num': ['月均 10+', '40% QoQ', '100+ 場'],
+          '.proof-lab': ['自然搜尋帶進的企業詢問', 'HTC 亞太營收季增期間', '第一線產品訓練（高峰年度）'],
+          '.proof-src': [
+            '我獨立規劃並建置一家工業 AI 檢測公司的官網與部落格。詢問來源包含美國富士康、中國 Dell、英業達、NXP、Honeywell Aerospace、研華。<br>其中一個三個月區間的 Search Console 數據：曝光 3.22K、點擊 203、點閱率 6.3%、平均排名 7.3。',
+            '我負責亞太與東南亞的在地化策略與業務賦能素材，是團隊成果的其中一塊，不是我一個人的功勞。',
+            '2013–2019 於 HTC，並建立種子講師制度，讓產品知識能在通路與門市擴散，不必每一場都由我親自上。'
+          ],
+          '.flow-t': ['30 分鐘通話', '範圍與驗收標準', '正式報價與時程', '交付與交接'],
+          '.flow-d': [
+            '先問三件事：現在誰在做這件事、上一次做花了多少、成功長什麼樣。不在這通電話報價。',
+            '寫下明確的交付清單與完成定義。「幫我們做行銷」不是專案，「三個月內官網自然詢問從 0 到每月 5 件」才是。',
+            '固定總價，付款分期，含修改輪次上限與不含項目。沒有隱藏費用。',
+            '交付原始檔與可維運文件。你的團隊要能在我離開後自己接手。'
+          ],
+          '.honest-col h3': ['適合一起做的', '不接的'],
+          '.honest-col li': [
+            'B2B 技術產品要進台灣或亞太市場', '工業自動化、機器視覺、企業軟體、AI 應用', '總部在海外，台灣還沒有行銷編制', '有明確的商業目標與驗收標準', '要的是能落地的交付，不只是一份策略簡報',
+            '需要半導體製程、記憶體或車用電子產業資歷的專案——我沒有，不會假裝有', '純套版網站與比價型的網頁製作', '電商購物車與金流串接', '模型開發、演算法或後端工程', '沒有明確驗收標準的長期外包'
+          ],
+          '.svc-cta .acts a': ['寄 Email 給我', 'LinkedIn', '先看作品集']
+        }
+      },
+      en: {
+        lang: 'en',
+        title: 'Rome Ye | Services & Engagement',
+        toggleLabel: '中',
+        toggleAria: '切換為繁體中文',
+        text: {
+          'h1.display': '<span class="hero-first-line">Get your technical product</span><span class="hero-second-line">understood and bought in Taiwan</span>',
+          '.hero-role': 'Taiwan &amp; APAC GTM · Technical Marketing · AI Workflow',
+          '.hero-cta': 'See engagement options →',
+          '.hero-intro .lede': 'The barrier to entering Taiwan is not language. <strong>Translating your spec sheet into Traditional Chinese will not get you a meeting with Foxconn, Inventec or Advantech.</strong> You need someone who turns your product capability into commercial language local buyers, distributors and frontline sales will actually adopt and repeat — and who can build the site, the material and the workflow themselves.',
+          '#why .svc-h2': 'Most companies entering Taiwan get stuck between two kinds of vendor',
+          '#services .svc-h2': 'Four stages: understood → found → closed on the floor → running inside',
+          '#services .svc-lede': 'These are four stages of one adoption path. Take the whole thing, or just the stage you need.',
+          '#packages .svc-h2': 'Three ways to work together',
+          '#packages .svc-lede': 'Pricing depends on actual scope. The figures below are starting points; the first call establishes your goal and current situation before any formal quote.',
+          '.pkg-note': '<strong>Not included:</strong> physical printing and booth construction, third-party asset and font licensing, outsourced video production, ad spend, domain and hosting. These are quoted separately and paid directly to the vendor — I do not mark them up.',
+          '#proof .svc-h2': 'Work delivered, not claims made',
+          '#proof .svc-lede': 'Case studies, trade show execution and design output are in the <a href="index.html#work" style="border-bottom:1px solid var(--ink);">portfolio</a>. International trade shows I have worked on: Computex, InnoVEX, Hannover Messe, APEX EXPO.',
+          '#process .svc-h2': 'How an engagement runs',
+          '#fit .svc-h2': 'Good fit, and what I turn down',
+          '.svc-cta h2': 'Start with 30 minutes and see if this is the same problem',
+          '.svc-cta p': 'Tell me about your product, your target market, and where you are stuck. If I am not the right person, I will say so and point you somewhere more useful.',
+          '#contact h2': 'Let us talk about<br>working together'
+        },
+        groups: {
+          'header .navlinks a': ['Work', 'Experience', 'Services', 'Get in touch'],
+          '.footer-links a': ['Work', 'Experience', 'Services'],
+          '.contact-links a': ['Email', 'LinkedIn'],
+          '.svc-kicker span:nth-child(3)': ['The Gap', 'Services', 'Packages', 'Track Record', 'How We Work', 'Fit'],
+          '.pain-lab': ['Translation agency / local creative shop', 'Where I sit', 'International marketing consultancy', 'Where I sit'],
+          '.pain-txt': [
+            'Language is fine, but they do not know enterprise technical specs and have never worked with an overseas HQ. What comes back is something local sales cannot use.',
+            '13 years inside technology companies doing product marketing and sales enablement — and I build the site, the material and the AI workflow myself. I know what HQ needs and what the Taiwan floor needs.',
+            'The strategy presents well, but delivery stops at a deck. You still have to find someone else to execute, and timeline and quality slip.',
+            'Strategy and delivery are the same person. From buyer-context analysis and a Traditional Chinese site with SEO/GEO, through to show funnels and sales material — one line, end to end.'
+          ],
+          '.svc-card .step': ['A / Understood', 'B / Found', 'C / Closed on the floor', 'D / Running inside'],
+          '.svc-card h3': ['Technical translation and sales enablement', 'Traditional Chinese B2B site, product pages, SEO &amp; GEO', 'Trade show package and field execution', 'AI workflows, agents and lightweight CRM'],
+          '.svc-card .ask': ['&ldquo;Our engineers cannot explain the product and sales cannot sell it.&rdquo;', '&ldquo;Nobody in Taiwan can find us, and the site brings no enquiries.&rdquo;', '&ldquo;We spend six figures on a show and walk away with a stack of business cards.&rdquo;', '&ldquo;We bought AI and nobody uses it. We do not know where to start.&rdquo;'],
+          '.svc-card li': [
+            'Rewrite product capability into value narratives and use cases local buyers understand', 'Competitive positioning, buyer personas, message hierarchy', 'Battlecards, product one-pagers, sales scripts, training material', 'Align HQ messaging with what the Taiwan market actually needs',
+            'Information architecture and funnel design first, visual design second', 'Traditional Chinese B2B site, product pages, campaign landing pages', 'SEO and GEO so search engines and AI summaries cite your content correctly', 'Turn the site into an inbound entry point, not a brochure',
+            'Pre-show bilingual booking funnel that converts traffic into scheduled meetings', 'Booth backdrop and collateral design files', 'Product demo video localization and re-edit', 'Post-show follow-up emails and lead routing',
+            'Map the workflow first and find the two or three steps where AI saves real time', 'Keep a human approval gate wherever a wrong output is expensive', 'Build a lightweight CRM and content publishing workflow', 'Hand over documentation your team can run without me'
+          ],
+          '.pkg-tag': ['Option 1', 'Option 2 / Most chosen', 'Option 3'],
+          '.pkg h3': ['Market Entry Starter Kit', 'Trade Show Turnkey', 'Fractional GTM Lead'],
+          '.pkg .term': ['2–3 weeks', '4–6 weeks', '10–20 hrs/week, monthly'],
+          '.pkg .price': ['From USD 3,500<small>approx. NTD 110,000</small>', 'From USD 5,500<small>approx. NTD 170,000</small>', 'Quoted on scope<small>based on hours and scope</small>'],
+          '.pkg li': [
+            'One Traditional Chinese B2B landing page with SEO/GEO structure', 'One localized sales battlecard', 'Competitive and local buyer-context analysis', 'Message hierarchy recommendation for the Taiwan market',
+            'Pre-show bilingual booking funnel landing page', 'Booth backdrop and brochure design files', 'Product demo video localization and re-edit', 'Post-show follow-up email templates and lead routing', 'On-floor sales script and FAQ',
+            'Act as your ongoing GTM and marketing point of contact in Taiwan', 'Bridge HQ and local distributors, and produce the material', 'Ongoing site, content and inbound work', 'AI workflow adoption inside the team'
+          ],
+          '.pkg .ref': ['For: entering Taiwan for the first time and testing market response.', 'For: a Taiwan show already booked, turning the booth into scheduled meetings.', 'For: not ready to hire in Taiwan, but need someone moving it forward.'],
+          '.proof-num': ['10+ / month', '40% QoQ', '100+ sessions'],
+          '.proof-lab': ['Organic inbound enterprise enquiries', 'HTC APAC revenue growth period', 'Frontline product training (peak year)'],
+          '.proof-src': [
+            'I independently planned and built the site and blog for an industrial AI inspection company. Enquiries came from accounts including Foxconn US, Dell China, Inventec, NXP, Honeywell Aerospace and Advantech.<br>Over one three-month window, Search Console recorded 3.22K impressions, 203 clicks, 6.3% CTR and average position 7.3.',
+            'I owned the APAC and Southeast Asia localization strategy and sales enablement material — one part of a team result, not mine alone.',
+            'At HTC, 2013–2019. I also set up a seed-trainer program so product knowledge scaled across retail and channel without me delivering every session.'
+          ],
+          '.flow-t': ['A 30-minute call', 'Scope and definition of done', 'Formal quote and timeline', 'Delivery and handover'],
+          '.flow-d': [
+            'Three questions first: who does this today, what did it cost last time, and what does success look like. No quote on this call.',
+            'A written deliverable list and definition of done. &ldquo;Help us with marketing&rdquo; is not a project. &ldquo;Organic enquiries from 0 to 5 per month within three months&rdquo; is.',
+            'Fixed total price, staged payments, a capped number of revision rounds, and what is excluded. No hidden costs.',
+            'Source files and documentation your team can maintain. They should be able to run it after I leave.'
+          ],
+          '.honest-col h3': ['Good fit', 'What I turn down'],
+          '.honest-col li': [
+            'B2B technical products entering Taiwan or APAC', 'Industrial automation, machine vision, enterprise software, applied AI', 'HQ overseas with no marketing headcount in Taiwan', 'A clear commercial goal and definition of done', 'You want delivery that lands, not just a strategy deck',
+            'Work requiring semiconductor process, memory or automotive electronics experience — I do not have it and will not pretend to', 'Template websites and price-shopped web production', 'E-commerce carts and payment integration', 'Model development, algorithms or backend engineering', 'Open-ended retainers with no definition of done'
+          ],
+          '.svc-cta .acts a': ['Email me', 'LinkedIn', 'See the portfolio first']
+        }
+      }
+    };
+
+    var activeLang = localStorage.getItem('siteLang') === 'en' ? 'en' : 'zh';
+    var langToggle = document.getElementById('langToggle');
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
+
+    function applyLanguage(lang) {
+      activeLang = lang;
+      localStorage.setItem('siteLang', lang);
+      var copy = translations[lang];
+      document.documentElement.lang = copy.lang;
+      document.title = copy.title;
+      Object.keys(copy.text).forEach(function (selector) {
+        var el = document.querySelector(selector);
+        if (el) el.innerHTML = copy.text[selector];
+      });
+      Object.keys(copy.groups).forEach(function (selector) {
+        document.querySelectorAll(selector).forEach(function (el, index) {
+          if (copy.groups[selector][index] !== undefined) el.innerHTML = copy.groups[selector][index];
+        });
+      });
+      if (langToggle) {
+        langToggle.textContent = copy.toggleLabel;
+        langToggle.setAttribute('aria-label', copy.toggleAria);
+      }
+    }
+
+    if (langToggle) {
+      langToggle.addEventListener('click', function () {
+        applyLanguage(activeLang === 'zh' ? 'en' : 'zh');
+        if (navLinks && navToggle) {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    var header = document.querySelector('header');
+    var heroEl = document.querySelector('.hero');
+    if (header && heroEl) {
+      var lastScrollY = window.scrollY;
+      var onScroll = function () {
+        var currentScrollY = window.scrollY;
+        var threshold = heroEl.offsetHeight - 80;
+        header.classList.toggle('over-light', currentScrollY > threshold);
+        if (currentScrollY <= threshold) {
+          header.classList.remove('scrolled');
+        } else if (currentScrollY > lastScrollY + 4) {
+          header.classList.add('scrolled');
+        } else if (currentScrollY < lastScrollY - 4) {
+          header.classList.remove('scrolled');
+        }
+        lastScrollY = Math.max(currentScrollY, 0);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      header.addEventListener('mouseenter', function () { header.classList.remove('scrolled'); });
+      header.addEventListener('mouseleave', function () {
+        if (window.scrollY > heroEl.offsetHeight - 80) header.classList.add('scrolled');
+      });
+      onScroll();
+    }
+
+    var lede = document.querySelector('.hero-intro .lede');
+    if (lede) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { lede.classList.add('is-visible'); io.disconnect(); } });
+      }, { threshold: 0.2 });
+      io.observe(lede);
+    }
+
+    applyLanguage(activeLang);
+  });
+</script>
+</body>
+</html>
